@@ -1,0 +1,424 @@
+{
+  "site": {
+    "name": "Grupo 35 de Guías y Scouts",
+    "shortName": "Grupo 35",
+    "tagline": "Guías y Scouts",
+    "description": "Grupo de Guías y Scouts en Costa Rica. Educación no formal, vida al aire libre y proyectos ambientales para niñas, niños y jóvenes de 6 a 21 años."
+  },
+
+  "pending": {
+    "label": "Por confirmar",
+    "hint": "Dato pendiente de confirmar con el grupo.",
+    "block": "Este bloque queda vacío a propósito. El contenido lo aporta el grupo y no se publica información inventada. El inventario de lo que falta está en docs/contenido-pendiente.md."
+  },
+
+  "nav": {
+    "home": "Inicio",
+    "about": "Nuestro Grupo",
+    "sections": "Secciones",
+    "impact": "Impacto",
+    "projects": "Proyectos",
+    "news": "Comunicados",
+    "join": "Unite",
+    "designSystem": "Base de diseño"
+  },
+
+  "layout": {
+    "skipToContent": "Saltar al contenido",
+    "mainNav": "Navegación principal",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "breadcrumbSeparator": "·"
+  },
+
+  "home": {
+    "hero": {
+      "badge": "Movimiento juvenil · Costa Rica",
+      "title": "Formamos líderes que cuidan su comunidad y su planeta",
+      "lead": "Acompañamos a niñas, niños y jóvenes de 6 a 21 años con educación no formal, vida al aire libre y proyectos ambientales.",
+      "ctaJoin": "Quiero ser parte",
+      "ctaAbout": "Conocé el grupo",
+      "imageAlt": "Personas jóvenes en una actividad scout al aire libre",
+      "statAges": "años de edad",
+      "statAgesValue": "6-21",
+      "statSections": "secciones",
+      "statMethod": "método",
+      "statMethodValue": "Scout"
+    },
+    "sections": {
+      "eyebrow": "Nuestras secciones",
+      "title": "Un camino para cada edad",
+      "link": "Ver las cuatro secciones"
+    },
+    "method": {
+      "eyebrow": "Cómo educamos",
+      "title": "Aprender haciendo, con propósito",
+      "lead": "El método scout convierte cada campamento, cada patrulla y cada proyecto en una oportunidad para crecer. Estos son los tres pilares que sostienen el trabajo de cada semana.",
+      "imageAlt": "Siembra de árboles nativos durante una jornada al aire libre",
+      "pillars": {
+        "education": {
+          "title": "Educación no formal",
+          "text": "Un programa progresivo por edades, con objetivos claros y evaluación acompañada."
+        },
+        "outdoors": {
+          "title": "Vida al aire libre",
+          "text": "Campamentos, excursiones y contacto directo con la naturaleza costarricense."
+        },
+        "service": {
+          "title": "Servicio a la comunidad",
+          "text": "Dejar el mundo mejor de como lo encontramos, con proyectos que se puedan medir."
+        }
+      }
+    },
+    "environment": {
+      "eyebrow": "Compromiso ambiental",
+      "title": "Queremos que cada acción se pueda medir",
+      "lead": "La meta de este sitio es publicar los proyectos ambientales del grupo con datos abiertos, para que cualquier persona de la comunidad pueda revisarlos.",
+      "cta": "Ver nuestro impacto",
+      "sdgNote": "Objetivos de Desarrollo Sostenible con los que se piensa alinear el trabajo. La selección definitiva la confirma el grupo."
+    },
+    "agenda": {
+      "eyebrow": "Agenda",
+      "title": "Próximas actividades",
+      "link": "Ver calendario completo",
+      "empty": "El calendario de actividades lo publica el grupo. Todavía no hay fechas confirmadas, así que este espacio se deja vacío en lugar de mostrar actividades de ejemplo."
+    },
+    "closing": {
+      "title": "¿Listos para la aventura?",
+      "lead": "Vení a una reunión, conocé cómo trabajamos y decidí con calma.",
+      "ctaJoin": "Quiero inscribirme",
+      "ctaAbout": "Conocer el grupo"
+    }
+  },
+
+  "about": {
+    "metaTitle": "Nuestro Grupo",
+    "metaDescription": "Quiénes somos, en qué creemos, la Promesa y la Ley, y el equipo de personas voluntarias del Grupo 35 de Guías y Scouts.",
+    "hero": {
+      "eyebrow": "Nuestro Grupo",
+      "title": "Una comunidad que educa jugando, acampando y sirviendo",
+      "lead": "Quiénes somos, en qué creemos y quiénes acompañan a nuestras niñas, niños y jóvenes.",
+      "imageAlt": "Grupo de personas voluntarias y jóvenes scouts reunidas al aire libre"
+    },
+    "history": {
+      "eyebrow": "Nuestra historia",
+      "title": "Del primer campamento a la casa digital",
+      "lead": "La historia del grupo —año de fundación, personas fundadoras, hitos— la escriben quienes la vivieron.",
+      "imageAlt": "Personas voluntarias del grupo durante una actividad",
+      "metricFoundation": "año de fundación",
+      "metricPeople": "personas activas",
+      "metricLeaders": "dirigentes voluntarios"
+    },
+    "purpose": {
+      "eyebrow": "Lo que nos mueve",
+      "title": "Misión, visión y valores",
+      "missionTitle": "Misión",
+      "missionText": "Contribuir a la educación de la niñez y la juventud para que alcancen su pleno potencial y participen como ciudadanía activa en la construcción de un mundo mejor.",
+      "missionSource": "Misión del Movimiento Scout, adoptada por la Asociación de Guías y Scouts de Costa Rica.",
+      "visionTitle": "Visión",
+      "visionText": "La visión propia del grupo todavía no está redactada.",
+      "valuesTitle": "Valores"
+    },
+    "commitment": {
+      "promiseEyebrow": "Nuestro compromiso",
+      "promiseTitle": "La Promesa",
+      "promiseLead": "Cada persona que ingresa al Movimiento formula, de manera libre y voluntaria, un compromiso personal ante su comunidad.",
+      "lawEyebrow": "Código de conducta",
+      "lawTitle": "La Ley"
+    },
+    "team": {
+      "eyebrow": "Equipo",
+      "title": "Quiénes acompañan",
+      "lead": "Personas adultas voluntarias, formadas y con acreditación vigente de la Asociación. Cada sección tiene su equipo de dirigentes y el grupo cuenta con una jefatura y un consejo de personas adultas.",
+      "rosterNote": "Los nombres, roles y fotografías del equipo los aporta el grupo."
+    },
+    "venue": {
+      "eyebrow": "Dónde estamos",
+      "title": "La sede del Grupo 35",
+      "lead": "Estos datos son los que la gente busca primero, así que se publican solo cuando el grupo los confirme.",
+      "addressTitle": "Dirección",
+      "meetingsTitle": "Día y hora de reunión",
+      "contactTitle": "Contacto",
+      "cta": "Escribinos para visitarnos",
+      "imageAlt": "Reunión de grupo al aire libre"
+    }
+  },
+
+  "sections": {
+    "metaTitle": "Secciones",
+    "metaDescription": "Manada, Tropa, Wak y Comunidad: las cuatro secciones del Grupo 35 de Guías y Scouts, con sus edades, su forma de organizarse y sus énfasis.",
+    "hero": {
+      "eyebrow": "Programa por edades",
+      "title": "Cuatro etapas, un mismo camino",
+      "lead": "El programa se organiza por edades. Cada sección tiene su nombre, su forma de organizarse y sus propios retos.",
+      "imageAlt": "Personas jóvenes trabajando juntas en una actividad al aire libre"
+    },
+    "anchorNav": "Ir a una sección",
+    "table": {
+      "title": "De un vistazo",
+      "caption": "Comparación de las cuatro secciones por edades, forma de organizarse y énfasis del programa",
+      "colSection": "Sección",
+      "colAges": "Edades",
+      "colUnit": "Se organiza en",
+      "colFocus": "Énfasis",
+      "cta": "Quiero inscribir a alguien",
+      "help": "¿Tenés dudas sobre cuál sección le toca? Escribinos y te orientamos."
+    }
+  },
+
+  "join": {
+    "metaTitle": "Unite",
+    "metaDescription": "Cómo inscribirse en el Grupo 35 de Guías y Scouts: pasos, secciones por edad y contacto.",
+    "hero": {
+      "eyebrow": "Inscripciones",
+      "title": "Sumate al grupo",
+      "lead": "Escribinos, vení a una reunión y decidí con calma.",
+      "imageAlt": "Jóvenes scouts armando una construcción con cuerdas y varas"
+    },
+    "steps": {
+      "eyebrow": "Cómo funciona",
+      "title": "Tres pasos",
+      "items": [
+        {
+          "title": "Escribinos",
+          "detail": "Contanos la edad de la persona interesada y te decimos a qué sección le toca."
+        },
+        {
+          "title": "Vení a una reunión",
+          "detail": "Coordinamos una visita para que conozcan el lugar, la sección y al equipo de dirigentes."
+        },
+        {
+          "title": "Formalizamos la inscripción",
+          "detail": "Se completa la ficha de la Asociación y se define la cuota de apoyo del grupo."
+        }
+      ]
+    },
+    "byAge": {
+      "eyebrow": "Por edad",
+      "title": "A qué sección le toca",
+      "cta": "Ver el detalle de cada sección"
+    },
+    "contact": {
+      "eyebrow": "Contacto",
+      "title": "Escribinos",
+      "lead": "El formulario de inscripción en línea forma parte de la segunda mitad del proyecto. Mientras tanto la atención es por correo y presencial.",
+      "emailTitle": "Correo",
+      "meetingsTitle": "Día y hora de reunión",
+      "venueTitle": "Dónde nos reunimos",
+      "checklistTitle": "Qué llevar el primer día",
+      "checklist": [
+        "Ropa cómoda",
+        "Botella de agua",
+        "Gorra o sombrero",
+        "Merienda",
+        "Muchas ganas"
+      ],
+      "checklistNote": "La primera visita no tiene costo ni compromiso. Una persona adulta responsable debe acompañar a quienes son menores de edad."
+    }
+  },
+
+  "designSystem": {
+    "metaTitle": "Base de diseño",
+    "metaDescription": "Color, tipografía, componentes y ritmo del sitio del Grupo 35, para que las páginas pendientes se vean como parte del mismo sitio.",
+    "eyebrow": "Guía para el equipo",
+    "title": "Base de diseño del sitio",
+    "lead": "Todo lo que hace falta para que las páginas de Impacto, Proyectos y Comunicados se vean como parte del mismo sitio. Los valores viven como custom properties en <code>app/globals.css</code>.",
+    "colorTitle": "Color",
+    "typographyTitle": "Tipografía",
+    "typographyHeadings": "Títulos · Sora 800",
+    "typographyHeadingsDetail": "H1 <code>clamp(2.25rem, 6vw, 3.875rem)</code><br></br>H2 <code>clamp(1.625rem, 3.4vw, 2.5rem)</code> · H3 20-24px<br></br>Interlineado 1.06-1.2 · letter-spacing -0.02em",
+    "typographyBody": "Texto · Mulish 400/700/800",
+    "typographyBodyDetail": "Párrafo 16-20px · Etiqueta 13px 800 mayúsculas<br></br>Interlineado 1.55-1.7 · texto secundario <code>#5B5169</code>",
+    "componentsTitle": "Componentes",
+    "buttonsTitle": "Botones",
+    "buttonPrimary": "Primario",
+    "buttonAccent": "Destacado",
+    "buttonGhost": "Secundario",
+    "buttonsDetail": "Clases <code>.btn</code>, <code>.btn--accent</code>, <code>.btn--ghost</code>. Radio 999px.",
+    "cardTitle": "Tarjeta",
+    "cardSample": "Título de tarjeta",
+    "cardDetail": "Radio 20px · borde <code>#EFE9DF</code> · relleno 22-34px",
+    "rhythmTitle": "Ritmo y rejilla",
+    "rhythmDetail": "Ancho máximo <b>1280px</b><br></br>Márgenes laterales <code>clamp(20px, 5vw, 32px)</code><br></br>Separación entre secciones <code>clamp(56px, 8vw, 84px)</code><br></br>Espacio entre columnas <code>clamp(36px, 5vw, 64px)</code><br></br>Radio de imagen <b>24px</b>",
+    "howToTitle": "Cómo construir una página nueva",
+    "structureTitle": "Estructura mínima",
+    "structureDetail": "Crear <code>{route}</code>, exportar <code>generateMetadata</code> y envolver cada bloque en <code>{section}</code> con un <code>{wrapper}</code> adentro. El encabezado y el pie ya los pone <code>{layout}</code>.",
+    "accentTitle": "Color por sección",
+    "accentDetail": "Poner <code>data-seccion=\"manada|tropa|wak|comunidad\"</code> en cualquier contenedor cambia <code>--acento</code>, <code>--acento-suave</code> y <code>--acento-texto</code> para todo lo que tenga adentro. No se escriben hex sueltos en los componentes.",
+    "i18nTitle": "Textos e idiomas",
+    "i18nDetail": "Ningún texto visible se escribe en el JSX: todo sale de <code>messages/es.json</code> mediante llaves. En páginas de servidor se usa <code>getTranslations</code> y en componentes de cliente <code>useTranslations</code>. Para sumar un idioma se copia el archivo de mensajes y se agrega el código a <code>i18n/routing.ts</code>.",
+    "contentTitle": "Datos del grupo",
+    "contentDetail": "El sitio no publica datos inventados. Fechas, cantidades, direcciones, contactos y nombres se marcan con <code>PendingValue</code> o <code>PendingNote</code> hasta que el grupo los confirme. La lista completa está en <code>docs/contenido-pendiente.md</code>.",
+    "splitEyebrowDone": "Reparto del trabajo",
+    "splitTitleDone": "Mitad 1 · lista",
+    "splitTextDone": "Encabezado y pie · Base de diseño<br></br>Inicio · Nuestro Grupo · Secciones · Unite",
+    "splitEyebrowPending": "Pendiente",
+    "splitTitlePending": "Mitad 2",
+    "splitTextPending": "Impacto (datos abiertos) · Proyectos<br></br>Comunicados · Formulario de voluntariado"
+  },
+
+  "underConstruction": {
+    "backHome": "Volver al inicio",
+    "designSystem": "Ver la base de diseño"
+  },
+
+  "impact": {
+    "metaTitle": "Impacto ambiental",
+    "metaDescription": "Datos abiertos del impacto ambiental del Grupo 35. Página en construcción.",
+    "title": "Impacto ambiental: en construcción",
+    "description": "Aquí se van a publicar las métricas ambientales del grupo con datos abiertos. Corresponde a la segunda mitad del proyecto colaborativo y se construye sobre esta misma base de diseño."
+  },
+
+  "projects": {
+    "metaTitle": "Proyectos",
+    "metaDescription": "Proyectos ambientales y comunitarios del Grupo 35. Página en construcción.",
+    "title": "Proyectos: en construcción",
+    "description": "Aquí va a vivir el catálogo de proyectos ambientales y comunitarios del grupo, con su estado, sus responsables y sus resultados. Corresponde a la segunda mitad del proyecto colaborativo."
+  },
+
+  "news": {
+    "metaTitle": "Comunicados",
+    "metaDescription": "Comunicados y calendario del Grupo 35. Página en construcción.",
+    "title": "Comunicados: en construcción",
+    "description": "Aquí se van a publicar los comunicados para las familias, el calendario de actividades y los avisos de cada sección. Corresponde a la segunda mitad del proyecto colaborativo."
+  },
+
+  "notFound": {
+    "eyebrow": "Error 404",
+    "title": "No encontramos esa página",
+    "lead": "Puede que el enlace esté viejo o que la sección todavía no exista. Desde el inicio se llega a todo lo publicado.",
+    "backHome": "Volver al inicio",
+    "sections": "Ver las secciones"
+  },
+
+  "footer": {
+    "text": "Comunidad de niñas, niños, jóvenes y personas adultas comprometidas de forma libre y voluntaria con el servicio y el cuidado del ambiente.",
+    "navTitle": "Navegación",
+    "navLabel": "Navegación del pie",
+    "transparencyTitle": "Transparencia",
+    "transparencyLabel": "Transparencia",
+    "impactLink": "Impacto ambiental",
+    "contactTitle": "Contacto",
+    "venueLabel": "Dónde nos reunimos",
+    "emailLabel": "Correo",
+    "copyright": "© {year} {name} de Costa Rica · Sitio desarrollado como Trabajo Comunal Universitario de la UTN",
+    "sdgLabel": "Objetivos de Desarrollo Sostenible",
+    "sdgAbbr": "ODS"
+  },
+
+  "content": {
+    "values": [
+      "Honestidad",
+      "Servicio",
+      "Respeto",
+      "Cuido del ambiente",
+      "Trabajo en equipo",
+      "Alegría"
+    ],
+
+    "promise": "Prometo por mi honor hacer cuanto de mí dependa por cumplir mis deberes para con Dios y mi Patria, ayudar al prójimo en toda circunstancia y cumplir fielmente la Ley Scout.",
+
+    "scoutLaw": [
+      "Es digna de confianza",
+      "Es leal",
+      "Es útil y ayuda a los demás",
+      "Es amiga de todos y hermana de toda persona guía o scout",
+      "Es cortés",
+      "Ve en la naturaleza la obra de Dios",
+      "Obedece sin réplica y no deja nada a medias",
+      "Sonríe y canta ante las dificultades",
+      "Es económica y respeta el bien ajeno",
+      "Es limpia y sana en pensamientos, palabras y obras"
+    ],
+
+    "sections": {
+      "manada": {
+        "name": "Manada",
+        "ages": "6 a 10 años",
+        "agesShort": "6-10",
+        "summary": "Se aprende jugando, en grupos pequeños y con mucho aire libre.",
+        "description": "La Manada es la puerta de entrada al Movimiento. Su marco simbólico viene de El libro de la selva y todo el programa gira alrededor del juego: se trabaja en grupos pequeños y cada quien avanza en su progresión con el acompañamiento del equipo de dirigentes.",
+        "facts": [
+          { "label": "Se organiza en", "value": "Seisenas" },
+          { "label": "Marco simbólico", "value": "El libro de la selva" }
+        ],
+        "topics": [
+          "Juego y descubrimiento",
+          "Primeros campamentos",
+          "Cuido de la naturaleza"
+        ],
+        "focus": "Juego, descubrimiento y hábitos",
+        "unit": "Seisenas",
+        "imageAlt": "Niñas y niños en una actividad al aire libre"
+      },
+      "tropa": {
+        "name": "Tropa",
+        "ages": "11 a 14 años",
+        "agesShort": "11-14",
+        "summary": "Se trabaja en patrullas, con campamentos y técnica scout.",
+        "description": "Es la sección que dio origen al Movimiento. La Tropa se divide en patrullas pequeñas y autónomas donde cada persona asume un cargo real: la vida en la naturaleza, la técnica scout y el trabajo en equipo se aprenden haciéndolos.",
+        "facts": [
+          { "label": "Se organiza en", "value": "Patrullas" },
+          { "label": "Órgano de decisión", "value": "Consejo de Tropa" }
+        ],
+        "topics": ["Campismo", "Especialidades", "Proyectos ambientales"],
+        "focus": "Vida al aire libre y trabajo en equipo",
+        "unit": "Patrullas",
+        "imageAlt": "Patrulla durante una excursión"
+      },
+      "wak": {
+        "name": "Wak",
+        "ages": "15 a 17 años",
+        "agesShort": "15-17",
+        "summary": "La juventud propone, planifica y ejecuta sus propios proyectos.",
+        "description": "En esta etapa la juventud toma el timón: propone sus propias empresas, las planifica, las ejecuta y las evalúa. La persona dirigente acompaña, no dirige.",
+        "facts": [
+          { "label": "Se organiza en", "value": "Equipos" },
+          { "label": "Eje del programa", "value": "La empresa" }
+        ],
+        "topics": [
+          "Liderazgo juvenil",
+          "Expediciones",
+          "Incidencia comunitaria"
+        ],
+        "focus": "Liderazgo y proyectos propios",
+        "unit": "Equipos",
+        "imageAlt": "Personas jóvenes durante una expedición"
+      },
+      "comunidad": {
+        "name": "Comunidad",
+        "ages": "18 a 21 años",
+        "agesShort": "18-21",
+        "summary": "El servicio deja de ser una actividad y se vuelve un proyecto de vida.",
+        "description": "La última etapa del camino. Cada persona define su plan personal, asume responsabilidades dentro del grupo y sostiene los proyectos de servicio de largo plazo.",
+        "facts": [
+          { "label": "Se organiza en", "value": "Comunidad" },
+          { "label": "Eje del programa", "value": "Servicio y plan personal" }
+        ],
+        "topics": [
+          "Voluntariado",
+          "Proyectos de largo plazo",
+          "Acompañamiento a las otras secciones"
+        ],
+        "focus": "Servicio y proyecto de vida",
+        "unit": "Comunidad",
+        "imageAlt": "Personas jóvenes trabajando en un proyecto de servicio"
+      }
+    },
+
+    "sdg": [
+      { "label": "Educación" },
+      { "label": "Clima" },
+      { "label": "Alianzas" }
+    ],
+
+    "palette": [
+      { "name": "Púrpura", "use": "Fondos oscuros y títulos" },
+      { "name": "Púrpura vivo", "use": "Acción primaria y enlaces" },
+      { "name": "Ámbar", "use": "Destacados y llamados" },
+      { "name": "Verde", "use": "Eje ambiental" },
+      { "name": "Crema", "use": "Fondo general" },
+      { "name": "Gris texto", "use": "Párrafos y apoyo" }
+    ]
+  }
+}
