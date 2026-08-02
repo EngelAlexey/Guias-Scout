@@ -70,10 +70,11 @@ Copy-Item .env.example .env.local
 
 Variables previstas:
 
+- `NEXT_PUBLIC_SITE_URL`: dominio publico del sitio. De ahi salen `metadataBase`, el sitemap y `robots.txt`. Si queda vacia se usa `http://localhost:3000`, asi que hay que definirla antes de publicar.
 - `NEXT_PUBLIC_SUPABASE_URL`: URL publica del proyecto Supabase.
 - `NEXT_PUBLIC_SUPABASE_ANON_KEY`: llave publica anonima del proyecto Supabase.
 
-Estas variables pueden quedar vacias mientras solo se trabaje en la base del repositorio. La app no implementa todavia autenticacion, tablas, politicas RLS ni almacenamiento final.
+Las variables de Supabase pueden quedar vacias mientras solo se trabaje en la base del repositorio. La app no implementa todavia autenticacion, tablas, politicas RLS ni almacenamiento final.
 
 ## Desarrollo
 
