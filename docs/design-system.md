@@ -125,6 +125,58 @@ de bien en 360px sin escalones bruscos.
 - Espacio entre columnas `clamp(36px, 5vw, 64px)`.
 - Radio: tarjeta `20px`, imagen `24px`, boton `999px`.
 
+## Movimiento y compas
+
+El sitio se movia con tres transiciones sueltas de `0.18s` que no
+significaban nada. Ahora hay un solo tempo, y sale del sujeto: una banda
+marcha a **120 pasos por minuto**, o sea una negra cada **500 ms**. Todo el
+movimiento del sitio es una subdivision de ese pulso.
+
+| Token             | Valor   | Para que                        |
+| ----------------- | ------- | ------------------------------- |
+| `--contra`        | `125ms` | cambios de color                |
+| `--medio-pulso`   | `250ms` | masa: `transform`, `box-shadow` |
+| `--pulso`         | `500ms` | la negra. Nada dura mas         |
+| `--ease-suave`    | —       | salida rapida, aterrizaje asentado |
+| `--ease-salida`   | —       | entradas                        |
+
+Regla, sin excepciones: **el color cambia en la contra, la masa se mueve en
+el medio pulso, y nada dura mas de un pulso.**
+
+**El compas** es la firma del sitio. Cada costura entre bloques
+(`.section + .section::before`) lleva una franja de 12px con pulsos debiles
+cada `--compas-pulso` y, cada cuatro pulsos, un tiempo fuerte a altura
+completa. Los tiempos fuertes son los cuatro colores de seccion en el orden
+de la progresion por edades: manada, tropa, wak, comunidad. El compas del
+sitio es el recorrido del grupo. Son dos gradientes: cero imagenes, cero
+JavaScript. Sobre fondo oscuro se reescribe solo `--compas-debil`.
+
+La barra de `.seccion-card` se queda **solida**, en el color de su seccion. Se
+probo con el pulso grabado encima y se leia como ruido: el compas vive en las
+costuras entre bloques y no se repite dentro de cada tarjeta. El hover
+responde con la tarjeta entera, que sube y estrena sombra. Las tarjetas que no
+llevan a ningun lado no se mueven: el hover es una promesa.
+
+**Frecuencia.** El compas no sella todas las costuras: entre dos secciones
+claras seguidas no hay cambio de registro y el riel se volveria papel tapiz.
+Marca el cierre del bloque de apertura y las entradas y salidas de una banda
+de color (`--ink`, `--green`, `--lilac`). En la portada son tres, nunca dos
+seguidas.
+
+El compas que cierra la portada se traza solo de izquierda a derecha, una vez,
+con easing **lineal** — es lo unico lineal del sitio, porque una formacion que
+avanza por la calle no acelera ni frena.
+
+Reglas de seguridad:
+
+- El estado oculto de la entrada y del revelado por scroll vive **dentro** de
+  `@media (prefers-reduced-motion: no-preference)`. Con movimiento reducido no
+  se declara nada: el contenido se ve como siempre y el compas queda dibujado.
+- El revelado por scroll usa `animation-timeline: view()` detras de un
+  `@supports`. Donde no exista, el bloque entero no aplica.
+- `.hero__title` es el elemento LCP: se desplaza pero **nunca** baja su
+  opacidad. Retrasar su pintado seria pagar rendimiento por adorno.
+
 ## Clases principales
 
 - Estructura: `.section` + modificadores `--cream|--white|--ink|--green|--lilac`,

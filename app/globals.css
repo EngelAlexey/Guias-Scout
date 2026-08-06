@@ -43,6 +43,36 @@
 
   --sombra-card: 0 20px 44px rgb(46 26 71 / 12%);
   --sombra-boton: 0 6px 18px rgb(91 45 142 / 28%);
+  --sombra-suave:
+    0 1px 2px rgb(46 26 71 / 5%),
+    0 4px 12px rgb(46 26 71 / 5%);
+  --sombra-alta:
+    0 4px 10px rgb(46 26 71 / 8%),
+    0 26px 56px rgb(46 26 71 / 16%);
+
+  /* Tempo. 120 pasos por minuto es la cadencia real a la que marcha una
+     banda, asi que la negra dura 500ms. Todo el movimiento del sitio son
+     subdivisiones de ese pulso: el color cambia en la contra, la masa se
+     mueve en el medio pulso, nada dura mas de un pulso. */
+  --contra: 125ms;
+  --medio-pulso: 250ms;
+  --pulso: 500ms;
+  --ease-suave: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ease-salida: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Los cuatro colores de seccion, promovidos a tokens para poder
+     componer con ellos fuera de [data-seccion]. */
+  --sec-manada: #f4b400;
+  --sec-tropa: #43a047;
+  --sec-wak: #1e88e5;
+  --sec-comunidad: #e53935;
+
+  /* El compas: pulsos debiles cada --compas-pulso y un tiempo fuerte
+     cada cuatro, en el orden de la progresion por edades. */
+  --compas-pulso: clamp(15px, 3vw, 22px);
+  --compas-tiempo: calc(var(--compas-pulso) * 4);
+  --compas-ciclo: calc(var(--compas-pulso) * 16);
+  --compas-debil: rgb(46 26 71 / 9%);
 }
 
 [data-seccion="manada"] {
@@ -1932,4 +1962,253 @@ code {
 
 .anchor-band .anchor-nav {
   margin-top: 0;
+}
+
+/* ---------------------------------------------------------------
+   Profundidad y movimiento
+
+   El sitio no tenia ninguno de los dos. Todo lo que sigue respeta
+   prefers-reduced-motion: la regla global de mas arriba anula las
+   duraciones, y los bloques de scroll estan detras de un @media que
+   los apaga por completo.
+   --------------------------------------------------------------- */
+
+.card,
+.agenda-item {
+  box-shadow: var(--sombra-suave);
+}
+
+/* Solo levanta lo que de verdad es un enlace. Las tarjetas que no
+   llevan a ningun lado se quedan quietas: el hover es una promesa. */
+.seccion-card {
+  transition:
+    transform var(--medio-pulso) var(--ease-suave),
+    box-shadow var(--medio-pulso) var(--ease-suave);
+}
+
+.seccion-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--sombra-alta);
+}
+
+.btn {
+  box-shadow: 0 0 0 0 rgb(46 26 71 / 0%);
+  transition:
+    background-color var(--contra) var(--ease-suave),
+    border-color var(--contra) var(--ease-suave),
+    transform var(--contra) var(--ease-suave),
+    box-shadow var(--contra) var(--ease-suave);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--sombra-suave);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.header-cta:hover {
+  box-shadow: var(--sombra-boton);
+}
+
+.link-arrow {
+  transition: gap var(--contra) var(--ease-suave);
+}
+
+.link-arrow:hover {
+  gap: 12px;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  right: 10px;
+  bottom: 2px;
+  left: 10px;
+  height: 2.5px;
+  border-radius: 2px;
+  background: var(--purple);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--contra) var(--ease-suave);
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+.nav-link[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+
+@keyframes entrar {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes asentar {
+  from {
+    transform: translateY(14px);
+  }
+
+  to {
+    transform: none;
+  }
+}
+
+/* Entrada de la portada: una sola secuencia escalonada, nada mas.
+   animation-fill-mode: both deja el estado final aplicado, asi que
+   con reduced-motion (duracion 0.01ms) el contenido queda visible. */
+@media (prefers-reduced-motion: no-preference) {
+  .hero__badge,
+  .hero__lead,
+  .hero .btn-row,
+  .hero .stats,
+  .hero__media {
+    animation: entrar var(--pulso) var(--ease-salida) both;
+  }
+
+  /* El titulo es el elemento LCP. Se desplaza, pero nunca baja su
+     opacidad: atrasar su pintado seria pagar rendimiento por adorno. */
+  .hero__title {
+    animation: asentar var(--pulso) var(--ease-salida) both;
+  }
+
+  .hero__badge {
+    animation-delay: 0ms;
+  }
+
+  .hero__media,
+  .hero__lead {
+    animation-delay: var(--contra);
+  }
+
+  .hero .btn-row {
+    animation-delay: var(--medio-pulso);
+  }
+
+  .hero .stats {
+    animation-delay: 375ms;
+  }
+}
+
+/* Revelado al hacer scroll, sin JavaScript. Cada elemento corre su
+   propia linea de tiempo segun entra en pantalla. Detras de @supports
+   para que, donde no exista, el contenido se vea sin animarse. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .section .section-head,
+    .section .card-grid > *,
+    .section .pilares > *,
+    .section .agenda-item {
+      animation: entrar auto var(--ease-salida) both;
+      animation-timeline: view();
+      animation-range: entry 2% cover 18%;
+    }
+  }
+}
+
+/* ---------------------------------------------------------------
+   El compas
+
+   Cada costura entre bloques lleva una franja de pulsos: tiempos
+   debiles cada --compas-pulso, y cada cuatro pulsos un tiempo fuerte
+   a altura completa. Los tiempos fuertes son los cuatro colores de
+   seccion en el orden de la progresion por edades: manada, tropa,
+   wak, comunidad. El compas del sitio es el recorrido del grupo.
+   Dos gradientes, cero imagenes, cero JavaScript.
+   --------------------------------------------------------------- */
+
+.section {
+  position: relative;
+}
+
+/* No toda costura lleva compas: entre dos secciones claras seguidas no
+   hay cambio de registro y el riel se volveria papel tapiz. Marca solo
+   el cierre del bloque de apertura y las entradas y salidas de una
+   banda de color. */
+.section:first-of-type + .section::before,
+.page-hero + .section::before,
+.section--ink + .section::before,
+.section + .section--ink::before,
+.section + .section--green::before,
+.section + .section--lilac::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 10px;
+  background-image:
+    linear-gradient(
+      90deg,
+      var(--sec-manada) 0 4px,
+      transparent 4px var(--compas-tiempo),
+      var(--sec-tropa) var(--compas-tiempo) calc(var(--compas-tiempo) + 4px),
+      transparent calc(var(--compas-tiempo) + 4px) calc(var(--compas-tiempo) * 2),
+      var(--sec-wak) calc(var(--compas-tiempo) * 2)
+        calc(var(--compas-tiempo) * 2 + 4px),
+      transparent calc(var(--compas-tiempo) * 2 + 4px)
+        calc(var(--compas-tiempo) * 3),
+      var(--sec-comunidad) calc(var(--compas-tiempo) * 3)
+        calc(var(--compas-tiempo) * 3 + 4px),
+      transparent calc(var(--compas-tiempo) * 3 + 4px) var(--compas-ciclo)
+    ),
+    repeating-linear-gradient(
+      90deg,
+      var(--compas-debil) 0 2px,
+      transparent 2px var(--compas-pulso)
+    );
+  background-repeat: repeat-x, repeat-x;
+  background-position:
+    0 0,
+    0 100%;
+  background-size:
+    var(--compas-ciclo) 100%,
+    var(--compas-pulso) 38%;
+  pointer-events: none;
+}
+
+/* Sobre fondo oscuro el pulso debil se invierte. */
+.section--ink,
+.section--green {
+  --compas-debil: rgb(255 255 255 / 13%);
+}
+
+/* La barra de cada tarjeta se queda solida, en el color de su seccion.
+   El compas vive en las costuras entre bloques, no aca: repetirlo en
+   cada tarjeta lo volvia ruido. El hover ya responde con la tarjeta
+   entera, que sube y estrena sombra. */
+.seccion-card__barra {
+  height: 10px;
+  background: var(--acento);
+}
+
+/* La unica audacia del sitio, y dura menos de un segundo: el compas
+   que cierra la portada se traza solo, de izquierda a derecha. Es lo
+   unico con easing lineal en todo el sitio, porque una formacion que
+   avanza por la calle no acelera ni frena. */
+@keyframes trazar-compas {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .section:first-of-type + .section::before,
+  .page-hero + .section::before {
+    animation: trazar-compas calc(var(--pulso) * 1.5) linear var(--medio-pulso)
+      both;
+  }
 }
