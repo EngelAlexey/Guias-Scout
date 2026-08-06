@@ -74,3 +74,23 @@ export const SDG = [
   { number: "13", hex: "#3F7E44" },
   { number: "17", hex: "#19486A" },
 ];
+
+// Enlace de contacto. El numero visible vive en messages/es.json; aca solo el URI.
+export const CONTACT = {
+  phoneHref: "tel:+50660101502",
+} as const;
+
+// Paralelos por indice a content.team[] y content.agenda[] de messages/es.json,
+// igual que SDG lo es a content.sdg[]. Si cambia el largo de uno hay que cambiar
+// el del otro: TypeScript no lo detecta.
+export const TEAM_SECTIONS: readonly (SectionId | undefined)[] = [
+  undefined,
+  "tropa",
+];
+
+export const AGENDA_TONES: readonly (string | undefined)[] = [
+  "amber",
+  undefined,
+  undefined,
+  "green",
+];

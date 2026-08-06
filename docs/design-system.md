@@ -132,7 +132,19 @@ de bien en 360px sin escalones bruscos.
 - Texto: `.eyebrow`, `.title-xl|lg|md|sm`, `.lead`, `.prose`.
 - Acciones: `.btn`, `.btn--accent`, `.btn--ghost`, `.btn--outline-dark`,
   `.btn--light`, `.link-arrow`.
-- Piezas: `.card`, `.icon-badge`, `.chip`, `.tag-seccion`, `.fact`, `.metric`.
+- Piezas: `.card`, `.icon-badge`, `.chip`, `.tag-seccion`, `.fact`, `.metric`,
+  `.avatar`, `.team-card__*`, `.agenda-item`, `.agenda-fecha` (con
+  `data-tono="green|amber"`).
+
+`.card-grid` sin modificador es una sola columna con `gap: 22px`: es el
+contenedor de la agenda en la portada. `.fact-grid` es de dos columnas y sirve
+tanto para los hechos de cada seccion como para los hitos de la historia y los
+datos de inscripcion.
+
+Siguen reservados, escritos y sin usar: `.social-row`, `.social-link` y
+`.footer-mail` junto con `SOCIAL_ICONS` (`components/icons.tsx`). Esperan a que
+el grupo entregue correo y redes sociales. Ojo con `.footer-mail`: el `a:hover`
+global lo pisaba, por eso tiene su propia regla de hover.
 
 Los nombres de clase siguen en espanol. Es la unica capa que no se tradujo,
 para no tocar 1800 lineas de CSS por un cambio cosmetico.

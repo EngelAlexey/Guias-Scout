@@ -1,9 +1,10 @@
 {
   "site": {
-    "name": "Grupo 35 de Guías y Scouts",
-    "shortName": "Grupo 35",
+    "name": "Grupo 35 Esparzol Guías y Scouts de Costa Rica",
+    "shortName": "Grupo 35 Esparzol",
     "tagline": "Guías y Scouts",
-    "description": "Grupo de Guías y Scouts en Costa Rica. Educación no formal, vida al aire libre y proyectos ambientales para niñas, niños y jóvenes de 6 a 21 años."
+    "description": "Grupo de Guías y Scouts en Esparza, Puntarenas. Educación no formal, vida al aire libre y la Banda Artística Juvenil de Esparzol para niñas, niños y jóvenes de 6 a 21 años.",
+    "motto": "Siempre Mejor"
   },
 
   "pending": {
@@ -33,9 +34,9 @@
 
   "home": {
     "hero": {
-      "badge": "Movimiento juvenil · Costa Rica",
+      "badge": "Movimiento juvenil · Esparza, Costa Rica",
       "title": "Formamos líderes que cuidan su comunidad y su planeta",
-      "lead": "Acompañamos a niñas, niños y jóvenes de 6 a 21 años con educación no formal, vida al aire libre y proyectos ambientales.",
+      "lead": "Acompañamos a niñas, niños y jóvenes de 6 a 21 años en Esparza, con educación no formal, vida al aire libre y la Banda Artística Juvenil de Esparzol.",
       "ctaJoin": "Quiero ser parte",
       "ctaAbout": "Conocé el grupo",
       "imageAlt": "Personas jóvenes en una actividad scout al aire libre",
@@ -71,17 +72,17 @@
       }
     },
     "environment": {
-      "eyebrow": "Compromiso ambiental",
-      "title": "Queremos que cada acción se pueda medir",
-      "lead": "La meta de este sitio es publicar los proyectos ambientales del grupo con datos abiertos, para que cualquier persona de la comunidad pueda revisarlos.",
+      "eyebrow": "Nuestro proyecto educativo",
+      "title": "La Banda Artística Juvenil de Esparzol",
+      "lead": "El proyecto educativo del grupo tiene enfoque musical: la Banda Artística Juvenil de Esparzol ensaya, se presenta y lleva el nombre de la comunidad a desfiles dentro y fuera de Esparza. Alrededor de ella trabajamos el rescate del patrimonio inmaterial y las buenas prácticas.",
       "cta": "Ver nuestro impacto",
-      "sdgNote": "Objetivos de Desarrollo Sostenible con los que se piensa alinear el trabajo. La selección definitiva la confirma el grupo."
+      "themesTitle": "Temas que trabajamos",
+      "sdgNote": "Objetivos de Desarrollo Sostenible con los que el grupo alinea su trabajo, confirmados por la jefatura de grupo."
     },
     "agenda": {
       "eyebrow": "Agenda",
       "title": "Próximas actividades",
-      "link": "Ver calendario completo",
-      "empty": "El calendario de actividades lo publica el grupo. Todavía no hay fechas confirmadas, así que este espacio se deja vacío en lugar de mostrar actividades de ejemplo."
+      "note": "Las fechas marcadas «por confirmar» se publican apenas el grupo las cierre."
     },
     "closing": {
       "title": "¿Listos para la aventura?",
@@ -93,7 +94,7 @@
 
   "about": {
     "metaTitle": "Nuestro Grupo",
-    "metaDescription": "Quiénes somos, en qué creemos, la Promesa y la Ley, y el equipo de personas voluntarias del Grupo 35 de Guías y Scouts.",
+    "metaDescription": "Quiénes somos, en qué creemos, la Promesa y la Ley, y el equipo de personas voluntarias del Grupo 35 Esparzol de Guías y Scouts, en Esparza de Puntarenas.",
     "hero": {
       "eyebrow": "Nuestro Grupo",
       "title": "Una comunidad que educa jugando, acampando y sirviendo",
@@ -102,12 +103,17 @@
     },
     "history": {
       "eyebrow": "Nuestra historia",
-      "title": "Del primer campamento a la casa digital",
-      "lead": "La historia del grupo —año de fundación, personas fundadoras, hitos— la escriben quienes la vivieron.",
+      "title": "Un grupo joven en el Pacífico Central",
+      "lead": "El Grupo 35 Esparzol nació el 9 de noviembre de 2020, dentro de un plan de la sede central de la Asociación de Guías y Scouts de Costa Rica para abrir grupos en la zona del Pacífico Central.",
+      "story": "Lo fundó Elena Manzanarez Juárez, que ya había participado en el Grupo 44 de San Francisco de Dos Ríos y trajo esa experiencia a Esparza.",
+      "sponsor": "El grupo forma parte de la Asociación de Guías y Scouts de Costa Rica, que respalda su programa y acredita a sus personas adultas voluntarias.",
       "imageAlt": "Personas voluntarias del grupo durante una actividad",
       "metricFoundation": "año de fundación",
-      "metricPeople": "personas activas",
-      "metricLeaders": "dirigentes voluntarios"
+      "metricPeople": "personas participantes",
+      "metricLeaders": "personas adultas voluntarias",
+      "foundationValue": "2020",
+      "leadersValue": "22",
+      "milestonesTitle": "Hitos"
     },
     "purpose": {
       "eyebrow": "Lo que nos mueve",
@@ -116,7 +122,7 @@
       "missionText": "Contribuir a la educación de la niñez y la juventud para que alcancen su pleno potencial y participen como ciudadanía activa en la construcción de un mundo mejor.",
       "missionSource": "Misión del Movimiento Scout, adoptada por la Asociación de Guías y Scouts de Costa Rica.",
       "visionTitle": "Visión",
-      "visionText": "La visión propia del grupo todavía no está redactada.",
+      "visionText": "Implementar buenas prácticas y rescatar el patrimonio inmaterial con el método scout.",
       "valuesTitle": "Valores"
     },
     "commitment": {
@@ -129,24 +135,26 @@
     "team": {
       "eyebrow": "Equipo",
       "title": "Quiénes acompañan",
-      "lead": "Personas adultas voluntarias, formadas y con acreditación vigente de la Asociación. Cada sección tiene su equipo de dirigentes y el grupo cuenta con una jefatura y un consejo de personas adultas.",
-      "rosterNote": "Los nombres, roles y fotografías del equipo los aporta el grupo."
+      "lead": "Personas adultas voluntarias, formadas y con acreditación vigente de la Asociación. Cada sección tiene su equipo de dirigentes y las decisiones del grupo las toma la Junta de Grupo, encabezada por la jefatura.",
+      "structureTitle": "Cómo se organiza la Junta de Grupo",
+      "rosterNote": "El grupo cuenta con 22 personas adultas entre dirigentes y colaboradoras. Aquí publicamos las que ya confirmaron su nombre y su rol; el resto se agrega conforme nos lo vayan pasando."
     },
     "venue": {
       "eyebrow": "Dónde estamos",
-      "title": "La sede del Grupo 35",
-      "lead": "Estos datos son los que la gente busca primero, así que se publican solo cuando el grupo los confirme.",
+      "title": "La sede del Grupo 35 Esparzol",
+      "lead": "Nos reunimos todos los domingos en Esparza, Puntarenas. Vení un domingo, conocé el lugar y preguntá lo que haga falta.",
       "addressTitle": "Dirección",
       "meetingsTitle": "Día y hora de reunión",
-      "contactTitle": "Contacto",
-      "cta": "Escribinos para visitarnos",
+      "phoneTitle": "Teléfono",
+      "contactTitle": "Correo",
+      "cta": "Vení a conocernos",
       "imageAlt": "Reunión de grupo al aire libre"
     }
   },
 
   "sections": {
     "metaTitle": "Secciones",
-    "metaDescription": "Manada, Tropa, Wak y Comunidad: las cuatro secciones del Grupo 35 de Guías y Scouts, con sus edades, su forma de organizarse y sus énfasis.",
+    "metaDescription": "Manada, Tropa, Wak y Comunidad: las cuatro secciones del Grupo 35 Esparzol de Guías y Scouts, con sus edades, su forma de organizarse y sus énfasis.",
     "hero": {
       "eyebrow": "Programa por edades",
       "title": "Cuatro etapas, un mismo camino",
@@ -162,17 +170,17 @@
       "colUnit": "Se organiza en",
       "colFocus": "Énfasis",
       "cta": "Quiero inscribir a alguien",
-      "help": "¿Tenés dudas sobre cuál sección le toca? Escribinos y te orientamos."
+      "help": "¿Tenés dudas sobre cuál sección le toca? Llamanos y te orientamos."
     }
   },
 
   "join": {
     "metaTitle": "Unite",
-    "metaDescription": "Cómo inscribirse en el Grupo 35 de Guías y Scouts: pasos, secciones por edad y contacto.",
+    "metaDescription": "Cómo inscribirse en el Grupo 35 Esparzol de Guías y Scouts: pasos, requisitos, secciones por edad y contacto en Esparza, Puntarenas.",
     "hero": {
       "eyebrow": "Inscripciones",
       "title": "Sumate al grupo",
-      "lead": "Escribinos, vení a una reunión y decidí con calma.",
+      "lead": "Llamanos, vení un domingo a la sede y decidí con calma.",
       "imageAlt": "Jóvenes scouts armando una construcción con cuerdas y varas"
     },
     "steps": {
@@ -180,19 +188,27 @@
       "title": "Tres pasos",
       "items": [
         {
-          "title": "Escribinos",
-          "detail": "Contanos la edad de la persona interesada y te decimos a qué sección le toca."
+          "title": "Contactanos",
+          "detail": "Llamanos y contanos la edad de la persona interesada: te decimos a qué sección le toca y cuándo pasar."
         },
         {
           "title": "Vení a una reunión",
-          "detail": "Coordinamos una visita para que conozcan el lugar, la sección y al equipo de dirigentes."
+          "detail": "Invitamos a la niña o el niño a las reuniones de los domingos, para que conozcan el lugar, la sección y al equipo de dirigentes."
         },
         {
           "title": "Formalizamos la inscripción",
-          "detail": "Se completa la ficha de la Asociación y se define la cuota de apoyo del grupo."
+          "detail": "Si le gusta, se completa la ficha de la Asociación con el permiso de la madre, el padre o la persona encargada. La membresía del grupo no tiene costo."
         }
-      ]
+      ],
+      "factsTitle": "Antes de venir"
     },
+    "facts": [
+      { "label": "Costo de la membresía", "value": "Sin costo" },
+      { "label": "Edad mínima", "value": "6 años" },
+      { "label": "Próximas inscripciones", "value": "Octubre de 2026" },
+      { "label": "Uniforme", "value": "Después de varias reuniones" }
+    ],
+    "factsNote": "La vestimenta del grupo se entrega cuando la persona ya lleva varias reuniones de asistencia; para empezar no hace falta.",
     "byAge": {
       "eyebrow": "Por edad",
       "title": "A qué sección le toca",
@@ -200,11 +216,12 @@
     },
     "contact": {
       "eyebrow": "Contacto",
-      "title": "Escribinos",
-      "lead": "El formulario de inscripción en línea forma parte de la segunda mitad del proyecto. Mientras tanto la atención es por correo y presencial.",
-      "emailTitle": "Correo",
+      "title": "Hablemos",
+      "lead": "El formulario de inscripción en línea forma parte de la segunda mitad del proyecto. Mientras tanto la atención es por teléfono y en persona, los domingos en la sede.",
+      "phoneTitle": "Teléfono",
       "meetingsTitle": "Día y hora de reunión",
       "venueTitle": "Dónde nos reunimos",
+      "emailTitle": "Correo",
       "checklistTitle": "Qué llevar el primer día",
       "checklist": [
         "Ropa cómoda",
@@ -219,7 +236,7 @@
 
   "designSystem": {
     "metaTitle": "Base de diseño",
-    "metaDescription": "Color, tipografía, componentes y ritmo del sitio del Grupo 35, para que las páginas pendientes se vean como parte del mismo sitio.",
+    "metaDescription": "Color, tipografía, componentes y ritmo del sitio del Grupo 35 Esparzol, para que las páginas pendientes se vean como parte del mismo sitio.",
     "eyebrow": "Guía para el equipo",
     "title": "Base de diseño del sitio",
     "lead": "Todo lo que hace falta para que las páginas de Impacto, Proyectos y Comunicados se vean como parte del mismo sitio. Los valores viven como custom properties en <code>app/globals.css</code>.",
@@ -263,22 +280,22 @@
   },
 
   "impact": {
-    "metaTitle": "Impacto ambiental",
-    "metaDescription": "Datos abiertos del impacto ambiental del Grupo 35. Página en construcción.",
-    "title": "Impacto ambiental: en construcción",
-    "description": "Aquí se van a publicar las métricas ambientales del grupo con datos abiertos. Corresponde a la segunda mitad del proyecto colaborativo y se construye sobre esta misma base de diseño."
+    "metaTitle": "Impacto",
+    "metaDescription": "Datos abiertos del trabajo del Grupo 35 Esparzol. Página en construcción.",
+    "title": "Impacto: en construcción",
+    "description": "Aquí se van a publicar, con datos abiertos, los resultados del trabajo del grupo: presentaciones de la Banda Artística Juvenil, horas de servicio y acciones de cuido del ambiente. Corresponde a la segunda mitad del proyecto colaborativo y se construye sobre esta misma base de diseño."
   },
 
   "projects": {
     "metaTitle": "Proyectos",
-    "metaDescription": "Proyectos ambientales y comunitarios del Grupo 35. Página en construcción.",
+    "metaDescription": "Proyectos educativos y comunitarios del Grupo 35 Esparzol. Página en construcción.",
     "title": "Proyectos: en construcción",
-    "description": "Aquí va a vivir el catálogo de proyectos ambientales y comunitarios del grupo, con su estado, sus responsables y sus resultados. Corresponde a la segunda mitad del proyecto colaborativo."
+    "description": "Aquí va a vivir el catálogo de proyectos del grupo, empezando por la Banda Artística Juvenil de Esparzol, con su estado, sus responsables y sus resultados. Corresponde a la segunda mitad del proyecto colaborativo."
   },
 
   "news": {
     "metaTitle": "Comunicados",
-    "metaDescription": "Comunicados y calendario del Grupo 35. Página en construcción.",
+    "metaDescription": "Comunicados y calendario del Grupo 35 Esparzol. Página en construcción.",
     "title": "Comunicados: en construcción",
     "description": "Aquí se van a publicar los comunicados para las familias, el calendario de actividades y los avisos de cada sección. Corresponde a la segunda mitad del proyecto colaborativo."
   },
@@ -297,23 +314,92 @@
     "navLabel": "Navegación del pie",
     "transparencyTitle": "Transparencia",
     "transparencyLabel": "Transparencia",
-    "impactLink": "Impacto ambiental",
     "contactTitle": "Contacto",
     "venueLabel": "Dónde nos reunimos",
+    "phoneLabel": "Teléfono",
     "emailLabel": "Correo",
-    "copyright": "© {year} {name} de Costa Rica · Sitio desarrollado como Trabajo Comunal Universitario de la UTN",
+    "copyright": "© {year} {name} · Sitio desarrollado como Trabajo Comunal Universitario de la UTN",
     "sdgLabel": "Objetivos de Desarrollo Sostenible",
     "sdgAbbr": "ODS"
   },
 
   "content": {
+    "contact": {
+      "address": "Plaza de Tierra, Esparzol, Esparza, Puntarenas.",
+      "addressShort": "Esparza, Esparzol, Plaza de Tierra",
+      "meetings": "Todos los domingos, de 10 de la mañana a 12 mediodía.",
+      "meetingsNote": "No hay reuniones desde el 15 de diciembre hasta inicios de enero.",
+      "phone": "6010 1502",
+      "phoneNote": "Responde la jefatura de grupo."
+    },
+
+    "milestones": [
+      { "year": "2020", "text": "Fundación del grupo, el 9 de noviembre" },
+      {
+        "year": "2024",
+        "text": "Primera presentación de la Banda Artística Juvenil de Esparzol"
+      }
+    ],
+
+    "team": [
+      {
+        "initials": "EM",
+        "name": "Elena Manzanarez Juárez",
+        "role": "Jefe de grupo · Gestión",
+        "detail": "Técnica universitaria en gestión local y políticas públicas."
+      },
+      {
+        "initials": "JC",
+        "name": "José Campos Zamora",
+        "role": "Tropa · Director de la Banda Artística Juvenil",
+        "detail": "Organiza los ensayos y las presentaciones de la Banda, que es el proyecto educativo del grupo."
+      }
+    ],
+
+    "groupAreas": [
+      "Jefatura de grupo",
+      "Administración y finanzas",
+      "Gestión del talento",
+      "Comunicación y tecnología"
+    ],
+
+    "themes": ["Rescate del patrimonio inmaterial", "Buenas prácticas"],
+
+    "agenda": [
+      {
+        "day": "30",
+        "month": "SET",
+        "title": "Desfile de Bandas en Puntarenas",
+        "detail": "30 de setiembre de 2026 · Todas las secciones · Puntarenas centro · En horas de la mañana."
+      },
+      {
+        "day": "Dic",
+        "month": "2026",
+        "title": "Desfile en Marañonal de Esparza",
+        "detail": "Diciembre de 2026, día por confirmar · Todas las secciones · Marañonal, Esparza, Puntarenas · Durante la tarde."
+      },
+      {
+        "day": "Dic",
+        "month": "2026",
+        "title": "Desfile en San Rafael de Heredia",
+        "detail": "Diciembre de 2026, día por confirmar · Todas las secciones · San Rafael de Heredia · Durante la noche."
+      },
+      {
+        "day": "Ene",
+        "month": "2027",
+        "title": "Canapas, campamento de Tropa",
+        "detail": "Enero de 2027, fecha por confirmar · Tropa · Finca Barvak, Heredia · Fin de semana."
+      }
+    ],
+
     "values": [
-      "Honestidad",
+      "Liderazgo",
       "Servicio",
       "Respeto",
       "Cuido del ambiente",
       "Trabajo en equipo",
-      "Alegría"
+      "Alegría",
+      "Amigos de todos"
     ],
 
     "promise": "Prometo por mi honor hacer cuanto de mí dependa por cumplir mis deberes para con Dios y mi Patria, ayudar al prójimo en toda circunstancia y cumplir fielmente la Ley Scout.",
@@ -340,7 +426,9 @@
         "description": "La Manada es la puerta de entrada al Movimiento. Su marco simbólico viene de El libro de la selva y todo el programa gira alrededor del juego: se trabaja en grupos pequeños y cada quien avanza en su progresión con el acompañamiento del equipo de dirigentes.",
         "facts": [
           { "label": "Se organiza en", "value": "Seisenas" },
-          { "label": "Marco simbólico", "value": "El libro de la selva" }
+          { "label": "Marco simbólico", "value": "El libro de la selva" },
+          { "label": "Órgano de decisión", "value": "Consejo de la Roca" },
+          { "label": "Se les llama", "value": "Lobato y Lobata" }
         ],
         "topics": [
           "Juego y descubrimiento",
@@ -359,7 +447,9 @@
         "description": "Es la sección que dio origen al Movimiento. La Tropa se divide en patrullas pequeñas y autónomas donde cada persona asume un cargo real: la vida en la naturaleza, la técnica scout y el trabajo en equipo se aprenden haciéndolos.",
         "facts": [
           { "label": "Se organiza en", "value": "Patrullas" },
-          { "label": "Órgano de decisión", "value": "Consejo de Tropa" }
+          { "label": "Marco simbólico", "value": "Aventura" },
+          { "label": "Órgano de decisión", "value": "Consejo de Tropa" },
+          { "label": "Se les llama", "value": "Guía y Scout" }
         ],
         "topics": ["Campismo", "Especialidades", "Proyectos ambientales"],
         "focus": "Vida al aire libre y trabajo en equipo",
@@ -374,7 +464,9 @@
         "description": "En esta etapa la juventud toma el timón: propone sus propias empresas, las planifica, las ejecuta y las evalúa. La persona dirigente acompaña, no dirige.",
         "facts": [
           { "label": "Se organiza en", "value": "Equipos" },
-          { "label": "Eje del programa", "value": "La empresa" }
+          { "label": "Eje del programa", "value": "La empresa" },
+          { "label": "Marco simbólico", "value": "Tradición y Camino" },
+          { "label": "Se les llama", "value": "Wak y Tsuri" }
         ],
         "topics": [
           "Liderazgo juvenil",
@@ -393,7 +485,9 @@
         "description": "La última etapa del camino. Cada persona define su plan personal, asume responsabilidades dentro del grupo y sostiene los proyectos de servicio de largo plazo.",
         "facts": [
           { "label": "Se organiza en", "value": "Comunidad" },
-          { "label": "Eje del programa", "value": "Servicio y plan personal" }
+          { "label": "Eje del programa", "value": "Servicio y plan personal" },
+          { "label": "Marco simbólico" },
+          { "label": "Se les llama" }
         ],
         "topics": [
           "Voluntariado",

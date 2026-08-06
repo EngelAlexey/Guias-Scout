@@ -1848,6 +1848,10 @@ code {
   color: var(--amber);
 }
 
+.footer-mail:hover {
+  color: var(--amber-bright);
+}
+
 .por-confirmar {
   display: inline-block;
   border: 1px dashed var(--purple-border);

@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
+import { PendingValue } from "@/components/pending";
 import { Link } from "@/i18n/navigation";
 import { PAGE_IMAGES, SECTION_IDS, SECTION_IMAGES } from "@/lib/content/site";
 
 type Props = { params: Promise<{ locale: string }> };
 
-type Fact = { label: string; value: string };
+type Fact = { label: string; value?: string };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
@@ -120,7 +121,9 @@ export default async function SectionsPage({ params }: Props) {
                   {facts.map((fact) => (
                     <div className="fact" key={fact.label}>
                       <dt className="fact__titulo">{fact.label}</dt>
-                      <dd className="fact__valor">{fact.value}</dd>
+                      <dd className="fact__valor">
+                        {fact.value ?? <PendingValue />}
+                      </dd>
                     </div>
                   ))}
                 </dl>
