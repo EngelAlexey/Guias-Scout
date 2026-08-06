@@ -20,7 +20,7 @@
     "impact": "Impacto",
     "projects": "Proyectos",
     "news": "Comunicados",
-    "join": "Unite",
+    "join": "Únete",
     "designSystem": "Base de diseño"
   },
 
@@ -175,7 +175,7 @@
   },
 
   "join": {
-    "metaTitle": "Unite",
+    "metaTitle": "Únete",
     "metaDescription": "Cómo inscribirse en el Grupo 35 Esparzol de Guías y Scouts: pasos, requisitos, secciones por edad y contacto en Esparza, Puntarenas.",
     "hero": {
       "eyebrow": "Inscripciones",
@@ -268,7 +268,7 @@
     "contentDetail": "El sitio no publica datos inventados. Fechas, cantidades, direcciones, contactos y nombres se marcan con <code>PendingValue</code> o <code>PendingNote</code> hasta que el grupo los confirme. La lista completa está en <code>docs/contenido-pendiente.md</code>.",
     "splitEyebrowDone": "Reparto del trabajo",
     "splitTitleDone": "Mitad 1 · lista",
-    "splitTextDone": "Encabezado y pie · Base de diseño<br></br>Inicio · Nuestro Grupo · Secciones · Unite",
+    "splitTextDone": "Encabezado y pie · Base de diseño<br></br>Inicio · Nuestro Grupo · Secciones · Únete",
     "splitEyebrowPending": "Pendiente",
     "splitTitlePending": "Mitad 2",
     "splitTextPending": "Impacto (datos abiertos) · Proyectos<br></br>Comunicados · Formulario de voluntariado"
