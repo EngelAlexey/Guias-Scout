@@ -20,7 +20,7 @@
     "impact": "Impacto",
     "projects": "Proyectos",
     "news": "Comunicados",
-    "join": "Únete",
+    "join": "Unite",
     "designSystem": "Base de diseño"
   },
 
@@ -175,7 +175,7 @@
   },
 
   "join": {
-    "metaTitle": "Únete",
+    "metaTitle": "Unite",
     "metaDescription": "Cómo inscribirse en el Grupo 35 Esparzol de Guías y Scouts: pasos, requisitos, secciones por edad y contacto en Esparza, Puntarenas.",
     "hero": {
       "eyebrow": "Inscripciones",
@@ -268,7 +268,7 @@
     "contentDetail": "El sitio no publica datos inventados. Fechas, cantidades, direcciones, contactos y nombres se marcan con <code>PendingValue</code> o <code>PendingNote</code> hasta que el grupo los confirme. La lista completa está en <code>docs/contenido-pendiente.md</code>.",
     "splitEyebrowDone": "Reparto del trabajo",
     "splitTitleDone": "Mitad 1 · lista",
-    "splitTextDone": "Encabezado y pie · Base de diseño<br></br>Inicio · Nuestro Grupo · Secciones · Únete",
+    "splitTextDone": "Encabezado y pie · Base de diseño<br></br>Inicio · Nuestro Grupo · Secciones · Unite",
     "splitEyebrowPending": "Pendiente",
     "splitTitlePending": "Mitad 2",
     "splitTextPending": "Impacto (datos abiertos) · Proyectos<br></br>Comunicados · Formulario de voluntariado"
@@ -281,23 +281,82 @@
 
   "impact": {
     "metaTitle": "Impacto",
-    "metaDescription": "Datos abiertos del trabajo del Grupo 35 Esparzol. Página en construcción.",
-    "title": "Impacto: en construcción",
-    "description": "Aquí se van a publicar, con datos abiertos, los resultados del trabajo del grupo: presentaciones de la Banda Artística Juvenil, horas de servicio y acciones de cuido del ambiente. Corresponde a la segunda mitad del proyecto colaborativo y se construye sobre esta misma base de diseño."
+    "metaDescription": "Resultados del trabajo del Grupo 35 Esparzol con datos verificables: presentaciones de la Banda Artística Juvenil, horas de servicio y acciones de cuido del ambiente.",
+    "hero": {
+      "eyebrow": "Datos abiertos",
+      "title": "Lo que hacemos, con números",
+      "lead": "Publicamos los resultados del trabajo del grupo con datos verificables. Lo que todavía no está confirmado se muestra «por confirmar» en lugar de inventar cifras.",
+      "imageAlt": "Personas jóvenes del grupo durante una actividad"
+    },
+    "axes": [
+      {
+        "eyebrow": "Cultura y comunidad",
+        "title": "Presentaciones de la Banda",
+        "lead": "La Banda Artística Juvenil de Esparzol lleva el nombre de la comunidad a desfiles dentro y fuera de Esparza.",
+        "facts": [
+          { "label": "Presentaciones realizadas" },
+          { "label": "Lugares alcanzados" }
+        ]
+      },
+      {
+        "eyebrow": "Servicio",
+        "title": "Horas de servicio",
+        "lead": "Las personas del grupo dedican su tiempo, de forma libre y voluntaria, al servicio de la comunidad.",
+        "facts": [
+          { "label": "Horas de servicio acumuladas" }
+        ]
+      },
+      {
+        "eyebrow": "Cuido del ambiente",
+        "title": "Acciones ambientales",
+        "lead": "El cuido del ambiente es uno de los valores del grupo y su trabajo se alinea con los ODS 4, 13 y 17.",
+        "facts": [
+          { "label": "Acciones de cuido del ambiente" }
+        ]
+      }
+    ],
+    "note": "Fuente: informe social del grupo. Los números se publican apenas la jefatura los confirme y se actualizan en cada revisión del sitio."
   },
 
   "projects": {
     "metaTitle": "Proyectos",
-    "metaDescription": "Proyectos educativos y comunitarios del Grupo 35 Esparzol. Página en construcción.",
-    "title": "Proyectos: en construcción",
-    "description": "Aquí va a vivir el catálogo de proyectos del grupo, empezando por la Banda Artística Juvenil de Esparzol, con su estado, sus responsables y sus resultados. Corresponde a la segunda mitad del proyecto colaborativo."
+    "metaDescription": "Catálogo de proyectos educativos y comunitarios del Grupo 35 Esparzol, empezando por la Banda Artística Juvenil de Esparzol.",
+    "hero": {
+      "eyebrow": "Lo que construimos",
+      "title": "Proyectos del grupo",
+      "lead": "Los proyectos en los que el grupo invierte su tiempo, con su estado, sus responsables y sus resultados.",
+      "imageAlt": "Personas voluntarias del grupo reunidas al aire libre"
+    },
+    "status": {
+      "active": "En marcha",
+      "done": "Terminado"
+    },
+    "items": [
+      {
+        "name": "Banda Artística Juvenil de Esparzol",
+        "status": "active",
+        "year": "2024",
+        "lead": "Dirección de José Campos Zamora, con todo el grupo",
+        "result": "Presentaciones en desfiles dentro y fuera de Esparza, que llevan el nombre de la comunidad a otros cantones.",
+        "detail": "El proyecto educativo del grupo tiene enfoque musical: la Banda ensaya, se presenta y alrededor de ella se trabaja el rescate del patrimonio inmaterial y las buenas prácticas."
+      }
+    ],
+    "pendingNote": "El catálogo se completa con los proyectos que el grupo vaya confirmando."
   },
 
   "news": {
     "metaTitle": "Comunicados",
-    "metaDescription": "Comunicados y calendario del Grupo 35 Esparzol. Página en construcción.",
-    "title": "Comunicados: en construcción",
-    "description": "Aquí se van a publicar los comunicados para las familias, el calendario de actividades y los avisos de cada sección. Corresponde a la segunda mitad del proyecto colaborativo."
+    "metaDescription": "Comunicados y avisos para las familias del Grupo 35 Esparzol: cambios de horario, listas de campamento y avisos de cada sección.",
+    "hero": {
+      "eyebrow": "Avisos para las familias",
+      "title": "Comunicados",
+      "lead": "Los avisos del grupo, públicos para cualquiera que los necesite: cambios de horario, listas de qué llevar y avisos de cada sección.",
+      "imageAlt": "Reunión de grupo al aire libre"
+    },
+    "emptyTitle": "Todavía no hay comunicados publicados",
+    "emptyLead": "Los avisos aparecen aquí apenas la jefatura los confirme. Mientras tanto, la vía de contacto sigue siendo el teléfono y la reunión de los domingos.",
+    "items": [],
+    "note": "El calendario de actividades vivirá en esta página cuando el grupo maneje uno."
   },
 
   "notFound": {

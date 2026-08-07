@@ -145,6 +145,21 @@ El dato de «unas 8000 vistas» de la respuesta 9.3 **no se publica**: no quedo
 claro vistas de que ni en que plazo, y el sitio se sostiene sobre datos
 verificables.
 
+## Segunda mitad en pantalla
+
+`/es/impact`, `/es/projects` y `/es/news` ya son paginas reales sobre la base
+de diseno. Lo que sigue abierto:
+
+- **Impacto:** los numeros esperan el informe social (9.2) para llenar
+  `impact.axes` en `messages/es.json`. Las etiquetas estan publicadas con
+  `PendingValue` hasta que la jefatura confirme cifras.
+- **Proyectos:** el catalogo arranca con la Banda Artistica Juvenil de Esparzol
+  (`projects.items[0]`) y crece con lo que el grupo confirme. Las «8000 vistas»
+  no se publican.
+- **Comunicados:** la lista vive en `news.items[]` y esta vacia. Sin
+  autenticacion ni RLS (9.4). El calendario se suma cuando el grupo maneje uno
+  (5.2).
+
 ## Dominio
 
 El grupo **no tiene dominio propio ni servicio contratado** (1.9 y 10.4).
@@ -162,3 +177,7 @@ se queda con `locales: ["es"]`.
 El sitio se escribe en espanol de Costa Rica, con voseo (`vení`, `llamanos`,
 `contanos`, `conocé`, `sumate`). Al agregar textos hay que mantener ese
 registro y evitar formas peninsulares.
+
+La decision sobre el titulo del enlace quedo **cerrada**: se mantiene el voseo,
+«Unite», y el cambio a «Unete» se revirtio en `nav.join`, `join.metaTitle` y
+`designSystem.splitTextDone` de `messages/es.json`.

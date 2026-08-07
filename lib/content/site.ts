@@ -58,6 +58,12 @@ export const PAGE_IMAGES = {
     "https://images.unsplash.com/photo-1528122819723-9dca3a31295d?fm=jpg&q=75&w=1000&auto=format&fit=crop",
   venue:
     "https://images.unsplash.com/photo-1457530378978-8bac673b8062?fm=jpg&q=75&w=1000&auto=format&fit=crop",
+  impactHero:
+    "https://images.unsplash.com/photo-1643730484055-abc29f2de73c?fm=jpg&q=75&w=1000&auto=format&fit=crop",
+  projectsHero:
+    "https://images.unsplash.com/photo-1719559519360-02486e77ef13?fm=jpg&q=75&w=1000&auto=format&fit=crop",
+  newsHero:
+    "https://images.unsplash.com/photo-1603714196939-6f6436c8d0c5?fm=jpg&q=75&w=1000&auto=format&fit=crop",
 } as const;
 
 export const PALETTE_HEX = [

@@ -12,8 +12,10 @@ Las rutas llevan el idioma adelante: `/` redirige a `/es`.
 | `/es/about`         | Nuestro Grupo (historia, mision, Promesa y Ley, equipo) |
 | `/es/sections`      | Manada, Tropa, Wak y Comunidad                          |
 | `/es/join`          | Como inscribirse y contacto                             |
+| `/es/impact`        | Impacto con datos abiertos del grupo                    |
+| `/es/projects`      | Proyectos, empezando por la Banda                       |
+| `/es/news`          | Comunicados para las familias                           |
 | `/es/design-system` | Guia de estilo viva para el resto del equipo            |
-| `/es/impact`, `/es/projects`, `/es/news` | Placeholder: segunda mitad del proyecto |
 
 El diseno se documenta en [`docs/design-system.md`](docs/design-system.md).
 
@@ -113,6 +115,6 @@ git switch main
 
 ## Estado actual
 
-Estan implementadas las pantallas de la primera mitad del proyecto colaborativo (encabezado, pie, base de diseno, Inicio, Nuestro Grupo, Secciones y Unete) con contenido estatico servido desde el diccionario de i18n. Siguen pendientes: Impacto con datos abiertos, Proyectos, Comunicados, el formulario de voluntariado, el panel administrativo, la galeria, la autenticacion y la carga de imagenes.
+Estan implementadas Inicio, Nuestro Grupo, Secciones, Unete, Impacto, Proyectos y Comunicados con contenido estatico servido desde el diccionario de i18n. Los numeros de Impacto y el catalogo de Proyectos se completan con datos verificables del grupo a medida que la jefatura los confirma (ver `docs/contenido-pendiente.md`). Siguen pendientes: el formulario de voluntariado, el panel administrativo, la galeria, la autenticacion y la carga de imagenes.
 
 Las fotos de referencia se sirven desde Unsplash mientras no exista el banco de imagenes propio en Supabase Storage. El logo es el emblema de la Asociacion de Guias y Scouts de Costa Rica (`public/logo.webp`).

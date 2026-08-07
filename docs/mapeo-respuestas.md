@@ -122,9 +122,9 @@ textos actuales describen las fotos genericas de Unsplash, no las del grupo.
 | #   | Estado |
 | --- | ------ |
 | 9.1 | Corrige el encuadre del sitio: el proyecto educativo es **musical**, no ambiental. Aplicado en `home.environment.*` e `impact.*` |
-| 9.2 | Existe un informe social con datos historicos. Fuente para `/impact` |
-| 9.3 | Banda Artistica Juvenil de Esparzol. Alimentara `/projects`. Las «8000 vistas» **no se publican**: unidad ambigua |
-| 9.4 | Los avisos son publicos para cualquiera → `/news` no necesita autenticacion ni RLS |
+| 9.2 | Existe un informe social con datos historicos. Fuente para `impact.axes` de `messages/es.json`. La pagina ya existe; los numeros quedan **pendientes** hasta recibir el informe |
+| 9.3 | Banda Artistica Juvenil de Esparzol → `projects.items[0]` (estado, direccion y resultados). Las «8000 vistas» **no se publican**: unidad ambigua |
+| 9.4 | Los avisos son publicos para cualquiera → `/news` se construyo sin autenticacion ni RLS, con `news.items[]` (vacio por ahora) |
 | 9.5 | Formulario de inscripcion: datos de personas menores, definir custodia antes de construir |
 | 9.6 | Formulario de voluntariado: preguntar por que desea formar parte; las solicitudes llegan a la Junta de Grupo |
 | 9.7 | **No hace falta ingles.** `i18n/routing.ts` se queda con `locales: ["es"]` |
