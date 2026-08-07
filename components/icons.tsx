@@ -149,6 +149,14 @@ export function IconMail(props: IconProps) {
   );
 }
 
+export function IconPhone(props: IconProps) {
+  return (
+    <Icon {...props}>
+      <path d="M6.5 3h3l1.5 4-2 1.5a12 12 0 0 0 6.5 6.5L17 13l4 1.5v3a2.5 2.5 0 0 1-2.7 2.5A16.5 16.5 0 0 1 3 5.7 2.5 2.5 0 0 1 5.5 3Z" />
+    </Icon>
+  );
+}
+
 export function IconConstruction(props: IconProps) {
   return (
     <Icon {...props} strokeWidth={1.9}>

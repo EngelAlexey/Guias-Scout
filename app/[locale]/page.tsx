@@ -11,9 +11,20 @@ import {
   IconPaw,
   IconTent,
 } from "@/components/icons";
-import { PendingNote } from "@/components/pending";
 import { Link } from "@/i18n/navigation";
-import { PAGE_IMAGES, SDG, SECTION_IDS } from "@/lib/content/site";
+import {
+  AGENDA_TONES,
+  PAGE_IMAGES,
+  SDG,
+  SECTION_IDS,
+} from "@/lib/content/site";
+
+type AgendaItem = {
+  day: string;
+  month: string;
+  title: string;
+  detail: string;
+};
 
 const SECTION_ICON = {
   manada: IconPaw,
@@ -35,6 +46,8 @@ export default async function HomePage({ params }: Props) {
   setRequestLocale(locale);
 
   const t = await getTranslations();
+  const themes = t.raw("content.themes") as string[];
+  const agenda = t.raw("content.agenda") as AgendaItem[];
 
   return (
     <>
@@ -211,6 +224,17 @@ export default async function HomePage({ params }: Props) {
               ))}
             </ul>
             <p className="ods-row__nota">{t("home.environment.sdgNote")}</p>
+
+            <p className="eyebrow eyebrow--mint" style={{ marginTop: 22 }}>
+              {t("home.environment.themesTitle")}
+            </p>
+            <ul className="chip-row">
+              {themes.map((theme) => (
+                <li className="chip" key={theme}>
+                  {theme}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
@@ -224,17 +248,30 @@ export default async function HomePage({ params }: Props) {
                 {t("home.agenda.title")}
               </h2>
             </div>
-            <Link className="link-arrow" href="/news">
-              {t("home.agenda.link")} &rarr;
-            </Link>
           </div>
 
-          <PendingNote text={t("home.agenda.empty")} />
+          <ul className="card-grid">
+            {agenda.map((item, index) => (
+              <li className="agenda-item" key={item.title}>
+                <p className="agenda-fecha" data-tono={AGENDA_TONES[index]}>
+                  <span className="agenda-fecha__dia">{item.day}</span>
+                  <span className="agenda-fecha__mes">{item.month}</span>
+                </p>
+                <div>
+                  <h3 className="agenda-item__titulo">{item.title}</h3>
+                  <p className="agenda-item__detalle">{item.detail}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+
+          <p className="card__fuente">{t("home.agenda.note")}</p>
         </div>
       </section>
 
       <section className="section section--lilac">
         <div className="container container--centrado">
+          <p className="eyebrow">{t("site.motto")}</p>
           <h2 className="title-lg">{t("home.closing.title")}</h2>
           <p className="lead lead--centrado">{t("home.closing.lead")}</p>
           <div className="btn-row btn-row--center">

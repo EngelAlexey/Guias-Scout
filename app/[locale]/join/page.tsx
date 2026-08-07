@@ -2,10 +2,21 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
-import { IconClock, IconLocation, IconMail } from "@/components/icons";
-import { PendingValue } from "@/components/pending";
+import {
+  IconClock,
+  IconLocation,
+  IconMail,
+  IconPhone,
+} from "@/components/icons";
+import { PendingNote, PendingValue } from "@/components/pending";
+import {
+  InscripcionForm,
+  VoluntariadoForm,
+} from "@/components/recruitment-forms";
 import { Link } from "@/i18n/navigation";
-import { PAGE_IMAGES, SECTION_IDS } from "@/lib/content/site";
+import { CONTACT, FORM_RECIPIENT, PAGE_IMAGES, SECTION_IDS } from "@/lib/content/site";
+
+type JoinFact = { label: string; value: string };
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -25,6 +36,7 @@ export default async function JoinPage({ params }: Props) {
     detail: string;
   }[];
   const checklist = t.raw("join.contact.checklist") as string[];
+  const facts = t.raw("join.facts") as JoinFact[];
 
   return (
     <>
@@ -78,6 +90,19 @@ export default async function JoinPage({ params }: Props) {
               </li>
             ))}
           </ol>
+
+          <h3 className="title-sm" style={{ marginTop: 34 }}>
+            {t("join.steps.factsTitle")}
+          </h3>
+          <dl className="fact-grid">
+            {facts.map((fact) => (
+              <div className="fact" key={fact.label}>
+                <dt className="fact__titulo">{fact.label}</dt>
+                <dd className="fact__valor">{fact.value}</dd>
+              </div>
+            ))}
+          </dl>
+          <p className="card__fuente">{t("join.factsNote")}</p>
         </div>
       </section>
 
@@ -113,6 +138,27 @@ export default async function JoinPage({ params }: Props) {
         </div>
       </section>
 
+      <section className="section section--white section--bordered">
+        <div className="container">
+          <p className="eyebrow">{t("forms.eyebrow")}</p>
+          <h2 className="title-md section-head__title">{t("forms.title")}</h2>
+          <p className="lead" style={{ marginTop: 12 }}>
+            {t("forms.lead")}
+          </p>
+
+          {FORM_RECIPIENT ? (
+            <div className="split" style={{ marginTop: 28 }}>
+              <InscripcionForm recipient={FORM_RECIPIENT} />
+              <VoluntariadoForm recipient={FORM_RECIPIENT} />
+            </div>
+          ) : (
+            <div className="card" style={{ marginTop: 28 }}>
+              <PendingNote text={t("forms.pendingBlock")} />
+            </div>
+          )}
+        </div>
+      </section>
+
       <section className="section section--cream">
         <div className="container split">
           <div>
@@ -129,14 +175,17 @@ export default async function JoinPage({ params }: Props) {
             <ul className="contact-list">
               <li className="contact-item">
                 <span className="icon-badge icon-badge--sm">
-                  <IconMail size={22} />
+                  <IconPhone size={22} />
                 </span>
                 <div>
                   <h3 className="contact-item__titulo">
-                    {t("join.contact.emailTitle")}
+                    {t("join.contact.phoneTitle")}
                   </h3>
                   <p className="contact-item__texto">
-                    <PendingValue />
+                    <a href={CONTACT.phoneHref}>{t("content.contact.phone")}</a>
+                  </p>
+                  <p className="card__fuente">
+                    {t("content.contact.phoneNote")}
                   </p>
                 </div>
               </li>
@@ -149,7 +198,10 @@ export default async function JoinPage({ params }: Props) {
                     {t("join.contact.meetingsTitle")}
                   </h3>
                   <p className="contact-item__texto">
-                    <PendingValue />
+                    {t("content.contact.meetings")}
+                  </p>
+                  <p className="card__fuente">
+                    {t("content.contact.meetingsNote")}
                   </p>
                 </div>
               </li>
@@ -160,6 +212,19 @@ export default async function JoinPage({ params }: Props) {
                 <div>
                   <h3 className="contact-item__titulo">
                     {t("join.contact.venueTitle")}
+                  </h3>
+                  <p className="contact-item__texto">
+                    {t("content.contact.address")}
+                  </p>
+                </div>
+              </li>
+              <li className="contact-item" data-seccion="wak">
+                <span className="icon-badge icon-badge--sm">
+                  <IconMail size={22} />
+                </span>
+                <div>
+                  <h3 className="contact-item__titulo">
+                    {t("join.contact.emailTitle")}
                   </h3>
                   <p className="contact-item__texto">
                     <PendingValue />

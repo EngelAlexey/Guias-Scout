@@ -7,12 +7,22 @@ import {
   IconEye,
   IconLocation,
   IconMail,
+  IconPhone,
   IconStar,
   IconTarget,
 } from "@/components/icons";
 import { PendingNote, PendingValue } from "@/components/pending";
 import { Link } from "@/i18n/navigation";
-import { PAGE_IMAGES } from "@/lib/content/site";
+import { CONTACT, PAGE_IMAGES, TEAM_SECTIONS } from "@/lib/content/site";
+
+type Milestone = { year: string; text: string };
+
+type TeamMember = {
+  initials: string;
+  name: string;
+  role: string;
+  detail: string;
+};
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -29,6 +39,9 @@ export default async function AboutPage({ params }: Props) {
   const t = await getTranslations();
   const values = t.raw("content.values") as string[];
   const scoutLaw = t.raw("content.scoutLaw") as string[];
+  const milestones = t.raw("content.milestones") as Milestone[];
+  const team = t.raw("content.team") as TeamMember[];
+  const groupAreas = t.raw("content.groupAreas") as string[];
 
   return (
     <>
@@ -73,7 +86,8 @@ export default async function AboutPage({ params }: Props) {
               {t("about.history.lead")}
             </p>
 
-            <PendingNote />
+            <p className="prose">{t("about.history.story")}</p>
+            <p className="prose">{t("about.history.sponsor")}</p>
 
             <dl className="metric-grid">
               <div className="metric">
@@ -81,7 +95,7 @@ export default async function AboutPage({ params }: Props) {
                   {t("about.history.metricFoundation")}
                 </dt>
                 <dd className="metric__valor">
-                  <PendingValue />
+                  {t("about.history.foundationValue")}
                 </dd>
               </div>
               <div className="metric">
@@ -97,9 +111,21 @@ export default async function AboutPage({ params }: Props) {
                   {t("about.history.metricLeaders")}
                 </dt>
                 <dd className="metric__valor">
-                  <PendingValue />
+                  {t("about.history.leadersValue")}
                 </dd>
               </div>
+            </dl>
+
+            <h3 className="title-sm" style={{ marginTop: 34 }}>
+              {t("about.history.milestonesTitle")}
+            </h3>
+            <dl className="fact-grid">
+              {milestones.map((milestone) => (
+                <div className="fact" key={milestone.year}>
+                  <dt className="fact__titulo">{milestone.year}</dt>
+                  <dd className="fact__valor">{milestone.text}</dd>
+                </div>
+              ))}
             </dl>
           </div>
 
@@ -152,9 +178,6 @@ export default async function AboutPage({ params }: Props) {
               </h3>
               <p className="prose" style={{ marginTop: 10 }}>
                 {t("about.purpose.visionText")}
-              </p>
-              <p style={{ marginTop: 12 }}>
-                <PendingValue />
               </p>
             </li>
 
@@ -229,7 +252,35 @@ export default async function AboutPage({ params }: Props) {
             </div>
           </div>
 
+          <ul className="card-grid card-grid--3">
+            {team.map((person, index) => (
+              <li
+                className="card"
+                key={person.name}
+                data-seccion={TEAM_SECTIONS[index]}
+              >
+                <p className="avatar" aria-hidden="true">
+                  {person.initials}
+                </p>
+                <h3 className="team-card__nombre">{person.name}</h3>
+                <p className="team-card__rol">{person.role}</p>
+                <p className="team-card__detalle">{person.detail}</p>
+              </li>
+            ))}
+          </ul>
+
           <PendingNote text={t("about.team.rosterNote")} />
+
+          <h3 className="title-sm" style={{ marginTop: 34 }}>
+            {t("about.team.structureTitle")}
+          </h3>
+          <ul className="chip-row">
+            {groupAreas.map((area) => (
+              <li className="chip" key={area}>
+                {area}
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
@@ -254,7 +305,7 @@ export default async function AboutPage({ params }: Props) {
                     {t("about.venue.addressTitle")}
                   </h3>
                   <p className="contact-item__texto">
-                    <PendingValue />
+                    {t("content.contact.address")}
                   </p>
                 </div>
               </li>
@@ -267,7 +318,26 @@ export default async function AboutPage({ params }: Props) {
                     {t("about.venue.meetingsTitle")}
                   </h3>
                   <p className="contact-item__texto">
-                    <PendingValue />
+                    {t("content.contact.meetings")}
+                  </p>
+                  <p className="card__fuente">
+                    {t("content.contact.meetingsNote")}
+                  </p>
+                </div>
+              </li>
+              <li className="contact-item" data-seccion="wak">
+                <span className="icon-badge icon-badge--sm">
+                  <IconPhone size={22} />
+                </span>
+                <div>
+                  <h3 className="contact-item__titulo">
+                    {t("about.venue.phoneTitle")}
+                  </h3>
+                  <p className="contact-item__texto">
+                    <a href={CONTACT.phoneHref}>{t("content.contact.phone")}</a>
+                  </p>
+                  <p className="card__fuente">
+                    {t("content.contact.phoneNote")}
                   </p>
                 </div>
               </li>

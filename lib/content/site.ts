@@ -58,6 +58,12 @@ export const PAGE_IMAGES = {
     "https://images.unsplash.com/photo-1528122819723-9dca3a31295d?fm=jpg&q=75&w=1000&auto=format&fit=crop",
   venue:
     "https://images.unsplash.com/photo-1457530378978-8bac673b8062?fm=jpg&q=75&w=1000&auto=format&fit=crop",
+  impactHero:
+    "https://images.unsplash.com/photo-1643730484055-abc29f2de73c?fm=jpg&q=75&w=1000&auto=format&fit=crop",
+  projectsHero:
+    "https://images.unsplash.com/photo-1719559519360-02486e77ef13?fm=jpg&q=75&w=1000&auto=format&fit=crop",
+  newsHero:
+    "https://images.unsplash.com/photo-1603714196939-6f6436c8d0c5?fm=jpg&q=75&w=1000&auto=format&fit=crop",
 } as const;
 
 export const PALETTE_HEX = [
@@ -73,4 +79,26 @@ export const SDG = [
   { number: "4", hex: "#C5192D" },
   { number: "13", hex: "#3F7E44" },
   { number: "17", hex: "#19486A" },
+];
+
+// Enlace de contacto. El numero visible vive en messages/es.json; aca solo el URI.
+export const CONTACT = {
+  phoneHref: "tel:+50660101502",
+} as const;
+
+export const FORM_RECIPIENT = "prueba@grupo35.example" as string;
+
+// Paralelos por indice a content.team[] y content.agenda[] de messages/es.json,
+// igual que SDG lo es a content.sdg[]. Si cambia el largo de uno hay que cambiar
+// el del otro: TypeScript no lo detecta.
+export const TEAM_SECTIONS: readonly (SectionId | undefined)[] = [
+  undefined,
+  "tropa",
+];
+
+export const AGENDA_TONES: readonly (string | undefined)[] = [
+  "amber",
+  undefined,
+  undefined,
+  "green",
 ];

@@ -3,7 +3,12 @@ import { getTranslations } from "next-intl/server";
 import { BrandMark } from "@/components/brand-mark";
 import { PendingValue } from "@/components/pending";
 import { Link } from "@/i18n/navigation";
-import { FOOTER_NAV, FOOTER_TRANSPARENCY, SDG } from "@/lib/content/site";
+import {
+  CONTACT,
+  FOOTER_NAV,
+  FOOTER_TRANSPARENCY,
+  SDG,
+} from "@/lib/content/site";
 
 export async function SiteFooter() {
   const t = await getTranslations();
@@ -48,11 +53,7 @@ export async function SiteFooter() {
             <ul className="footer-col__lista">
               {FOOTER_TRANSPARENCY.map((item) => (
                 <li key={item.href}>
-                  <Link href={item.href}>
-                    {item.key === "impact"
-                      ? t("footer.impactLink")
-                      : t(`nav.${item.key}`)}
-                  </Link>
+                  <Link href={item.href}>{t(`nav.${item.key}`)}</Link>
                 </li>
               ))}
             </ul>
@@ -62,8 +63,14 @@ export async function SiteFooter() {
             <h2 className="footer-col__titulo">{t("footer.contactTitle")}</h2>
             <div className="footer-dato">
               <div className="footer-dato__label">{t("footer.venueLabel")}</div>
+              <div>{t("content.contact.addressShort")}</div>
+              <div className="footer-dato__label footer-dato__label--espaciado">
+                {t("footer.phoneLabel")}
+              </div>
               <div>
-                <PendingValue />
+                <a className="footer-mail" href={CONTACT.phoneHref}>
+                  {t("content.contact.phone")}
+                </a>
               </div>
               <div className="footer-dato__label footer-dato__label--espaciado">
                 {t("footer.emailLabel")}
