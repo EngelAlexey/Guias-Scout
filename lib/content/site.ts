@@ -8,8 +8,9 @@ export type NavItem = {
   pending?: boolean;
 };
 
-export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+const rawSiteUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim();
+
+export const SITE_URL = rawSiteUrl ? rawSiteUrl : "http://localhost:3000";
 
 export const NAV_ITEMS: NavItem[] = [
   { href: "/", key: "home" },

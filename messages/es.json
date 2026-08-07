@@ -20,7 +20,7 @@
     "impact": "Impacto",
     "projects": "Proyectos",
     "news": "Comunicados",
-    "join": "Unite",
+    "join": "Únete",
     "designSystem": "Base de diseño"
   },
 
@@ -38,7 +38,7 @@
       "title": "Formamos líderes que cuidan su comunidad y su planeta",
       "lead": "Acompañamos a niñas, niños y jóvenes de 6 a 21 años en Esparza, con educación no formal, vida al aire libre y la Banda Artística Juvenil de Esparzol.",
       "ctaJoin": "Quiero ser parte",
-      "ctaAbout": "Conocé el grupo",
+      "ctaAbout": "Conoce el grupo",
       "imageAlt": "Personas jóvenes en una actividad scout al aire libre",
       "statAges": "años de edad",
       "statAgesValue": "6-21",
@@ -86,7 +86,7 @@
     },
     "closing": {
       "title": "¿Listos para la aventura?",
-      "lead": "Vení a una reunión, conocé cómo trabajamos y decidí con calma.",
+      "lead": "Ven a una reunión, conoce cómo trabajamos y decide con calma.",
       "ctaJoin": "Quiero inscribirme",
       "ctaAbout": "Conocer el grupo"
     }
@@ -142,12 +142,12 @@
     "venue": {
       "eyebrow": "Dónde estamos",
       "title": "La sede del Grupo 35 Esparzol",
-      "lead": "Nos reunimos todos los domingos en Esparza, Puntarenas. Vení un domingo, conocé el lugar y preguntá lo que haga falta.",
+      "lead": "Nos reunimos todos los domingos en Esparza, Puntarenas. Ven un domingo, conoce el lugar y pregunta lo que haga falta.",
       "addressTitle": "Dirección",
       "meetingsTitle": "Día y hora de reunión",
       "phoneTitle": "Teléfono",
       "contactTitle": "Correo",
-      "cta": "Vení a conocernos",
+      "cta": "Ven a conocernos",
       "imageAlt": "Reunión de grupo al aire libre"
     }
   },
@@ -170,17 +170,17 @@
       "colUnit": "Se organiza en",
       "colFocus": "Énfasis",
       "cta": "Quiero inscribir a alguien",
-      "help": "¿Tenés dudas sobre cuál sección le toca? Llamanos y te orientamos."
+      "help": "¿Tienes dudas sobre cuál sección le toca? Llámanos y te orientamos."
     }
   },
 
   "join": {
-    "metaTitle": "Unite",
+    "metaTitle": "Únete",
     "metaDescription": "Cómo inscribirse en el Grupo 35 Esparzol de Guías y Scouts: pasos, requisitos, secciones por edad y contacto en Esparza, Puntarenas.",
     "hero": {
       "eyebrow": "Inscripciones",
-      "title": "Sumate al grupo",
-      "lead": "Llamanos, vení un domingo a la sede y decidí con calma.",
+      "title": "Únete al grupo",
+      "lead": "Llámanos, ven un domingo a la sede y decide con calma.",
       "imageAlt": "Jóvenes scouts armando una construcción con cuerdas y varas"
     },
     "steps": {
@@ -188,11 +188,11 @@
       "title": "Tres pasos",
       "items": [
         {
-          "title": "Contactanos",
-          "detail": "Llamanos y contanos la edad de la persona interesada: te decimos a qué sección le toca y cuándo pasar."
+          "title": "Contáctanos",
+          "detail": "Llámanos y cuéntanos la edad de la persona interesada: te decimos a qué sección le toca y cuándo pasar."
         },
         {
-          "title": "Vení a una reunión",
+          "title": "Ven a una reunión",
           "detail": "Invitamos a la niña o el niño a las reuniones de los domingos, para que conozcan el lugar, la sección y al equipo de dirigentes."
         },
         {
@@ -236,9 +236,9 @@
 
   "forms": {
     "eyebrow": "Formularios",
-    "title": "Sumate con un mensaje",
+    "title": "Únete con un mensaje",
     "lead": "Elegí el formulario según tu caso: al enviarlo se abre tu correo con el mensaje ya redactado para la Junta de Grupo.",
-    "pendingBlock": "Los formularios en línea se activan cuando el grupo tenga su correo institucional. Mientras tanto, llamanos o vení un domingo a la sede.",
+    "pendingBlock": "Los formularios en línea se activan cuando el grupo tenga su correo institucional. Mientras tanto, llámanos o ven un domingo a la sede.",
     "inscription": {
       "eyebrow": "Inscripción",
       "title": "Personas menores",
@@ -262,13 +262,13 @@
     "volunteer": {
       "eyebrow": "Voluntariado",
       "title": "Personas adultas",
-      "lead": "Contanos quién sos y por qué querés sumarte: la solicitud llega a la Junta de Grupo.",
+      "lead": "Cuéntanos quién eres y por qué quieres sumarte: la solicitud llega a la Junta de Grupo.",
       "fields": {
         "name": "Nombre completo",
         "phone": "Teléfono de contacto",
         "email": "Correo",
         "role": "¿En qué te gustaría colaborar?",
-        "why": "¿Por qué deseás formar parte de Guías y Scouts?"
+        "why": "¿Por qué deseas formar parte de Guías y Scouts?"
       },
       "options": {
         "default": "Elegí una opción",
@@ -336,7 +336,7 @@
     "contentDetail": "El sitio no publica datos inventados. Fechas, cantidades, direcciones, contactos y nombres se marcan con <code>PendingValue</code> o <code>PendingNote</code> hasta que el grupo los confirme. La lista completa está en <code>docs/contenido-pendiente.md</code>.",
     "splitEyebrowDone": "Reparto del trabajo",
     "splitTitleDone": "Mitad 1 · lista",
-    "splitTextDone": "Encabezado y pie · Base de diseño<br></br>Inicio · Nuestro Grupo · Secciones · Unite<br></br>Impacto · Proyectos · Comunicados",
+    "splitTextDone": "Encabezado y pie · Base de diseño<br></br>Inicio · Nuestro Grupo · Secciones · Únete<br></br>Impacto · Proyectos · Comunicados",
     "splitEyebrowPending": "Pendiente",
     "splitTitlePending": "Mitad 2",
     "splitTextPending": "Formularios (esperan el correo institucional)<br></br>Datos del informe social"
