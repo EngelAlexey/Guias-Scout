@@ -16,7 +16,7 @@ en `docs/mapeo-respuestas.md`. Lo que sigue es **solo lo que quedo abierto**.
 
 | Dato                       | Estado                                            |
 | -------------------------- | ------------------------------------------------- |
-| Correo de contacto          | **Pendiente.** El grupo va a usar uno institucional que todavia no existe. Marcado en `/es/about`, `/es/join` y el pie |
+| Correo de contacto          | **Pendiente.** El grupo va a usar uno institucional que todavia no existe. Marcado en `/es/about`, `/es/join` y el pie. Es tambien el destino de los formularios (`FORM_RECIPIENT`, ver "Segunda mitad en pantalla") |
 | Perfiles de redes sociales  | **Sin responder.** La fila del pie sigue quitada, no vacia. `.social-row`, `.social-link` y `SOCIAL_ICONS` estan listos y sin usar |
 
 Resueltos: direccion, dia y hora de reunion, receso de fin de ano, telefono
@@ -159,6 +159,12 @@ de diseno. Lo que sigue abierto:
 - **Comunicados:** la lista vive en `news.items[]` y esta vacia. Sin
   autenticacion ni RLS (9.4). El calendario se suma cuando el grupo maneje uno
   (5.2).
+- **Formularios (inscripcion 9.5 y voluntariado 9.6):** los dos estan
+  construidos en `/es/join` (`components/recruitment-forms.tsx`) y envían por
+  `mailto:` prellenado a `FORM_RECIPIENT`. Ese destino **sigue vacio** y es el
+  gate: mientras no exista el correo institucional (1.5), la seccion muestra un
+  `PendingNote` y no se publican formularios muertos. Al activar se escribe el
+  correo en `lib/content/site.ts` y se quita la nota.
 
 ## Dominio
 

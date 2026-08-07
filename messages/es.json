@@ -217,7 +217,7 @@
     "contact": {
       "eyebrow": "Contacto",
       "title": "Hablemos",
-      "lead": "El formulario de inscripción en línea forma parte de la segunda mitad del proyecto. Mientras tanto la atención es por teléfono y en persona, los domingos en la sede.",
+      "lead": "La atención es por teléfono y en persona, los domingos en la sede.",
       "phoneTitle": "Teléfono",
       "meetingsTitle": "Día y hora de reunión",
       "venueTitle": "Dónde nos reunimos",
@@ -231,6 +231,74 @@
         "Muchas ganas"
       ],
       "checklistNote": "La primera visita no tiene costo ni compromiso. Una persona adulta responsable debe acompañar a quienes son menores de edad."
+    }
+  },
+
+  "forms": {
+    "eyebrow": "Formularios",
+    "title": "Sumate con un mensaje",
+    "lead": "Elegí el formulario según tu caso: al enviarlo se abre tu correo con el mensaje ya redactado para la Junta de Grupo.",
+    "pendingBlock": "Los formularios en línea se activan cuando el grupo tenga su correo institucional. Mientras tanto, llamanos o vení un domingo a la sede.",
+    "inscription": {
+      "eyebrow": "Inscripción",
+      "title": "Personas menores",
+      "lead": "Llená los datos de la persona menor y de la madre, el padre o la persona encargada.",
+      "fields": {
+        "minorName": "Nombre de la persona menor",
+        "birthDate": "Fecha de nacimiento",
+        "guardian": "Madre, padre o persona encargada",
+        "phone": "Teléfono de contacto",
+        "email": "Correo de la persona encargada",
+        "section": "Sección de interés",
+        "message": "¿Algo más que quieras contarnos?"
+      },
+      "options": {
+        "notSure": "Todavía no lo sabemos"
+      },
+      "consent": "Soy la madre, el padre o la persona encargada de la persona menor y autorizo que el grupo me contacte para coordinar la visita.",
+      "privacyNote": "Este formulario abre la aplicación de correo del dispositivo: los datos viajan en el mensaje que vos enviás. No se publican en el sitio.",
+      "submit": "Preparar el correo"
+    },
+    "volunteer": {
+      "eyebrow": "Voluntariado",
+      "title": "Personas adultas",
+      "lead": "Contanos quién sos y por qué querés sumarte: la solicitud llega a la Junta de Grupo.",
+      "fields": {
+        "name": "Nombre completo",
+        "phone": "Teléfono de contacto",
+        "email": "Correo",
+        "role": "¿En qué te gustaría colaborar?",
+        "why": "¿Por qué deseás formar parte de Guías y Scouts?"
+      },
+      "options": {
+        "default": "Elegí una opción",
+        "leader": "Como persona dirigente",
+        "collab": "Con colaboraciones puntuales",
+        "band": "En la Banda Artística Juvenil",
+        "notSure": "Todavía no lo sé"
+      },
+      "consent": "Autorizo que la Junta de Grupo me contacte para coordinar mi participación.",
+      "juntaNote": "Las solicitudes llegan a la Junta de Grupo.",
+      "privacyNote": "Este formulario abre la aplicación de correo del dispositivo: los datos viajan en el mensaje que vos enviás. No se publican en el sitio.",
+      "submit": "Preparar el correo"
+    },
+    "mail": {
+      "subjectInscription": "Solicitud de inscripción al Grupo 35 Esparzol",
+      "subjectVolunteer": "Solicitud de voluntariado al Grupo 35 Esparzol",
+      "greeting": "Hola, este es un mensaje preparado desde el sitio del Grupo 35:",
+      "labels": {
+        "minorName": "Nombre de la persona menor",
+        "birthDate": "Fecha de nacimiento",
+        "guardian": "Madre, padre o persona encargada",
+        "phone": "Teléfono de contacto",
+        "email": "Correo",
+        "section": "Sección de interés",
+        "message": "Mensaje",
+        "name": "Nombre completo",
+        "role": "Colaboración",
+        "why": "Por qué quiere formar parte",
+        "consent": "Consentimiento"
+      }
     }
   },
 
@@ -268,10 +336,10 @@
     "contentDetail": "El sitio no publica datos inventados. Fechas, cantidades, direcciones, contactos y nombres se marcan con <code>PendingValue</code> o <code>PendingNote</code> hasta que el grupo los confirme. La lista completa está en <code>docs/contenido-pendiente.md</code>.",
     "splitEyebrowDone": "Reparto del trabajo",
     "splitTitleDone": "Mitad 1 · lista",
-    "splitTextDone": "Encabezado y pie · Base de diseño<br></br>Inicio · Nuestro Grupo · Secciones · Unite",
+    "splitTextDone": "Encabezado y pie · Base de diseño<br></br>Inicio · Nuestro Grupo · Secciones · Unite<br></br>Impacto · Proyectos · Comunicados",
     "splitEyebrowPending": "Pendiente",
     "splitTitlePending": "Mitad 2",
-    "splitTextPending": "Impacto (datos abiertos) · Proyectos<br></br>Comunicados · Formulario de voluntariado"
+    "splitTextPending": "Formularios (esperan el correo institucional)<br></br>Datos del informe social"
   },
 
   "underConstruction": {

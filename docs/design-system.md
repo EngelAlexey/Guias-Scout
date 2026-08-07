@@ -187,6 +187,11 @@ Reglas de seguridad:
 - Piezas: `.card`, `.icon-badge`, `.chip`, `.tag-seccion`, `.fact`, `.metric`,
   `.avatar`, `.team-card__*`, `.agenda-item`, `.agenda-fecha` (con
   `data-tono="green|amber"`).
+- Formularios (`.form`, `.form__row`, `.field`, `.field__label`,
+  `.field__control`, `.checkbox-row`, `.form__note`, `.form__actions`):
+  campos con borde `--line`, radio 12px y foco con anillo de `--acento-suave`.
+  El estado invalido usa `:user-invalid` con `--error`/`--error-suave`, sin
+  JavaScript.
 
 `.card-grid` sin modificador es una sola columna con `gap: 22px`: es el
 contenedor de la agenda en la portada. `.fact-grid` es de dos columnas y sirve
@@ -237,5 +242,10 @@ para no tocar 1800 lineas de CSS por un cambio cosmetico.
 `/es/impact`, `/es/projects` y `/es/news` ya son paginas reales sobre la misma
 base de diseno. Los numeros de Impacto se completan con el informe social del
 grupo y el catalogo de Proyectos con lo que la jefatura confirme; hasta
-entonces se muestran marcadores de «por confirmar». `/es/join` sigue con
-contacto directo mientras no exista el formulario de voluntariado.
+entonces se muestran marcadores de «por confirmar».
+
+`/es/join` tiene los dos formularios (inscripcion y voluntariado) ya
+construidos en `components/recruitment-forms.tsx`, que envian por `mailto:`
+prellenado a `FORM_RECIPIENT` (`lib/content/site.ts`). Mientras ese destino
+este vacio la seccion muestra una nota de pendiente; al llegar el correo
+institucional se escribe ahi y se activan.

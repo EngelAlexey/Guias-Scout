@@ -86,6 +86,8 @@ export const CONTACT = {
   phoneHref: "tel:+50660101502",
 } as const;
 
+export const FORM_RECIPIENT = "prueba@grupo35.example" as string;
+
 // Paralelos por indice a content.team[] y content.agenda[] de messages/es.json,
 // igual que SDG lo es a content.sdg[]. Si cambia el largo de uno hay que cambiar
 // el del otro: TypeScript no lo detecta.

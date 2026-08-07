@@ -73,6 +73,10 @@
   --compas-tiempo: calc(var(--compas-pulso) * 4);
   --compas-ciclo: calc(var(--compas-pulso) * 16);
   --compas-debil: rgb(46 26 71 / 9%);
+
+  /* Estado de error de formularios. */
+  --error: #c62828;
+  --error-suave: #fdecea;
 }
 
 [data-seccion="manada"] {
@@ -2210,5 +2214,129 @@ code {
   .page-hero + .section::before {
     animation: trazar-compas calc(var(--pulso) * 1.5) linear var(--medio-pulso)
       both;
+  }
+}
+
+/* Formularios de inscripcion y voluntariado. */
+.form {
+  display: grid;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.form__row {
+  display: grid;
+  gap: 16px;
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+}
+
+.field__label {
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.field__control {
+  width: 100%;
+  min-width: 0;
+  color: var(--ink);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 10px 14px;
+  font: inherit;
+  font-size: 16px;
+  line-height: 1.5;
+  transition:
+    border-color var(--contra) var(--ease-suave),
+    box-shadow var(--contra) var(--ease-suave),
+    background-color var(--contra) var(--ease-suave);
+}
+
+.field__control::placeholder {
+  color: var(--muted);
+}
+
+.field__control:focus-visible {
+  outline: none;
+  border-color: var(--acento-fuerte);
+  box-shadow: 0 0 0 3px var(--acento-suave);
+}
+
+.field__control:user-invalid {
+  border-color: var(--error);
+  background-color: var(--error-suave);
+}
+
+textarea.field__control {
+  min-height: 88px;
+  resize: vertical;
+}
+
+select.field__control {
+  appearance: none;
+  background-image: linear-gradient(
+      45deg,
+      transparent 50%,
+      var(--muted) 50%
+    ),
+    linear-gradient(135deg, var(--muted) 50%, transparent 50%);
+  background-position:
+    calc(100% - 20px) 50%,
+    calc(100% - 15px) 50%;
+  background-size:
+    5px 5px,
+    5px 5px;
+  background-repeat: no-repeat;
+  padding-right: 36px;
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.checkbox-row input {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  accent-color: var(--acento-fuerte);
+}
+
+.form__note {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.form__actions {
+  display: grid;
+}
+
+.form__actions .btn {
+  justify-self: start;
+}
+
+@media (min-width: 640px) {
+  .form__row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .form__actions .btn {
+    width: 100%;
+    justify-self: stretch;
   }
 }

@@ -28,7 +28,7 @@ Convenciones que cambiaron al integrar:
 | 1.2 | `content.contact.addressShort` (pie)            | listo  |
 | 1.3 | `content.contact.meetings`                      | listo  |
 | 1.4 | `content.contact.meetingsNote`                  | listo  |
-| 1.5 | —                                               | **abierto.** Correo institucional sin crear. Sobreviven 3 `PendingValue` |
+| 1.5 | —                                               | **abierto.** Correo institucional sin crear. Sobreviven 3 `PendingValue` y ademas `FORM_RECIPIENT` esta vacio: es el gate que activa los formularios de inscripcion y voluntariado (9.5 y 9.6) |
 | 1.6 | `content.contact.phone` + `.phoneNote`, `CONTACT.phoneHref` | listo. Se publica como enlace `tel:`, sin afirmar WhatsApp porque no lo dijeron |
 | 1.7 | —                                               | **abierto.** Sin respuesta. La fila de redes del pie sigue sin crearse |
 | 1.8 | `site.name`, `site.shortName`                   | listo. `shortName` = «Grupo 35 Esparzol» es derivacion nuestra: el formulario solo dio el nombre largo |
@@ -125,8 +125,8 @@ textos actuales describen las fotos genericas de Unsplash, no las del grupo.
 | 9.2 | Existe un informe social con datos historicos. Fuente para `impact.axes` de `messages/es.json`. La pagina ya existe; los numeros quedan **pendientes** hasta recibir el informe |
 | 9.3 | Banda Artistica Juvenil de Esparzol → `projects.items[0]` (estado, direccion y resultados). Las «8000 vistas» **no se publican**: unidad ambigua |
 | 9.4 | Los avisos son publicos para cualquiera → `/news` se construyo sin autenticacion ni RLS, con `news.items[]` (vacio por ahora) |
-| 9.5 | Formulario de inscripcion: datos de personas menores, definir custodia antes de construir |
-| 9.6 | Formulario de voluntariado: preguntar por que desea formar parte; las solicitudes llegan a la Junta de Grupo |
+| 9.5 | Formulario de inscripcion → `forms.inscription` | listo, activacion espera 1.5. Datos de personas menores + madre/padre/persona encargada (custodia) y consentimiento. Los envios van por `mailto:` prellenado a `FORM_RECIPIENT` (`lib/content/site.ts`) |
+| 9.6 | Formulario de voluntariado → `forms.volunteer` | listo, activacion espera 1.5. Pregunta «por que desea formar parte» (campo `why`, obligatorio). `juntaNote` aclara que las solicitudes llegan a la Junta de Grupo |
 | 9.7 | **No hace falta ingles.** `i18n/routing.ts` se queda con `locales: ["es"]` |
 
 ## 10. Operacion
