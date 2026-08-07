@@ -82,7 +82,7 @@ entro «Liderazgo», y se agrego uno mas.
 
 Pendiente menor: el septimo valor lo escribieron como «El Scouts es amigos de
 todos». Se publica como **«Amigos de todos»** para que funcione como etiqueta
-corta. Conviene que lo confirmen.
+corta. Hace falta que el grupo confirme esa redaccion o mande la suya.
 
 ## 6. Por verificar con la Asociacion
 
@@ -180,10 +180,10 @@ se queda con `locales: ["es"]`.
 
 ## Registro del texto
 
-El sitio se escribe en espanol de Costa Rica, con voseo (`vení`, `llamanos`,
-`contanos`, `conocé`, `sumate`). Al agregar textos hay que mantener ese
+El sitio se escribe en espanol de Costa Rica, con tuteo (`ven`, `llámanos`,
+`cuéntanos`, `conoce`, `únete`). Al agregar textos hay que mantener ese
 registro y evitar formas peninsulares.
 
-La decision sobre el titulo del enlace quedo **cerrada**: se mantiene el voseo,
-«Unite», y el cambio a «Unete» se revirtio en `nav.join`, `join.metaTitle` y
+La decision sobre el titulo del enlace quedo **cerrada**: se mantiene el tuteo,
+«Únete», y la copia relevante se ajusto en `nav.join`, `join.metaTitle` y
 `designSystem.splitTextDone` de `messages/es.json`.
