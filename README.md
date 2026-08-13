@@ -19,6 +19,19 @@ Las rutas llevan el idioma adelante: `/` redirige a `/es`.
 
 El diseno se documenta en [`docs/design-system.md`](docs/design-system.md).
 
+## Documentacion
+
+| Archivo | Para que sirve |
+| ------- | -------------- |
+| [`docs/technical-rules.md`](docs/technical-rules.md) | Reglas de ramas, convenciones y validacion |
+| [`docs/design-system.md`](docs/design-system.md) | Color, tipografia, componentes y ritmo |
+| [`docs/contenido-pendiente.md`](docs/contenido-pendiente.md) | Que datos faltan y quien los aporta |
+| [`docs/mapeo-respuestas.md`](docs/mapeo-respuestas.md) | Cada respuesta del grupo y donde quedo en el codigo |
+| [`docs/mantenimiento.md`](docs/mantenimiento.md) | Quien mantiene el sitio al terminar el TCU y por que sin panel administrativo |
+| [`docs/guia-de-edicion.md`](docs/guia-de-edicion.md) | Guia para el grupo: editar el contenido sin programar |
+| [`docs/supabase.md`](docs/supabase.md) | Backend previsto |
+| [`docs/project-proposal.md`](docs/project-proposal.md) | Propuesta y alcance del TCU |
+
 ## Textos e idiomas
 
 Ningun texto visible se escribe en el JSX. Todo vive en `messages/es.json` y se
@@ -115,6 +128,8 @@ git switch main
 
 ## Estado actual
 
-Estan implementadas Inicio, Nuestro Grupo, Secciones, Unete, Impacto, Proyectos y Comunicados con contenido estatico servido desde el diccionario de i18n. Los numeros de Impacto y el catalogo de Proyectos se completan con datos verificables del grupo a medida que la jefatura los confirma (ver `docs/contenido-pendiente.md`). Siguen pendientes: el formulario de voluntariado, el panel administrativo, la galeria, la autenticacion y la carga de imagenes.
+Estan implementadas Inicio, Nuestro Grupo, Secciones, Unete, Impacto, Proyectos y Comunicados con contenido estatico servido desde el diccionario de i18n. Los formularios de inscripcion y voluntariado estan construidos en `/es/join` y envian por `mailto:` a `FORM_RECIPIENT`; ese destino todavia es un correo de prueba. Los numeros de Impacto y el catalogo de Proyectos se completan con datos verificables del grupo a medida que la jefatura los confirma (ver `docs/contenido-pendiente.md`). Siguen pendientes: la galeria, la autenticacion y la carga de imagenes.
+
+El **panel administrativo queda fuera del TCU** por decision explicita: el mantenimiento posterior se resuelve con documentacion y capacitacion. Ver [`docs/mantenimiento.md`](docs/mantenimiento.md).
 
 Las fotos de referencia se sirven desde Unsplash mientras no exista el banco de imagenes propio en Supabase Storage. El logo es el emblema de la Asociacion de Guias y Scouts de Costa Rica (`public/logo.webp`).

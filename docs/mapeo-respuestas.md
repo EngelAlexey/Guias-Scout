@@ -74,7 +74,7 @@ invencion nuestra y ademas contradecia una fundacion de 2020.
 | --- | ------------------------------------ | ------ |
 | 5.1 | `content.agenda[]` + `AGENDA_TONES`  | listo, 4 actividades |
 | 5.2 | —                                    | respondido: no hay calendario anual. **Se quito el enlace a `/news`** de la portada |
-| 5.3 | —                                    | **abierto.** 5.3 dice «Juan David Loria» y 10.3 «Jose David Loria»: falta aclarar |
+| 5.3 | —                                    | **abierto.** 5.3 dice «Juan David Loria» y 10.3 «Jose David Loria»: falta aclarar. El nombre se anota en un solo lugar: [`mantenimiento.md`](./mantenimiento.md) §Quien queda a cargo |
 
 La agenda se decidio **estatica** en `messages/es.json`, no en Supabase: cuatro
 entradas no justifican una tabla y la segunda mitad del proyecto todavia no
@@ -135,7 +135,7 @@ textos actuales describen las fotos genericas de Unsplash, no las del grupo.
 | ---- | ------ |
 | 10.1 | Consultas de contenido: Elena Manzanarez Juarez |
 | 10.2 | Visto bueno antes de publicar: jefatura de grupo y administracion. Aplica antes de promover `dev` → `qa` → `main` |
-| 10.3 | El sitio queda a cargo de Comunicacion y tecnologia. Falta decidir si hace falta panel administrativo (Supabase + auth) o basta con documentacion |
+| 10.3 | El sitio queda a cargo de Comunicacion y tecnologia. **Decidido:** documentacion y capacitacion, sin panel administrativo dentro del TCU. Ver [`mantenimiento.md`](./mantenimiento.md) y [`guia-de-edicion.md`](./guia-de-edicion.md). Sigue abierto el **nombre** de la persona |
 | 10.4 | Sin cuenta ni servicio pagado. Ver 1.9 |
 | 10.5 | **Permiso concedido** para usar el emblema en `public/logo.webp` |
 

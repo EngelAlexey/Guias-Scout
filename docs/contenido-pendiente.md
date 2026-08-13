@@ -70,6 +70,8 @@ confirmar» porque el grupo solo dio el mes.
 
 Falta definir quien del grupo mantiene la lista al dia (la respuesta 5.3 nombra
 a «Juan David Loria» y la 10.3 a «Jose David Loria»: hay que aclarar cual es).
+El nombre se anota en **un solo lugar** cuando llegue:
+[`mantenimiento.md`](./mantenimiento.md) §Quien queda a cargo.
 
 ## 5. Vision y valores
 
@@ -165,6 +167,22 @@ de diseno. Lo que sigue abierto:
   gate: mientras no exista el correo institucional (1.5), la seccion muestra un
   `PendingNote` y no se publican formularios muertos. Al activar se escribe el
   correo en `lib/content/site.ts` y se quita la nota.
+
+## Quien mantiene el sitio despues del TCU
+
+**Decidido:** documentacion y capacitacion, sin panel administrativo dentro del
+TCU (10.3). La decision y sus consecuencias estan en
+[`mantenimiento.md`](./mantenimiento.md); la guia que recibe el grupo es
+[`guia-de-edicion.md`](./guia-de-edicion.md).
+
+Lo que sigue pendiente de este punto es **solo el nombre** de la persona de
+Comunicacion y Tecnologia: 5.3 dice «Juan David Loria» y 10.3 «Jose David
+Loria», y falta saber si es una persona o dos. Ningun nombre se publica en el
+sitio, asi que no hay error visible.
+
+Parte de la entrega: darle a esa persona **permiso de escritura en el
+repositorio** y recorrer la guia con ella haciendo un cambio real de punta a
+punta.
 
 ## Dominio
 

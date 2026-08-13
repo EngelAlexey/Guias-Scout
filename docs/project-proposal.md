@@ -23,7 +23,7 @@ Esta etapa solo inicializa el repositorio:
 Los siguientes modulos quedan fuera de esta etapa inicial y se implementaran en tareas posteriores:
 
 - Autenticacion y roles.
-- Panel administrativo.
+- Panel administrativo. **Queda fuera del TCU por decision explicita** (10.3): el mantenimiento posterior se resuelve con documentacion y capacitacion. Ver [`mantenimiento.md`](./mantenimiento.md).
 - Galeria o almacenamiento de imagenes.
 - Formularios publicos o internos.
 - Registro y consulta de metricas ambientales.
@@ -32,3 +32,7 @@ Los siguientes modulos quedan fuera de esta etapa inicial y se implementaran en 
 ## Criterio de exito inicial
 
 La base se considera lista cuando el proyecto instala dependencias, compila, inicia el servidor de desarrollo y cuenta con documentacion suficiente para que el equipo pueda continuar el desarrollo sin trabajar directamente sobre `main`.
+
+## Entrega al grupo
+
+Al cerrar el TCU el sitio queda a cargo de Comunicacion y Tecnologia del Grupo 35. La entrega incluye permiso de escritura en el repositorio, la guia [`guia-de-edicion.md`](./guia-de-edicion.md) y una sesion de capacitacion sobre ella.
