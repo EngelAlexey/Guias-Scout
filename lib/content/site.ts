@@ -85,9 +85,11 @@ export const SDG = [
 // Enlace de contacto. El numero visible vive en messages/es.json; aca solo el URI.
 export const CONTACT = {
   phoneHref: "tel:+50660101502",
+  email: "grupo35@siemprelistos.org",
+  emailHref: "mailto:grupo35@siemprelistos.org",
 } as const;
 
-export const FORM_RECIPIENT = "prueba@grupo35.example" as string;
+export const FORM_RECIPIENT = "grupo35@siemprelistos.org" as string;
 
 // Paralelos por indice a content.team[] y content.agenda[] de messages/es.json,
 // igual que SDG lo es a content.sdg[]. Si cambia el largo de uno hay que cambiar

@@ -227,7 +227,7 @@ export default async function JoinPage({ params }: Props) {
                     {t("join.contact.emailTitle")}
                   </h3>
                   <p className="contact-item__texto">
-                    <PendingValue />
+                    <a href={CONTACT.emailHref}>{t("content.contact.email")}</a>
                   </p>
                 </div>
               </li>

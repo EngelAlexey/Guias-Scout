@@ -16,15 +16,12 @@ en `docs/mapeo-respuestas.md`. Lo que sigue es **solo lo que quedo abierto**.
 
 | Dato                       | Estado                                            |
 | -------------------------- | ------------------------------------------------- |
-| Correo de contacto          | **Pendiente.** El grupo va a usar uno institucional que todavia no existe. Marcado en `/es/about`, `/es/join` y el pie. Es tambien el destino de los formularios (`FORM_RECIPIENT`, ver "Segunda mitad en pantalla") |
+| Correo de contacto          | **Confirmado.** Se definió el correo oficial `grupo35@siemprelistos.org`. Configurado en `lib/content/site.ts` (`CONTACT`, `FORM_RECIPIENT`), `messages/es.json` y visible en `/es/about`, `/es/join` y el pie. |
 | Perfiles de redes sociales  | **Sin responder.** La fila del pie sigue quitada, no vacia. `.social-row`, `.social-link` y `SOCIAL_ICONS` estan listos y sin usar |
 
-Resueltos: direccion, dia y hora de reunion, receso de fin de ano, telefono
-(`6010 1502`, responde la jefatura), nombre completo del grupo. Viven una sola
-vez en `content.contact` de `messages/es.json`.
-
-Sobre el correo: mientras no exista, **ningun texto del sitio promete atencion
-por correo**. Los llamados a la accion dicen llamar o venir un domingo.
+Resueltos: dirección, día y hora de reunión, receso de fin de año, teléfono
+(`6010 1502`, responde la jefatura), correo institucional (`grupo35@siemprelistos.org`), nombre completo del grupo. Viven una sola
+vez en `content.contact` de `messages/es.json` y `lib/content/site.ts`.
 
 ## 2. Historia del grupo
 
