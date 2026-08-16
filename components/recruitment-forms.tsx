@@ -1,92 +1,50 @@
 "use client";
 
-import type { FormEvent } from "react";
+import { useState, type FormEvent } from "react";
 import { useTranslations } from "next-intl";
 
 import { SECTION_IDS } from "@/lib/content/site";
 
-type Props = { recipient: string };
+type FormType = "minor" | "volunteer";
+type SubmissionStatus = "idle" | "submitting" | "success" | "error";
 
-type BodyEntry = [key: string, value: string | undefined];
-
-function openMailto(recipient: string, subject: string, body: string) {
-  const href = `mailto:${recipient}?subject=${encodeURIComponent(
-    subject,
-  )}&body=${encodeURIComponent(body)}`;
-  window.location.href = href;
-}
-
-function buildBody(
-  greeting: string,
-  entries: BodyEntry[],
-  label: (key: string) => string,
-) {
-  const lines = entries
-    .filter(([, value]) => value !== undefined && value.trim() !== "")
-    .map(([key, value]) => `${label(key)}: ${value}`);
-  return [greeting, ...lines].join("\r\n");
-}
-
-function submitInscription(
+async function submitForm(
   event: FormEvent<HTMLFormElement>,
-  recipient: string,
-  t: ReturnType<typeof useTranslations>,
+  type: FormType,
+  setStatus: (status: SubmissionStatus) => void,
 ) {
   event.preventDefault();
   const form = event.currentTarget;
   if (!form.reportValidity()) return;
 
   const data = new FormData(form);
-  const value = (name: string) => String(data.get(name) ?? "").trim();
+  const payload = {
+    ...Object.fromEntries(data.entries()),
+    type,
+    consent: data.has("consent"),
+  };
 
-  const body = buildBody(
-    t("forms.mail.greeting"),
-    [
-      ["minorName", value("minorName")],
-      ["birthDate", value("birthDate")],
-      ["guardian", value("guardian")],
-      ["phone", value("phone")],
-      ["email", value("email")],
-      ["section", value("section")],
-      ["message", value("message")],
-      ["consent", "Sí"],
-    ],
-    (key) => t(`forms.mail.labels.${key}`),
-  );
+  setStatus("submitting");
 
-  openMailto(recipient, t("forms.mail.subjectInscription"), body);
+  try {
+    const response = await fetch("/api/recruitment", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+
+    if (!response.ok) throw new Error("Submission failed");
+
+    form.reset();
+    setStatus("success");
+  } catch {
+    setStatus("error");
+  }
 }
 
-function submitVolunteer(
-  event: FormEvent<HTMLFormElement>,
-  recipient: string,
-  t: ReturnType<typeof useTranslations>,
-) {
-  event.preventDefault();
-  const form = event.currentTarget;
-  if (!form.reportValidity()) return;
-
-  const data = new FormData(form);
-  const value = (name: string) => String(data.get(name) ?? "").trim();
-
-  const body = buildBody(
-    t("forms.mail.greeting"),
-    [
-      ["name", value("name")],
-      ["phone", value("phone")],
-      ["email", value("email")],
-      ["role", value("role")],
-      ["why", value("why")],
-      ["consent", "Sí"],
-    ],
-    (key) => t(`forms.mail.labels.${key}`),
-  );
-
-  openMailto(recipient, t("forms.mail.subjectVolunteer"), body);
-}
-
-export function InscripcionForm({ recipient }: Props) {
+export function InscripcionForm() {
   const t = useTranslations();
+  const [status, setStatus] = useState<SubmissionStatus>("idle");
 
   return (
     <div className="card">
@@ -100,9 +58,18 @@ export function InscripcionForm({ recipient }: Props) {
 
       <form
         className="form"
-        onSubmit={(event) => submitInscription(event, recipient, t)}
+        onSubmit={(event) => submitForm(event, "minor", setStatus)}
+        aria-busy={status === "submitting"}
         noValidate
       >
+        <input
+          className="form__honeypot"
+          name="website"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden="true"
+        />
         <div className="form__row">
           <div className="field">
             <label className="field__label" htmlFor="insc-minor">
@@ -180,7 +147,7 @@ export function InscripcionForm({ recipient }: Props) {
             <select className="field__control" id="insc-section" name="section">
               <option value="">{t("forms.inscription.options.notSure")}</option>
               {SECTION_IDS.map((id) => (
-                <option key={id} value={t(`content.sections.${id}.name`)}>
+                <option key={id} value={id}>
                   {t(`content.sections.${id}.name`)}
                 </option>
               ))}
@@ -206,10 +173,25 @@ export function InscripcionForm({ recipient }: Props) {
         </label>
 
         <div className="form__actions">
-          <button type="submit" className="btn btn--accent">
-            {t("forms.inscription.submit")}
+          <button
+            type="submit"
+            className="btn btn--accent"
+            disabled={status === "submitting"}
+          >
+            {status === "submitting"
+              ? t("forms.status.submitting")
+              : t("forms.inscription.submit")}
           </button>
         </div>
+
+        <p
+          className={`form__status form__status--${status}`}
+          role={status === "error" ? "alert" : "status"}
+          aria-live="polite"
+        >
+          {status === "success" && t("forms.status.success")}
+          {status === "error" && t("forms.status.error")}
+        </p>
       </form>
 
       <p className="card__fuente" style={{ marginTop: 16 }}>
@@ -219,8 +201,9 @@ export function InscripcionForm({ recipient }: Props) {
   );
 }
 
-export function VoluntariadoForm({ recipient }: Props) {
+export function VoluntariadoForm() {
   const t = useTranslations();
+  const [status, setStatus] = useState<SubmissionStatus>("idle");
 
   return (
     <div className="card">
@@ -234,9 +217,18 @@ export function VoluntariadoForm({ recipient }: Props) {
 
       <form
         className="form"
-        onSubmit={(event) => submitVolunteer(event, recipient, t)}
+        onSubmit={(event) => submitForm(event, "volunteer", setStatus)}
+        aria-busy={status === "submitting"}
         noValidate
       >
+        <input
+          className="form__honeypot"
+          name="website"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden="true"
+        />
         <div className="form__row">
           <div className="field">
             <label className="field__label" htmlFor="vol-name">
@@ -284,14 +276,19 @@ export function VoluntariadoForm({ recipient }: Props) {
             <label className="field__label" htmlFor="vol-role">
               {t("forms.volunteer.fields.role")}
             </label>
-            <select className="field__control" id="vol-role" name="role">
+            <select
+              className="field__control"
+              id="vol-role"
+              name="role"
+              required
+            >
               <option value="" disabled>
                 {t("forms.volunteer.options.default")}
               </option>
               {(
                 ["leader", "collab", "band", "notSure"] as const
               ).map((key) => (
-                <option key={key} value={t(`forms.volunteer.options.${key}`)}>
+                <option key={key} value={key}>
                   {t(`forms.volunteer.options.${key}`)}
                 </option>
               ))}
@@ -320,10 +317,25 @@ export function VoluntariadoForm({ recipient }: Props) {
         <p className="form__note">{t("forms.volunteer.juntaNote")}</p>
 
         <div className="form__actions">
-          <button type="submit" className="btn btn--accent">
-            {t("forms.volunteer.submit")}
+          <button
+            type="submit"
+            className="btn btn--accent"
+            disabled={status === "submitting"}
+          >
+            {status === "submitting"
+              ? t("forms.status.submitting")
+              : t("forms.volunteer.submit")}
           </button>
         </div>
+
+        <p
+          className={`form__status form__status--${status}`}
+          role={status === "error" ? "alert" : "status"}
+          aria-live="polite"
+        >
+          {status === "success" && t("forms.status.success")}
+          {status === "error" && t("forms.status.error")}
+        </p>
       </form>
 
       <p className="card__fuente" style={{ marginTop: 16 }}>

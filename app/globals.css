@@ -2224,6 +2224,15 @@ code {
   margin-top: 20px;
 }
 
+.form__honeypot {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 .form__row {
   display: grid;
   gap: 16px;
@@ -2326,6 +2335,30 @@ select.field__control {
 
 .form__actions .btn {
   justify-self: start;
+}
+
+.form__actions .btn:disabled {
+  cursor: wait;
+  opacity: 0.7;
+  transform: none;
+}
+
+.form__status {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.form__status:empty {
+  display: none;
+}
+
+.form__status--success {
+  color: var(--green-deep);
+}
+
+.form__status--error {
+  color: var(--error);
 }
 
 @media (min-width: 640px) {

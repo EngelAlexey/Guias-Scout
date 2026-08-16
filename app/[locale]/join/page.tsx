@@ -8,13 +8,13 @@ import {
   IconMail,
   IconPhone,
 } from "@/components/icons";
-import { PendingNote, PendingValue } from "@/components/pending";
+import { PendingValue } from "@/components/pending";
 import {
   InscripcionForm,
   VoluntariadoForm,
 } from "@/components/recruitment-forms";
 import { Link } from "@/i18n/navigation";
-import { CONTACT, FORM_RECIPIENT, PAGE_IMAGES, SECTION_IDS } from "@/lib/content/site";
+import { CONTACT, PAGE_IMAGES, SECTION_IDS } from "@/lib/content/site";
 
 type JoinFact = { label: string; value: string };
 
@@ -146,16 +146,10 @@ export default async function JoinPage({ params }: Props) {
             {t("forms.lead")}
           </p>
 
-          {FORM_RECIPIENT ? (
-            <div className="split" style={{ marginTop: 28 }}>
-              <InscripcionForm recipient={FORM_RECIPIENT} />
-              <VoluntariadoForm recipient={FORM_RECIPIENT} />
-            </div>
-          ) : (
-            <div className="card" style={{ marginTop: 28 }}>
-              <PendingNote text={t("forms.pendingBlock")} />
-            </div>
-          )}
+          <div className="split" style={{ marginTop: 28 }}>
+            <InscripcionForm />
+            <VoluntariadoForm />
+          </div>
         </div>
       </section>
 
@@ -227,7 +221,7 @@ export default async function JoinPage({ params }: Props) {
                     {t("join.contact.emailTitle")}
                   </h3>
                   <p className="contact-item__texto">
-                    <PendingValue />
+                    <a href={CONTACT.emailHref}>{t("content.contact.email")}</a>
                   </p>
                 </div>
               </li>

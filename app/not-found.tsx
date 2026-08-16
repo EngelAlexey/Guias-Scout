@@ -11,18 +11,18 @@ export default function GlobalNotFound() {
           placeItems: "center",
           gap: 12,
           padding: 24,
-          background: "#faf8f3",
-          color: "#2e1a47",
+          background: "var(--cream)",
+          color: "var(--ink)",
           fontFamily: "system-ui, sans-serif",
           textAlign: "center",
         }}
       >
         <main>
           <h1 style={{ margin: 0, fontSize: 28 }}>404</h1>
-          <p style={{ margin: "10px 0 18px", color: "#5b5169" }}>
+          <p style={{ margin: "10px 0 18px", color: "var(--text)" }}>
             No encontramos esa página.
           </p>
-          <a href={`/${routing.defaultLocale}`} style={{ color: "#5b2d8e" }}>
+          <a href={`/${routing.defaultLocale}`} style={{ color: "var(--purple)" }}>
             Volver al inicio
           </a>
         </main>

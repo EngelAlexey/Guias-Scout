@@ -76,7 +76,9 @@ export async function SiteFooter() {
                 {t("footer.emailLabel")}
               </div>
               <div>
-                <PendingValue />
+                <a className="footer-mail" href={CONTACT.emailHref}>
+                  {t("content.contact.email")}
+                </a>
               </div>
             </div>
           </div>
