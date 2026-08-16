@@ -89,8 +89,6 @@ export const CONTACT = {
   emailHref: "mailto:grupo35@siemprelistos.org",
 } as const;
 
-export const FORM_RECIPIENT = "grupo35@siemprelistos.org" as string;
-
 // Paralelos por indice a content.team[] y content.agenda[] de messages/es.json,
 // igual que SDG lo es a content.sdg[]. Si cambia el largo de uno hay que cambiar
 // el del otro: TypeScript no lo detecta.

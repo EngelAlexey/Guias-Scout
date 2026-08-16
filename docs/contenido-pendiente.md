@@ -16,7 +16,7 @@ en `docs/mapeo-respuestas.md`. Lo que sigue es **solo lo que quedo abierto**.
 
 | Dato                       | Estado                                            |
 | -------------------------- | ------------------------------------------------- |
-| Correo de contacto          | **Confirmado.** Se definió el correo oficial `grupo35@siemprelistos.org`. Configurado en `lib/content/site.ts` (`CONTACT`, `FORM_RECIPIENT`), `messages/es.json` y visible en `/es/about`, `/es/join` y el pie. |
+| Correo de contacto          | **Confirmado.** Se definió `grupo35@siemprelistos.org` en `lib/content/site.ts` (`CONTACT`) y se muestra en `/es/about`, `/es/join` y el pie. Los formularios no dependen de este correo: guardan las solicitudes en Supabase. |
 | Perfiles de redes sociales  | **Sin responder.** La fila del pie sigue quitada, no vacia. `.social-row`, `.social-link` y `SOCIAL_ICONS` estan listos y sin usar |
 
 Resueltos: dirección, día y hora de reunión, receso de fin de año, teléfono
@@ -159,11 +159,9 @@ de diseno. Lo que sigue abierto:
   autenticacion ni RLS (9.4). El calendario se suma cuando el grupo maneje uno
   (5.2).
 - **Formularios (inscripcion 9.5 y voluntariado 9.6):** los dos estan
-  construidos en `/es/join` (`components/recruitment-forms.tsx`) y envían por
-  `mailto:` prellenado a `FORM_RECIPIENT`. Ese destino **sigue vacio** y es el
-  gate: mientras no exista el correo institucional (1.5), la seccion muestra un
-  `PendingNote` y no se publican formularios muertos. Al activar se escribe el
-  correo en `lib/content/site.ts` y se quita la nota.
+  construidos en `/es/join` (`components/recruitment-forms.tsx`) y guardan sus
+  solicitudes privadas en Supabase mediante `POST /api/recruitment`. La
+  migracion, variables y reglas de seguridad estan en `docs/supabase.md`.
 
 ## Quien mantiene el sitio despues del TCU
 

@@ -237,8 +237,7 @@
   "forms": {
     "eyebrow": "Formularios",
     "title": "Únete con un mensaje",
-    "lead": "Elegí el formulario según tu caso: al enviarlo se abre tu correo con el mensaje ya redactado para la Junta de Grupo.",
-    "pendingBlock": "Los formularios en línea se activan cuando el grupo tenga su correo institucional. Mientras tanto, llámanos o ven un domingo a la sede.",
+    "lead": "Elegí el formulario según tu caso. La solicitud se guarda de forma privada para que la Junta de Grupo pueda darle seguimiento.",
     "inscription": {
       "eyebrow": "Inscripción",
       "title": "Personas menores",
@@ -256,8 +255,8 @@
         "notSure": "Todavía no lo sabemos"
       },
       "consent": "Soy la madre, el padre o la persona encargada de la persona menor y autorizo que el grupo me contacte para coordinar la visita.",
-      "privacyNote": "Este formulario abre la aplicación de correo del dispositivo: los datos viajan en el mensaje que vos enviás. No se publican en el sitio.",
-      "submit": "Preparar el correo"
+      "privacyNote": "Los datos se guardan de forma privada y solo se usan para contactar a la persona encargada y coordinar el proceso de inscripción. No se publican en el sitio.",
+      "submit": "Enviar solicitud"
     },
     "volunteer": {
       "eyebrow": "Voluntariado",
@@ -279,8 +278,13 @@
       },
       "consent": "Autorizo que la Junta de Grupo me contacte para coordinar mi participación.",
       "juntaNote": "Las solicitudes llegan a la Junta de Grupo.",
-      "privacyNote": "Este formulario abre la aplicación de correo del dispositivo: los datos viajan en el mensaje que vos enviás. No se publican en el sitio.",
-      "submit": "Preparar el correo"
+      "privacyNote": "Los datos se guardan de forma privada y solo se usan para que la Junta de Grupo dé seguimiento a la solicitud. No se publican en el sitio.",
+      "submit": "Enviar solicitud"
+    },
+    "status": {
+      "submitting": "Enviando…",
+      "success": "¡Listo! Recibimos tu solicitud y la Junta de Grupo podrá darle seguimiento.",
+      "error": "No pudimos guardar la solicitud. Revisá los datos e intentá de nuevo."
     },
     "mail": {
       "subjectInscription": "Solicitud de inscripción al Grupo 35 Esparzol",

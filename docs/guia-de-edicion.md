@@ -195,18 +195,15 @@ Hay dos tipos de marcador:
 La lista completa de lo que falta esta en
 [`contenido-pendiente.md`](./contenido-pendiente.md).
 
-### Activar los formularios de inscripcion y voluntariado
+### Formularios de inscripcion y voluntariado
 
-Los dos formularios de `/es/join` ya estan construidos. Al enviarlos se abre el
-correo de la persona con el mensaje ya redactado hacia el grupo.
+Los dos formularios de `/es/join` estan activos. Las solicitudes se validan en
+el servidor y se guardan de forma privada en Supabase; no dependen del correo
+institucional ni abren la aplicacion de correo de la persona.
 
-El interruptor es `FORM_RECIPIENT` en `lib/content/site.ts`. Hoy tiene un correo
-de prueba (`prueba@grupo35.example`) y hay que reemplazarlo por el correo
-institucional real apenas exista. Eso es el issue #67 y lo hace el equipo
-tecnico.
-
-Si `FORM_RECIPIENT` queda vacio, la pagina muestra sola un aviso y no publica
-formularios muertos.
+La configuracion, las variables y la migracion de las tablas estan documentadas
+en [`supabase.md`](./supabase.md). Cualquier cambio en los campos o permisos lo
+hace el equipo tecnico mediante una migracion revisada.
 
 ## Como se publica
 
@@ -238,7 +235,7 @@ Todo lo demas se puede hacer desde el navegador. Estas cosas no:
 - Agregar o quitar entradas de **agenda** o de **equipo** (las listas paralelas
   `AGENDA_TONES` y `TEAM_SECTIONS`).
 - Cambiar el **enlace** del telefono (`phoneHref`).
-- Activar los **formularios** (`FORM_RECIPIENT`).
+- Cambiar los campos, permisos o tablas de los **formularios en Supabase**.
 - Quitar una **nota amarilla** de bloque completo.
 - Cambiar **fotos**, colores o cualquier cosa de como se ve el sitio.
 - Cualquier cosa donde el sitio deje de compilar.

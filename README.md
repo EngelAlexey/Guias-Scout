@@ -59,7 +59,7 @@ Al escribir paginas nuevas hay que importar `Link` desde `@/i18n/navigation`
 
 ## Requisitos locales
 
-- Node.js 20 LTS o superior
+- Node.js 22.13 o superior
 - pnpm 11 o superior
 - Proyecto de Supabase creado cuando se habiliten los modulos que lo necesiten
 
@@ -86,10 +86,11 @@ Copy-Item .env.example .env.local
 Variables previstas:
 
 - `NEXT_PUBLIC_SITE_URL`: dominio publico del sitio. De ahi salen `metadataBase`, el sitemap y `robots.txt`. Si queda vacia se usa `http://localhost:3000`, asi que hay que definirla antes de publicar.
-- `NEXT_PUBLIC_SUPABASE_URL`: URL publica del proyecto Supabase.
-- `NEXT_PUBLIC_SUPABASE_ANON_KEY`: llave publica anonima del proyecto Supabase.
+- `SUPABASE_URL`: URL del proyecto usada por el backend.
+- `SUPABASE_SECRET_KEY`: clave secreta usada exclusivamente por el backend para guardar formularios. Nunca debe usar el prefijo `NEXT_PUBLIC_`.
+- `NEXT_PUBLIC_SUPABASE_URL` y `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`: variables publicas opcionales para futuros modulos que usen Supabase desde el navegador.
 
-Las variables de Supabase pueden quedar vacias mientras solo se trabaje en la base del repositorio. La app no implementa todavia autenticacion, tablas, politicas RLS ni almacenamiento final.
+Para activar los formularios también se debe ejecutar la migración documentada en [`docs/supabase.md`](docs/supabase.md).
 
 ## Desarrollo
 
@@ -128,7 +129,7 @@ git switch main
 
 ## Estado actual
 
-Estan implementadas Inicio, Nuestro Grupo, Secciones, Unete, Impacto, Proyectos y Comunicados con contenido estatico servido desde el diccionario de i18n. Los formularios de inscripcion y voluntariado estan construidos en `/es/join` y envian por `mailto:` a `FORM_RECIPIENT`; ese destino todavia es un correo de prueba. Los numeros de Impacto y el catalogo de Proyectos se completan con datos verificables del grupo a medida que la jefatura los confirma (ver `docs/contenido-pendiente.md`). Siguen pendientes: la galeria, la autenticacion y la carga de imagenes.
+Estan implementadas Inicio, Nuestro Grupo, Secciones, Unete, Impacto, Proyectos y Comunicados. Los formularios de inscripción y voluntariado guardan sus solicitudes privadas en Supabase cuando se configuran las variables y la migración. Los numeros de Impacto y el catalogo de Proyectos se completan con datos verificables del grupo a medida que la jefatura los confirma (ver `docs/contenido-pendiente.md`). Siguen pendientes: la galeria, la autenticacion y la carga de imagenes.
 
 El **panel administrativo queda fuera del TCU** por decision explicita: el mantenimiento posterior se resuelve con documentacion y capacitacion. Ver [`docs/mantenimiento.md`](docs/mantenimiento.md).
 

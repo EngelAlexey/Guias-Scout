@@ -245,7 +245,6 @@ grupo y el catalogo de Proyectos con lo que la jefatura confirme; hasta
 entonces se muestran marcadores de «por confirmar».
 
 `/es/join` tiene los dos formularios (inscripcion y voluntariado) ya
-construidos en `components/recruitment-forms.tsx`, que envian por `mailto:`
-prellenado a `FORM_RECIPIENT` (`lib/content/site.ts`). Mientras ese destino
-este vacio la seccion muestra una nota de pendiente; al llegar el correo
-institucional se escribe ahi y se activan.
+construidos en `components/recruitment-forms.tsx`. Envían al endpoint privado
+`POST /api/recruitment`, que valida y almacena las solicitudes en Supabase. La
+configuración y la migración viven en `docs/supabase.md`.
