@@ -3,7 +3,6 @@ import type { MetadataRoute } from "next";
 import { routing } from "@/i18n/routing";
 import { SITE_URL } from "@/lib/content/site";
 
-// El portal de encargados es interno: no se indexa ni se lista en el sitemap.
 const PRIVATE_ROUTES = ["/design-system", "/portal"];
 
 export default function robots(): MetadataRoute.Robots {

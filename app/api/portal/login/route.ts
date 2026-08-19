@@ -25,9 +25,6 @@ function invalidRequest() {
   );
 }
 
-// Una sola respuesta para credenciales malas, persona que no esta en
-// portal_users y persona desactivada: desde afuera no se puede distinguir
-// cual de las tres es.
 function unauthorized() {
   return NextResponse.json(
     { ok: false, error: "unauthorized" },

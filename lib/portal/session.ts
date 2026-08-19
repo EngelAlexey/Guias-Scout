@@ -59,7 +59,6 @@ function verifyToken(token: string, nowMs = Date.now()): TokenPayload | null {
   const expected = sign(encoded);
   const received = Buffer.from(signature, "base64url");
 
-  // timingSafeEqual exige el mismo largo antes de comparar.
   if (received.length !== expected.length) return null;
   if (!timingSafeEqual(received, expected)) return null;
 
@@ -89,21 +88,10 @@ export function portalSessionCookieOptions() {
   };
 }
 
-/**
- * Unica fuente de verdad de la sesion del portal.
- *
- * Devuelve null si no hay cookie, si la firma no cuadra, si vencio, si la
- * persona ya no existe o si esta desactivada. Cada llamada revisa `is_active`,
- * asi que desactivar a alguien la saca del portal en la siguiente pagina que
- * abra, sin esperar a que venza su sesion.
- */
 export async function getPortalSession(): Promise<PortalSession | null> {
   const token = (await cookies()).get(PORTAL_SESSION_COOKIE)?.value;
   if (!token) return null;
 
-  // Nada de lo que pase aca adentro debe tumbar una pagina: si falta una
-  // variable o la base no responde, la respuesta correcta es "no hay sesion",
-  // que manda a la pantalla de acceso en vez de a un error 500.
   try {
     const payload = verifyToken(token);
     if (!payload) return null;
@@ -136,7 +124,6 @@ export async function getPortalSession(): Promise<PortalSession | null> {
   }
 }
 
-/** Igual que getPortalSession, pero sin sesion valida no sigue adelante. */
 export async function requirePortalSession(): Promise<PortalSession> {
   const session = await getPortalSession();
   if (!session) throw new Error("unauthorized");

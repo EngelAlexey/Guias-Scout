@@ -2374,14 +2374,6 @@ select.field__control {
   }
 }
 
-/* ==========================================================================
-   Portal de encargados (Sprint 4)
-
-   Marco interno, no publico. Reusa los mismos tokens, botones y campos del
-   sitio; solo agrega el armazon del panel para que las vistas de solicitudes
-   y de personas encargadas se cuelguen de algo comun.
-   ========================================================================== */
-
 .portal {
   min-height: 100vh;
   display: flex;
@@ -2525,7 +2517,6 @@ select.field__control {
   flex: 1;
 }
 
-/* Acceso: una sola caja centrada, sin encabezado ni pie del sitio. */
 .portal-acceso {
   min-height: 100vh;
   display: grid;

@@ -10,11 +10,6 @@ const PORTAL_PATH = new RegExp(
   `^/(${routing.locales.join("|")})/portal(/.*)?$`,
 );
 
-/**
- * Revision barata: si no hay cookie de sesion, la persona no llega ni a
- * renderizar la pagina. La decision real la toma `getPortalSession()` en el
- * servidor, que ademas verifica la firma y si la cuenta sigue activa.
- */
 function portalRedirect(request: NextRequest) {
   const match = request.nextUrl.pathname.match(PORTAL_PATH);
   if (!match) return null;

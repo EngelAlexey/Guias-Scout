@@ -1,9 +1,3 @@
--- Portal de encargados (Sprint 4).
--- Personas de la Junta de Grupo que pueden entrar al portal a dar seguimiento
--- a las solicitudes. No hay roles ni permisos por rol: quien entra ve y hace
--- lo mismo que cualquier otra persona encargada. Desactivar es el unico
--- control de acceso.
-
 create table if not exists public.portal_users (
   id uuid primary key default gen_random_uuid(),
   auth_user_id uuid unique,
@@ -27,10 +21,6 @@ revoke all on table public.portal_users from anon, authenticated;
 
 grant select, insert, update on table public.portal_users to service_role;
 
--- Sin politicas publicas: igual que las tablas de solicitudes, solo el backend
--- con la clave secreta puede leer o escribir estos datos.
-
--- Seguimiento de solicitudes: quien movio el estado por ultima vez y cuando.
 alter table public.minor_enrollment_submissions
   add column if not exists reviewed_by uuid references public.portal_users(id),
   add column if not exists reviewed_at timestamptz;
@@ -44,7 +34,6 @@ comment on column public.minor_enrollment_submissions.reviewed_by is
 comment on column public.volunteer_submissions.reviewed_by is
   'Persona encargada que cambio el estado por ultima vez.';
 
--- Las consultas del portal listan por estado y fecha.
 create index if not exists minor_enrollment_submissions_status_created_idx
   on public.minor_enrollment_submissions (status, created_at desc);
 

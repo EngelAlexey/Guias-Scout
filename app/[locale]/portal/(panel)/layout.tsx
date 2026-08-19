@@ -16,18 +16,6 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-/**
- * Marco del portal y guarda de sesion.
- *
- * Todo lo que cuelgue de `(panel)` queda protegido: sin sesion valida esta
- * capa redirige antes de renderizar nada. `proxy.ts` hace ademas una revision
- * barata de cookie para no llegar hasta aca sin necesidad, pero la decision
- * real se toma en el servidor, contra la base: si a la persona la desactivaron,
- * `getPortalSession()` devuelve null aunque su cookie siga viva.
- *
- * La pagina de acceso vive fuera del grupo (`portal/login`), por eso no entra
- * en este guardado y no se produce un ciclo de redirecciones.
- */
 export default async function PortalPanelLayout({ children, params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);

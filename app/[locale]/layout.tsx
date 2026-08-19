@@ -57,11 +57,6 @@ export async function generateMetadata({
   };
 }
 
-/**
- * Marco comun de todo lo que vive bajo /[locale]: documento, tipografias y
- * mensajes. El encabezado y el pie publicos viven en el grupo `(sitio)`, para
- * que el portal de encargados pueda tener su propio marco sin arrastrarlos.
- */
 export default async function LocaleLayout({ children, params }: Props) {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) notFound();

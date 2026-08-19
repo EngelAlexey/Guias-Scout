@@ -25,14 +25,6 @@ export function createSupabaseServerClient(): SupabaseClient {
   });
 }
 
-/**
- * Cliente para verificar credenciales contra Supabase Auth.
- *
- * Usa la clave publicable, no la secreta: comprobar una clave es justo lo que
- * esa llave puede hacer. Corre en el servidor para que la respuesta con los
- * tokens de Supabase nunca llegue al navegador; la sesion del portal viaja en
- * una cookie propia (`lib/portal/session.ts`).
- */
 export function createSupabaseAuthClient(): SupabaseClient {
   const supabaseUrl = getSupabaseUrl();
   const publishableKey = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY;

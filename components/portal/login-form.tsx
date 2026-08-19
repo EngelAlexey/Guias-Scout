@@ -31,8 +31,6 @@ export function PortalLoginForm() {
       });
 
       if (response.ok) {
-        // El portal se arma en el servidor: refresh vuelve a pedir la pagina
-        // ya con la cookie de sesion puesta.
         router.replace("/portal");
         router.refresh();
         return;
