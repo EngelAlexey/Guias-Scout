@@ -29,7 +29,7 @@ El diseno se documenta en [`docs/design-system.md`](docs/design-system.md).
 | [`docs/mapeo-respuestas.md`](docs/mapeo-respuestas.md) | Cada respuesta del grupo y donde quedo en el codigo |
 | [`docs/mantenimiento.md`](docs/mantenimiento.md) | Quien mantiene el sitio al terminar el TCU y por que sin panel administrativo |
 | [`docs/guia-de-edicion.md`](docs/guia-de-edicion.md) | Guia para el grupo: editar el contenido sin programar |
-| [`docs/supabase.md`](docs/supabase.md) | Backend previsto |
+| [`docs/supabase.md`](docs/supabase.md) | Backend: tablas, permisos, migraciones y acceso al portal |
 | [`docs/project-proposal.md`](docs/project-proposal.md) | Propuesta y alcance del TCU |
 
 ## Textos e idiomas
@@ -88,9 +88,10 @@ Variables previstas:
 - `NEXT_PUBLIC_SITE_URL`: dominio publico del sitio. De ahi salen `metadataBase`, el sitemap y `robots.txt`. Si queda vacia se usa `http://localhost:3000`, asi que hay que definirla antes de publicar.
 - `SUPABASE_URL`: URL del proyecto usada por el backend.
 - `SUPABASE_SECRET_KEY`: clave secreta usada exclusivamente por el backend para guardar formularios. Nunca debe usar el prefijo `NEXT_PUBLIC_`.
-- `NEXT_PUBLIC_SUPABASE_URL` y `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`: variables publicas opcionales para futuros modulos que usen Supabase desde el navegador.
+- `NEXT_PUBLIC_SUPABASE_URL` y `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`: URL y clave publicable. El portal de encargados usa la clave publicable desde el servidor para comprobar la clave de acceso contra Supabase Auth.
+- `PORTAL_SESSION_SECRET`: cadena aleatoria de al menos 32 caracteres con la que se firma la cookie de sesion del portal. Cambiarla cierra todas las sesiones abiertas.
 
-Para activar los formularios también se debe ejecutar la migración documentada en [`docs/supabase.md`](docs/supabase.md).
+Para activar los formularios y el portal de encargados también se deben ejecutar las migraciones documentadas en [`docs/supabase.md`](docs/supabase.md).
 
 ## Desarrollo
 

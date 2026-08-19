@@ -5,8 +5,6 @@ import { Mulish, Sora } from "next/font/google";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
-import { SiteFooter } from "@/components/site-footer";
-import { SiteHeader } from "@/components/site-header";
 import { routing } from "@/i18n/routing";
 import { SITE_URL } from "@/lib/content/site";
 import "../globals.css";
@@ -59,25 +57,21 @@ export async function generateMetadata({
   };
 }
 
+/**
+ * Marco comun de todo lo que vive bajo /[locale]: documento, tipografias y
+ * mensajes. El encabezado y el pie publicos viven en el grupo `(sitio)`, para
+ * que el portal de encargados pueda tener su propio marco sin arrastrarlos.
+ */
 export default async function LocaleLayout({ children, params }: Props) {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) notFound();
 
   setRequestLocale(locale);
 
-  const t = await getTranslations("layout");
-
   return (
     <html lang={locale} className={`${sora.variable} ${mulish.variable}`}>
       <body>
-        <NextIntlClientProvider>
-          <a className="skip-link" href="#content">
-            {t("skipToContent")}
-          </a>
-          <SiteHeader />
-          <main id="content">{children}</main>
-          <SiteFooter />
-        </NextIntlClientProvider>
+        <NextIntlClientProvider>{children}</NextIntlClientProvider>
       </body>
     </html>
   );

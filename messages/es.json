@@ -646,5 +646,61 @@
       { "name": "Crema", "use": "Fondo general" },
       { "name": "Gris texto", "use": "Párrafos y apoyo" }
     ]
+  },
+
+  "portal": {
+    "login": {
+      "eyebrow": "Portal de encargados",
+      "title": "Acceso de la Junta de Grupo",
+      "lead": "Entrá con el correo con el que te dieron acceso. Desde aquí se ven las solicitudes de inscripción y de voluntariado que llegan del sitio.",
+      "help": "Si no podés entrar, pedile a otra persona encargada que revise tu cuenta en el portal.",
+      "backToSite": "Volver al sitio",
+      "submit": "Entrar",
+      "submitting": "Entrando…",
+      "fields": {
+        "email": "Correo",
+        "password": "Clave"
+      },
+      "errors": {
+        "invalid": "Revisá el correo y la clave: falta algún dato o el formato no es válido.",
+        "unauthorized": "No pudimos entrar con esos datos. Si tu acceso fue desactivado, pedile a otra persona encargada que lo active.",
+        "error": "No pudimos completar el acceso. Intentá de nuevo en un momento."
+      }
+    },
+    "shell": {
+      "name": "Portal del Grupo 35",
+      "tagline": "Seguimiento de solicitudes",
+      "signOut": "Salir",
+      "skipToContent": "Ir al contenido del portal"
+    },
+    "nav": {
+      "label": "Secciones del portal",
+      "home": "Inicio",
+      "submissions": "Solicitudes",
+      "users": "Personas encargadas"
+    },
+    "home": {
+      "eyebrow": "Portal de encargados",
+      "title": "Resumen",
+      "lead": "Esto es lo que está esperando respuesta hoy.",
+      "unavailable": "Sin dato",
+      "scopeNote": "El portal muestra las solicitudes y quién puede entrar. No lleva historial de conversaciones ni recordatorios: eso quedó fuera de alcance de este sprint.",
+      "cards": {
+        "action": "Ver solicitudes",
+        "minor": {
+          "label": "Inscripciones sin atender",
+          "detail": "Solicitudes de inscripción de personas menores en estado pendiente."
+        },
+        "volunteer": {
+          "label": "Voluntariados sin atender",
+          "detail": "Personas adultas que se ofrecieron a colaborar y siguen en estado pendiente."
+        },
+        "users": {
+          "label": "Personas encargadas",
+          "detail": "Quiénes pueden entrar al portal. Se agregan, se modifican y se desactivan desde aquí.",
+          "action": "Ver personas encargadas"
+        }
+      }
+    }
   }
 }
