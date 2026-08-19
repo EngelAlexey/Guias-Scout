@@ -5,8 +5,6 @@ import { Mulish, Sora } from "next/font/google";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
-import { SiteFooter } from "@/components/site-footer";
-import { SiteHeader } from "@/components/site-header";
 import { routing } from "@/i18n/routing";
 import { SITE_URL } from "@/lib/content/site";
 import "../globals.css";
@@ -65,19 +63,10 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   setRequestLocale(locale);
 
-  const t = await getTranslations("layout");
-
   return (
     <html lang={locale} className={`${sora.variable} ${mulish.variable}`}>
       <body>
-        <NextIntlClientProvider>
-          <a className="skip-link" href="#content">
-            {t("skipToContent")}
-          </a>
-          <SiteHeader />
-          <main id="content">{children}</main>
-          <SiteFooter />
-        </NextIntlClientProvider>
+        <NextIntlClientProvider>{children}</NextIntlClientProvider>
       </body>
     </html>
   );

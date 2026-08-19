@@ -28,7 +28,7 @@ Convenciones que cambiaron al integrar:
 | 1.2 | `content.contact.addressShort` (pie)            | listo  |
 | 1.3 | `content.contact.meetings`                      | listo  |
 | 1.4 | `content.contact.meetingsNote`                  | listo  |
-| 1.5 | —                                               | **abierto.** Correo institucional sin crear. Sobreviven 3 `PendingValue` |
+| 1.5 | —                                               | **abierto.** Correo institucional sin crear. Sobreviven 3 `PendingValue`; los formularios ya no dependen del correo porque guardan en Supabase |
 | 1.6 | `content.contact.phone` + `.phoneNote`, `CONTACT.phoneHref` | listo. Se publica como enlace `tel:`, sin afirmar WhatsApp porque no lo dijeron |
 | 1.7 | —                                               | **abierto.** Sin respuesta. La fila de redes del pie sigue sin crearse |
 | 1.8 | `site.name`, `site.shortName`                   | listo. `shortName` = «Grupo 35 Esparzol» es derivacion nuestra: el formulario solo dio el nombre largo |
@@ -74,7 +74,7 @@ invencion nuestra y ademas contradecia una fundacion de 2020.
 | --- | ------------------------------------ | ------ |
 | 5.1 | `content.agenda[]` + `AGENDA_TONES`  | listo, 4 actividades |
 | 5.2 | —                                    | respondido: no hay calendario anual. **Se quito el enlace a `/news`** de la portada |
-| 5.3 | —                                    | **abierto.** 5.3 dice «Juan David Loria» y 10.3 «Jose David Loria»: falta aclarar |
+| 5.3 | —                                    | **abierto.** 5.3 dice «Juan David Loria» y 10.3 «Jose David Loria»: falta aclarar. El nombre se anota en un solo lugar: [`mantenimiento.md`](./mantenimiento.md) §Quien queda a cargo |
 
 La agenda se decidio **estatica** en `messages/es.json`, no en Supabase: cuatro
 entradas no justifican una tabla y la segunda mitad del proyecto todavia no
@@ -122,11 +122,11 @@ textos actuales describen las fotos genericas de Unsplash, no las del grupo.
 | #   | Estado |
 | --- | ------ |
 | 9.1 | Corrige el encuadre del sitio: el proyecto educativo es **musical**, no ambiental. Aplicado en `home.environment.*` e `impact.*` |
-| 9.2 | Existe un informe social con datos historicos. Fuente para `/impact` |
-| 9.3 | Banda Artistica Juvenil de Esparzol. Alimentara `/projects`. Las «8000 vistas» **no se publican**: unidad ambigua |
-| 9.4 | Los avisos son publicos para cualquiera → `/news` no necesita autenticacion ni RLS |
-| 9.5 | Formulario de inscripcion: datos de personas menores, definir custodia antes de construir |
-| 9.6 | Formulario de voluntariado: preguntar por que desea formar parte; las solicitudes llegan a la Junta de Grupo |
+| 9.2 | Existe un informe social con datos historicos. Fuente para `impact.axes` de `messages/es.json`. La pagina ya existe; los numeros quedan **pendientes** hasta recibir el informe |
+| 9.3 | Banda Artistica Juvenil de Esparzol → `projects.items[0]` (estado, direccion y resultados). Las «8000 vistas» **no se publican**: unidad ambigua |
+| 9.4 | Los avisos son publicos para cualquiera → `/news` se construyo sin autenticacion ni RLS, con `news.items[]` (vacio por ahora) |
+| 9.5 | Formulario de inscripcion → `forms.inscription` | listo. Datos de personas menores + madre/padre/persona encargada (custodia) y consentimiento. Los envios se validan en `POST /api/recruitment` y se guardan de forma privada en Supabase |
+| 9.6 | Formulario de voluntariado → `forms.volunteer` | listo. Pregunta «por que desea formar parte» (campo `why`, obligatorio). Los envios se validan en `POST /api/recruitment` y se guardan de forma privada en Supabase |
 | 9.7 | **No hace falta ingles.** `i18n/routing.ts` se queda con `locales: ["es"]` |
 
 ## 10. Operacion
@@ -135,7 +135,7 @@ textos actuales describen las fotos genericas de Unsplash, no las del grupo.
 | ---- | ------ |
 | 10.1 | Consultas de contenido: Elena Manzanarez Juarez |
 | 10.2 | Visto bueno antes de publicar: jefatura de grupo y administracion. Aplica antes de promover `dev` → `qa` → `main` |
-| 10.3 | El sitio queda a cargo de Comunicacion y tecnologia. Falta decidir si hace falta panel administrativo (Supabase + auth) o basta con documentacion |
+| 10.3 | El sitio queda a cargo de Comunicacion y tecnologia. **Decidido:** documentacion y capacitacion, sin panel administrativo dentro del TCU. Ver [`mantenimiento.md`](./mantenimiento.md) y [`guia-de-edicion.md`](./guia-de-edicion.md). Sigue abierto el **nombre** de la persona |
 | 10.4 | Sin cuenta ni servicio pagado. Ver 1.9 |
 | 10.5 | **Permiso concedido** para usar el emblema en `public/logo.webp` |
 

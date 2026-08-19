@@ -16,15 +16,12 @@ en `docs/mapeo-respuestas.md`. Lo que sigue es **solo lo que quedo abierto**.
 
 | Dato                       | Estado                                            |
 | -------------------------- | ------------------------------------------------- |
-| Correo de contacto          | **Pendiente.** El grupo va a usar uno institucional que todavia no existe. Marcado en `/es/about`, `/es/join` y el pie |
+| Correo de contacto          | **Confirmado.** Se definió `grupo35@siemprelistos.org` en `lib/content/site.ts` (`CONTACT`) y se muestra en `/es/about`, `/es/join` y el pie. Los formularios no dependen de este correo: guardan las solicitudes en Supabase. |
 | Perfiles de redes sociales  | **Sin responder.** La fila del pie sigue quitada, no vacia. `.social-row`, `.social-link` y `SOCIAL_ICONS` estan listos y sin usar |
 
-Resueltos: direccion, dia y hora de reunion, receso de fin de ano, telefono
-(`6010 1502`, responde la jefatura), nombre completo del grupo. Viven una sola
-vez en `content.contact` de `messages/es.json`.
-
-Sobre el correo: mientras no exista, **ningun texto del sitio promete atencion
-por correo**. Los llamados a la accion dicen llamar o venir un domingo.
+Resueltos: dirección, día y hora de reunión, receso de fin de año, teléfono
+(`6010 1502`, responde la jefatura), correo institucional (`grupo35@siemprelistos.org`), nombre completo del grupo. Viven una sola
+vez en `content.contact` de `messages/es.json` y `lib/content/site.ts`.
 
 ## 2. Historia del grupo
 
@@ -70,6 +67,8 @@ confirmar» porque el grupo solo dio el mes.
 
 Falta definir quien del grupo mantiene la lista al dia (la respuesta 5.3 nombra
 a «Juan David Loria» y la 10.3 a «Jose David Loria»: hay que aclarar cual es).
+El nombre se anota en **un solo lugar** cuando llegue:
+[`mantenimiento.md`](./mantenimiento.md) §Quien queda a cargo.
 
 ## 5. Vision y valores
 
@@ -82,7 +81,7 @@ entro «Liderazgo», y se agrego uno mas.
 
 Pendiente menor: el septimo valor lo escribieron como «El Scouts es amigos de
 todos». Se publica como **«Amigos de todos»** para que funcione como etiqueta
-corta. Conviene que lo confirmen.
+corta. Hace falta que el grupo confirme esa redaccion o mande la suya.
 
 ## 6. Por verificar con la Asociacion
 
@@ -145,6 +144,41 @@ El dato de «unas 8000 vistas» de la respuesta 9.3 **no se publica**: no quedo
 claro vistas de que ni en que plazo, y el sitio se sostiene sobre datos
 verificables.
 
+## Segunda mitad en pantalla
+
+`/es/impact`, `/es/projects` y `/es/news` ya son paginas reales sobre la base
+de diseno. Lo que sigue abierto:
+
+- **Impacto:** los numeros esperan el informe social (9.2) para llenar
+  `impact.axes` en `messages/es.json`. Las etiquetas estan publicadas con
+  `PendingValue` hasta que la jefatura confirme cifras.
+- **Proyectos:** el catalogo arranca con la Banda Artistica Juvenil de Esparzol
+  (`projects.items[0]`) y crece con lo que el grupo confirme. Las «8000 vistas»
+  no se publican.
+- **Comunicados:** la lista vive en `news.items[]` y esta vacia. Sin
+  autenticacion ni RLS (9.4). El calendario se suma cuando el grupo maneje uno
+  (5.2).
+- **Formularios (inscripcion 9.5 y voluntariado 9.6):** los dos estan
+  construidos en `/es/join` (`components/recruitment-forms.tsx`) y guardan sus
+  solicitudes privadas en Supabase mediante `POST /api/recruitment`. La
+  migracion, variables y reglas de seguridad estan en `docs/supabase.md`.
+
+## Quien mantiene el sitio despues del TCU
+
+**Decidido:** documentacion y capacitacion, sin panel administrativo dentro del
+TCU (10.3). La decision y sus consecuencias estan en
+[`mantenimiento.md`](./mantenimiento.md); la guia que recibe el grupo es
+[`guia-de-edicion.md`](./guia-de-edicion.md).
+
+Lo que sigue pendiente de este punto es **solo el nombre** de la persona de
+Comunicacion y Tecnologia: 5.3 dice «Juan David Loria» y 10.3 «Jose David
+Loria», y falta saber si es una persona o dos. Ningun nombre se publica en el
+sitio, asi que no hay error visible.
+
+Parte de la entrega: darle a esa persona **permiso de escritura en el
+repositorio** y recorrer la guia con ella haciendo un cambio real de punta a
+punta.
+
 ## Dominio
 
 El grupo **no tiene dominio propio ni servicio contratado** (1.9 y 10.4).
@@ -159,6 +193,10 @@ se queda con `locales: ["es"]`.
 
 ## Registro del texto
 
-El sitio se escribe en espanol de Costa Rica, con voseo (`vení`, `llamanos`,
-`contanos`, `conocé`, `sumate`). Al agregar textos hay que mantener ese
+El sitio se escribe en espanol de Costa Rica, con tuteo (`ven`, `llámanos`,
+`cuéntanos`, `conoce`, `únete`). Al agregar textos hay que mantener ese
 registro y evitar formas peninsulares.
+
+La decision sobre el titulo del enlace quedo **cerrada**: se mantiene el tuteo,
+«Únete», y la copia relevante se ajusto en `nav.join`, `join.metaTitle` y
+`designSystem.splitTextDone` de `messages/es.json`.

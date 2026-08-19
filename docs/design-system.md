@@ -56,16 +56,16 @@ genera las alternativas `hreflang` solo.
 
 ## Rutas
 
-| Ruta                 | Estado                                    |
-| -------------------- | ----------------------------------------- |
-| `/es`                | Inicio                                    |
-| `/es/about`          | Nuestro Grupo                             |
-| `/es/sections`       | Manada, Tropa, Wak y Comunidad            |
-| `/es/join`           | Como inscribirse y contacto               |
-| `/es/design-system`  | Esta guia, en vivo                        |
-| `/es/impact`         | Placeholder (segunda mitad)               |
-| `/es/projects`       | Placeholder (segunda mitad)               |
-| `/es/news`           | Placeholder (segunda mitad)               |
+| Ruta                 | Estado                                       |
+| -------------------- | -------------------------------------------- |
+| `/es`                | Inicio                                       |
+| `/es/about`          | Nuestro Grupo                                |
+| `/es/sections`       | Manada, Tropa, Wak y Comunidad               |
+| `/es/join`           | Como inscribirse y contacto                  |
+| `/es/impact`         | Impacto con datos abiertos del grupo         |
+| `/es/projects`       | Proyectos, empezando por la Banda            |
+| `/es/news`           | Comunicados para las familias                |
+| `/es/design-system`  | Esta guia, en vivo                           |
 
 Las carpetas van en ingles porque en el App Router la carpeta es el segmento
 de URL, y las URL en ingles son la practica comun aunque el contenido este en
@@ -187,6 +187,11 @@ Reglas de seguridad:
 - Piezas: `.card`, `.icon-badge`, `.chip`, `.tag-seccion`, `.fact`, `.metric`,
   `.avatar`, `.team-card__*`, `.agenda-item`, `.agenda-fecha` (con
   `data-tono="green|amber"`).
+- Formularios (`.form`, `.form__row`, `.field`, `.field__label`,
+  `.field__control`, `.checkbox-row`, `.form__note`, `.form__actions`):
+  campos con borde `--line`, radio 12px y foco con anillo de `--acento-suave`.
+  El estado invalido usa `:user-invalid` con `--error`/`--error-suave`, sin
+  JavaScript.
 
 `.card-grid` sin modificador es una sola columna con `gap: 22px`: es el
 contenedor de la agenda en la portada. `.fact-grid` es de dos columnas y sirve
@@ -234,6 +239,12 @@ para no tocar 1800 lineas de CSS por un cambio cosmetico.
 
 ## Pendiente (segunda mitad del proyecto)
 
-`/es/impact`, `/es/projects` y `/es/news` estan como placeholder con el
-componente `UnderConstruction`, y `/es/join` funciona con contacto directo
-mientras no exista el formulario de voluntariado.
+`/es/impact`, `/es/projects` y `/es/news` ya son paginas reales sobre la misma
+base de diseno. Los numeros de Impacto se completan con el informe social del
+grupo y el catalogo de Proyectos con lo que la jefatura confirme; hasta
+entonces se muestran marcadores de «por confirmar».
+
+`/es/join` tiene los dos formularios (inscripcion y voluntariado) ya
+construidos en `components/recruitment-forms.tsx`. Envían al endpoint privado
+`POST /api/recruitment`, que valida y almacena las solicitudes en Supabase. La
+configuración y la migración viven en `docs/supabase.md`.

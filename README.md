@@ -12,10 +12,25 @@ Las rutas llevan el idioma adelante: `/` redirige a `/es`.
 | `/es/about`         | Nuestro Grupo (historia, mision, Promesa y Ley, equipo) |
 | `/es/sections`      | Manada, Tropa, Wak y Comunidad                          |
 | `/es/join`          | Como inscribirse y contacto                             |
+| `/es/impact`        | Impacto con datos abiertos del grupo                    |
+| `/es/projects`      | Proyectos, empezando por la Banda                       |
+| `/es/news`          | Comunicados para las familias                           |
 | `/es/design-system` | Guia de estilo viva para el resto del equipo            |
-| `/es/impact`, `/es/projects`, `/es/news` | Placeholder: segunda mitad del proyecto |
 
 El diseno se documenta en [`docs/design-system.md`](docs/design-system.md).
+
+## Documentacion
+
+| Archivo | Para que sirve |
+| ------- | -------------- |
+| [`docs/technical-rules.md`](docs/technical-rules.md) | Reglas de ramas, convenciones y validacion |
+| [`docs/design-system.md`](docs/design-system.md) | Color, tipografia, componentes y ritmo |
+| [`docs/contenido-pendiente.md`](docs/contenido-pendiente.md) | Que datos faltan y quien los aporta |
+| [`docs/mapeo-respuestas.md`](docs/mapeo-respuestas.md) | Cada respuesta del grupo y donde quedo en el codigo |
+| [`docs/mantenimiento.md`](docs/mantenimiento.md) | Quien mantiene el sitio al terminar el TCU y por que sin panel administrativo |
+| [`docs/guia-de-edicion.md`](docs/guia-de-edicion.md) | Guia para el grupo: editar el contenido sin programar |
+| [`docs/supabase.md`](docs/supabase.md) | Backend: tablas, permisos, migraciones y acceso al portal |
+| [`docs/project-proposal.md`](docs/project-proposal.md) | Propuesta y alcance del TCU |
 
 ## Textos e idiomas
 
@@ -44,7 +59,7 @@ Al escribir paginas nuevas hay que importar `Link` desde `@/i18n/navigation`
 
 ## Requisitos locales
 
-- Node.js 20 LTS o superior
+- Node.js 22.13 o superior
 - pnpm 11 o superior
 - Proyecto de Supabase creado cuando se habiliten los modulos que lo necesiten
 
@@ -71,10 +86,12 @@ Copy-Item .env.example .env.local
 Variables previstas:
 
 - `NEXT_PUBLIC_SITE_URL`: dominio publico del sitio. De ahi salen `metadataBase`, el sitemap y `robots.txt`. Si queda vacia se usa `http://localhost:3000`, asi que hay que definirla antes de publicar.
-- `NEXT_PUBLIC_SUPABASE_URL`: URL publica del proyecto Supabase.
-- `NEXT_PUBLIC_SUPABASE_ANON_KEY`: llave publica anonima del proyecto Supabase.
+- `SUPABASE_URL`: URL del proyecto usada por el backend.
+- `SUPABASE_SECRET_KEY`: clave secreta usada exclusivamente por el backend para guardar formularios. Nunca debe usar el prefijo `NEXT_PUBLIC_`.
+- `NEXT_PUBLIC_SUPABASE_URL` y `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`: URL y clave publicable. El portal de encargados usa la clave publicable desde el servidor para comprobar la clave de acceso contra Supabase Auth.
+- `PORTAL_SESSION_SECRET`: cadena aleatoria de al menos 32 caracteres con la que se firma la cookie de sesion del portal. Cambiarla cierra todas las sesiones abiertas.
 
-Las variables de Supabase pueden quedar vacias mientras solo se trabaje en la base del repositorio. La app no implementa todavia autenticacion, tablas, politicas RLS ni almacenamiento final.
+Para activar los formularios y el portal de encargados también se deben ejecutar las migraciones documentadas en [`docs/supabase.md`](docs/supabase.md).
 
 ## Desarrollo
 
@@ -113,6 +130,8 @@ git switch main
 
 ## Estado actual
 
-Estan implementadas las pantallas de la primera mitad del proyecto colaborativo (encabezado, pie, base de diseno, Inicio, Nuestro Grupo, Secciones y Unete) con contenido estatico servido desde el diccionario de i18n. Siguen pendientes: Impacto con datos abiertos, Proyectos, Comunicados, el formulario de voluntariado, el panel administrativo, la galeria, la autenticacion y la carga de imagenes.
+Estan implementadas Inicio, Nuestro Grupo, Secciones, Unete, Impacto, Proyectos y Comunicados. Los formularios de inscripción y voluntariado guardan sus solicitudes privadas en Supabase cuando se configuran las variables y la migración. Los numeros de Impacto y el catalogo de Proyectos se completan con datos verificables del grupo a medida que la jefatura los confirma (ver `docs/contenido-pendiente.md`). Siguen pendientes: la galeria, la autenticacion y la carga de imagenes.
+
+El **panel administrativo queda fuera del TCU** por decision explicita: el mantenimiento posterior se resuelve con documentacion y capacitacion. Ver [`docs/mantenimiento.md`](docs/mantenimiento.md).
 
 Las fotos de referencia se sirven desde Unsplash mientras no exista el banco de imagenes propio en Supabase Storage. El logo es el emblema de la Asociacion de Guias y Scouts de Costa Rica (`public/logo.webp`).

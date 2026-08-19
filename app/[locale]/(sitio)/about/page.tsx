@@ -350,7 +350,7 @@ export default async function AboutPage({ params }: Props) {
                     {t("about.venue.contactTitle")}
                   </h3>
                   <p className="contact-item__texto">
-                    <PendingValue />
+                    <a href={CONTACT.emailHref}>{t("content.contact.email")}</a>
                   </p>
                 </div>
               </li>

@@ -38,7 +38,7 @@
       "title": "Formamos líderes que cuidan su comunidad y su planeta",
       "lead": "Acompañamos a niñas, niños y jóvenes de 6 a 21 años en Esparza, con educación no formal, vida al aire libre y la Banda Artística Juvenil de Esparzol.",
       "ctaJoin": "Quiero ser parte",
-      "ctaAbout": "Conocé el grupo",
+      "ctaAbout": "Conoce el grupo",
       "imageAlt": "Personas jóvenes en una actividad scout al aire libre",
       "statAges": "años de edad",
       "statAgesValue": "6-21",
@@ -86,7 +86,7 @@
     },
     "closing": {
       "title": "¿Listos para la aventura?",
-      "lead": "Vení a una reunión, conocé cómo trabajamos y decidí con calma.",
+      "lead": "Ven a una reunión, conoce cómo trabajamos y decide con calma.",
       "ctaJoin": "Quiero inscribirme",
       "ctaAbout": "Conocer el grupo"
     }
@@ -142,12 +142,12 @@
     "venue": {
       "eyebrow": "Dónde estamos",
       "title": "La sede del Grupo 35 Esparzol",
-      "lead": "Nos reunimos todos los domingos en Esparza, Puntarenas. Vení un domingo, conocé el lugar y preguntá lo que haga falta.",
+      "lead": "Nos reunimos todos los domingos en Esparza, Puntarenas. Ven un domingo, conoce el lugar y pregunta lo que haga falta.",
       "addressTitle": "Dirección",
       "meetingsTitle": "Día y hora de reunión",
       "phoneTitle": "Teléfono",
       "contactTitle": "Correo",
-      "cta": "Vení a conocernos",
+      "cta": "Ven a conocernos",
       "imageAlt": "Reunión de grupo al aire libre"
     }
   },
@@ -170,7 +170,7 @@
       "colUnit": "Se organiza en",
       "colFocus": "Énfasis",
       "cta": "Quiero inscribir a alguien",
-      "help": "¿Tenés dudas sobre cuál sección le toca? Llamanos y te orientamos."
+      "help": "¿Tienes dudas sobre cuál sección le toca? Llámanos y te orientamos."
     }
   },
 
@@ -179,8 +179,8 @@
     "metaDescription": "Cómo inscribirse en el Grupo 35 Esparzol de Guías y Scouts: pasos, requisitos, secciones por edad y contacto en Esparza, Puntarenas.",
     "hero": {
       "eyebrow": "Inscripciones",
-      "title": "Sumate al grupo",
-      "lead": "Llamanos, vení un domingo a la sede y decidí con calma.",
+      "title": "Únete al grupo",
+      "lead": "Llámanos, ven un domingo a la sede y decide con calma.",
       "imageAlt": "Jóvenes scouts armando una construcción con cuerdas y varas"
     },
     "steps": {
@@ -188,11 +188,11 @@
       "title": "Tres pasos",
       "items": [
         {
-          "title": "Contactanos",
-          "detail": "Llamanos y contanos la edad de la persona interesada: te decimos a qué sección le toca y cuándo pasar."
+          "title": "Contáctanos",
+          "detail": "Llámanos y cuéntanos la edad de la persona interesada: te decimos a qué sección le toca y cuándo pasar."
         },
         {
-          "title": "Vení a una reunión",
+          "title": "Ven a una reunión",
           "detail": "Invitamos a la niña o el niño a las reuniones de los domingos, para que conozcan el lugar, la sección y al equipo de dirigentes."
         },
         {
@@ -217,7 +217,7 @@
     "contact": {
       "eyebrow": "Contacto",
       "title": "Hablemos",
-      "lead": "El formulario de inscripción en línea forma parte de la segunda mitad del proyecto. Mientras tanto la atención es por teléfono y en persona, los domingos en la sede.",
+      "lead": "La atención es por teléfono y en persona, los domingos en la sede.",
       "phoneTitle": "Teléfono",
       "meetingsTitle": "Día y hora de reunión",
       "venueTitle": "Dónde nos reunimos",
@@ -231,6 +231,78 @@
         "Muchas ganas"
       ],
       "checklistNote": "La primera visita no tiene costo ni compromiso. Una persona adulta responsable debe acompañar a quienes son menores de edad."
+    }
+  },
+
+  "forms": {
+    "eyebrow": "Formularios",
+    "title": "Únete con un mensaje",
+    "lead": "Elegí el formulario según tu caso. La solicitud se guarda de forma privada para que la Junta de Grupo pueda darle seguimiento.",
+    "inscription": {
+      "eyebrow": "Inscripción",
+      "title": "Personas menores",
+      "lead": "Llená los datos de la persona menor y de la madre, el padre o la persona encargada.",
+      "fields": {
+        "minorName": "Nombre de la persona menor",
+        "birthDate": "Fecha de nacimiento",
+        "guardian": "Madre, padre o persona encargada",
+        "phone": "Teléfono de contacto",
+        "email": "Correo de la persona encargada",
+        "section": "Sección de interés",
+        "message": "¿Algo más que quieras contarnos?"
+      },
+      "options": {
+        "notSure": "Todavía no lo sabemos"
+      },
+      "consent": "Soy la madre, el padre o la persona encargada de la persona menor y autorizo que el grupo me contacte para coordinar la visita.",
+      "privacyNote": "Los datos se guardan de forma privada y solo se usan para contactar a la persona encargada y coordinar el proceso de inscripción. No se publican en el sitio.",
+      "submit": "Enviar solicitud"
+    },
+    "volunteer": {
+      "eyebrow": "Voluntariado",
+      "title": "Personas adultas",
+      "lead": "Cuéntanos quién eres y por qué quieres sumarte: la solicitud llega a la Junta de Grupo.",
+      "fields": {
+        "name": "Nombre completo",
+        "phone": "Teléfono de contacto",
+        "email": "Correo",
+        "role": "¿En qué te gustaría colaborar?",
+        "why": "¿Por qué deseas formar parte de Guías y Scouts?"
+      },
+      "options": {
+        "default": "Elegí una opción",
+        "leader": "Como persona dirigente",
+        "collab": "Con colaboraciones puntuales",
+        "band": "En la Banda Artística Juvenil",
+        "notSure": "Todavía no lo sé"
+      },
+      "consent": "Autorizo que la Junta de Grupo me contacte para coordinar mi participación.",
+      "juntaNote": "Las solicitudes llegan a la Junta de Grupo.",
+      "privacyNote": "Los datos se guardan de forma privada y solo se usan para que la Junta de Grupo dé seguimiento a la solicitud. No se publican en el sitio.",
+      "submit": "Enviar solicitud"
+    },
+    "status": {
+      "submitting": "Enviando…",
+      "success": "¡Listo! Recibimos tu solicitud y la Junta de Grupo podrá darle seguimiento.",
+      "error": "No pudimos guardar la solicitud. Revisá los datos e intentá de nuevo."
+    },
+    "mail": {
+      "subjectInscription": "Solicitud de inscripción al Grupo 35 Esparzol",
+      "subjectVolunteer": "Solicitud de voluntariado al Grupo 35 Esparzol",
+      "greeting": "Hola, este es un mensaje preparado desde el sitio del Grupo 35:",
+      "labels": {
+        "minorName": "Nombre de la persona menor",
+        "birthDate": "Fecha de nacimiento",
+        "guardian": "Madre, padre o persona encargada",
+        "phone": "Teléfono de contacto",
+        "email": "Correo",
+        "section": "Sección de interés",
+        "message": "Mensaje",
+        "name": "Nombre completo",
+        "role": "Colaboración",
+        "why": "Por qué quiere formar parte",
+        "consent": "Consentimiento"
+      }
     }
   },
 
@@ -268,10 +340,10 @@
     "contentDetail": "El sitio no publica datos inventados. Fechas, cantidades, direcciones, contactos y nombres se marcan con <code>PendingValue</code> o <code>PendingNote</code> hasta que el grupo los confirme. La lista completa está en <code>docs/contenido-pendiente.md</code>.",
     "splitEyebrowDone": "Reparto del trabajo",
     "splitTitleDone": "Mitad 1 · lista",
-    "splitTextDone": "Encabezado y pie · Base de diseño<br></br>Inicio · Nuestro Grupo · Secciones · Únete",
+    "splitTextDone": "Encabezado y pie · Base de diseño<br></br>Inicio · Nuestro Grupo · Secciones · Únete<br></br>Impacto · Proyectos · Comunicados",
     "splitEyebrowPending": "Pendiente",
     "splitTitlePending": "Mitad 2",
-    "splitTextPending": "Impacto (datos abiertos) · Proyectos<br></br>Comunicados · Formulario de voluntariado"
+    "splitTextPending": "Formularios (esperan el correo institucional)<br></br>Datos del informe social"
   },
 
   "underConstruction": {
@@ -281,23 +353,82 @@
 
   "impact": {
     "metaTitle": "Impacto",
-    "metaDescription": "Datos abiertos del trabajo del Grupo 35 Esparzol. Página en construcción.",
-    "title": "Impacto: en construcción",
-    "description": "Aquí se van a publicar, con datos abiertos, los resultados del trabajo del grupo: presentaciones de la Banda Artística Juvenil, horas de servicio y acciones de cuido del ambiente. Corresponde a la segunda mitad del proyecto colaborativo y se construye sobre esta misma base de diseño."
+    "metaDescription": "Resultados del trabajo del Grupo 35 Esparzol con datos verificables: presentaciones de la Banda Artística Juvenil, horas de servicio y acciones de cuido del ambiente.",
+    "hero": {
+      "eyebrow": "Datos abiertos",
+      "title": "Lo que hacemos, con números",
+      "lead": "Publicamos los resultados del trabajo del grupo con datos verificables. Lo que todavía no está confirmado se muestra «por confirmar» en lugar de inventar cifras.",
+      "imageAlt": "Personas jóvenes del grupo durante una actividad"
+    },
+    "axes": [
+      {
+        "eyebrow": "Cultura y comunidad",
+        "title": "Presentaciones de la Banda",
+        "lead": "La Banda Artística Juvenil de Esparzol lleva el nombre de la comunidad a desfiles dentro y fuera de Esparza.",
+        "facts": [
+          { "label": "Presentaciones realizadas" },
+          { "label": "Lugares alcanzados" }
+        ]
+      },
+      {
+        "eyebrow": "Servicio",
+        "title": "Horas de servicio",
+        "lead": "Las personas del grupo dedican su tiempo, de forma libre y voluntaria, al servicio de la comunidad.",
+        "facts": [
+          { "label": "Horas de servicio acumuladas" }
+        ]
+      },
+      {
+        "eyebrow": "Cuido del ambiente",
+        "title": "Acciones ambientales",
+        "lead": "El cuido del ambiente es uno de los valores del grupo y su trabajo se alinea con los ODS 4, 13 y 17.",
+        "facts": [
+          { "label": "Acciones de cuido del ambiente" }
+        ]
+      }
+    ],
+    "note": "Fuente: informe social del grupo. Los números se publican apenas la jefatura los confirme y se actualizan en cada revisión del sitio."
   },
 
   "projects": {
     "metaTitle": "Proyectos",
-    "metaDescription": "Proyectos educativos y comunitarios del Grupo 35 Esparzol. Página en construcción.",
-    "title": "Proyectos: en construcción",
-    "description": "Aquí va a vivir el catálogo de proyectos del grupo, empezando por la Banda Artística Juvenil de Esparzol, con su estado, sus responsables y sus resultados. Corresponde a la segunda mitad del proyecto colaborativo."
+    "metaDescription": "Catálogo de proyectos educativos y comunitarios del Grupo 35 Esparzol, empezando por la Banda Artística Juvenil de Esparzol.",
+    "hero": {
+      "eyebrow": "Lo que construimos",
+      "title": "Proyectos del grupo",
+      "lead": "Los proyectos en los que el grupo invierte su tiempo, con su estado, sus responsables y sus resultados.",
+      "imageAlt": "Personas voluntarias del grupo reunidas al aire libre"
+    },
+    "status": {
+      "active": "En marcha",
+      "done": "Terminado"
+    },
+    "items": [
+      {
+        "name": "Banda Artística Juvenil de Esparzol",
+        "status": "active",
+        "year": "2024",
+        "lead": "Dirección de José Campos Zamora, con todo el grupo",
+        "result": "Presentaciones en desfiles dentro y fuera de Esparza, que llevan el nombre de la comunidad a otros cantones.",
+        "detail": "El proyecto educativo del grupo tiene enfoque musical: la Banda ensaya, se presenta y alrededor de ella se trabaja el rescate del patrimonio inmaterial y las buenas prácticas."
+      }
+    ],
+    "pendingNote": "El catálogo se completa con los proyectos que el grupo vaya confirmando."
   },
 
   "news": {
     "metaTitle": "Comunicados",
-    "metaDescription": "Comunicados y calendario del Grupo 35 Esparzol. Página en construcción.",
-    "title": "Comunicados: en construcción",
-    "description": "Aquí se van a publicar los comunicados para las familias, el calendario de actividades y los avisos de cada sección. Corresponde a la segunda mitad del proyecto colaborativo."
+    "metaDescription": "Comunicados y avisos para las familias del Grupo 35 Esparzol: cambios de horario, listas de campamento y avisos de cada sección.",
+    "hero": {
+      "eyebrow": "Avisos para las familias",
+      "title": "Comunicados",
+      "lead": "Los avisos del grupo, públicos para cualquiera que los necesite: cambios de horario, listas de qué llevar y avisos de cada sección.",
+      "imageAlt": "Reunión de grupo al aire libre"
+    },
+    "emptyTitle": "Todavía no hay comunicados publicados",
+    "emptyLead": "Los avisos aparecen aquí apenas la jefatura los confirme. Mientras tanto, la vía de contacto sigue siendo el teléfono y la reunión de los domingos.",
+    "items": [],
+    "note": "El calendario de actividades vivirá en esta página cuando el grupo maneje uno."
   },
 
   "notFound": {
@@ -330,7 +461,8 @@
       "meetings": "Todos los domingos, de 10 de la mañana a 12 mediodía.",
       "meetingsNote": "No hay reuniones desde el 15 de diciembre hasta inicios de enero.",
       "phone": "6010 1502",
-      "phoneNote": "Responde la jefatura de grupo."
+      "phoneNote": "Responde la jefatura de grupo.",
+      "email": "grupo35@siemprelistos.org"
     },
 
     "milestones": [
@@ -514,5 +646,61 @@
       { "name": "Crema", "use": "Fondo general" },
       { "name": "Gris texto", "use": "Párrafos y apoyo" }
     ]
+  },
+
+  "portal": {
+    "login": {
+      "eyebrow": "Portal de encargados",
+      "title": "Acceso de la Junta de Grupo",
+      "lead": "Entrá con el correo con el que te dieron acceso. Desde aquí se ven las solicitudes de inscripción y de voluntariado que llegan del sitio.",
+      "help": "Si no podés entrar, pedile a otra persona encargada que revise tu cuenta en el portal.",
+      "backToSite": "Volver al sitio",
+      "submit": "Entrar",
+      "submitting": "Entrando…",
+      "fields": {
+        "email": "Correo",
+        "password": "Clave"
+      },
+      "errors": {
+        "invalid": "Revisá el correo y la clave: falta algún dato o el formato no es válido.",
+        "unauthorized": "No pudimos entrar con esos datos. Si tu acceso fue desactivado, pedile a otra persona encargada que lo active.",
+        "error": "No pudimos completar el acceso. Intentá de nuevo en un momento."
+      }
+    },
+    "shell": {
+      "name": "Portal del Grupo 35",
+      "tagline": "Seguimiento de solicitudes",
+      "signOut": "Salir",
+      "skipToContent": "Ir al contenido del portal"
+    },
+    "nav": {
+      "label": "Secciones del portal",
+      "home": "Inicio",
+      "submissions": "Solicitudes",
+      "users": "Personas encargadas"
+    },
+    "home": {
+      "eyebrow": "Portal de encargados",
+      "title": "Resumen",
+      "lead": "Esto es lo que está esperando respuesta hoy.",
+      "unavailable": "Sin dato",
+      "scopeNote": "El portal muestra las solicitudes y quién puede entrar. No lleva historial de conversaciones ni recordatorios: eso quedó fuera de alcance de este sprint.",
+      "cards": {
+        "action": "Ver solicitudes",
+        "minor": {
+          "label": "Inscripciones sin atender",
+          "detail": "Solicitudes de inscripción de personas menores en estado pendiente."
+        },
+        "volunteer": {
+          "label": "Voluntariados sin atender",
+          "detail": "Personas adultas que se ofrecieron a colaborar y siguen en estado pendiente."
+        },
+        "users": {
+          "label": "Personas encargadas",
+          "detail": "Quiénes pueden entrar al portal. Se agregan, se modifican y se desactivan desde aquí.",
+          "action": "Ver personas encargadas"
+        }
+      }
+    }
   }
 }

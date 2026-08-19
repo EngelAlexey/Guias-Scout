@@ -9,6 +9,10 @@ import {
   IconPhone,
 } from "@/components/icons";
 import { PendingValue } from "@/components/pending";
+import {
+  InscripcionForm,
+  VoluntariadoForm,
+} from "@/components/recruitment-forms";
 import { Link } from "@/i18n/navigation";
 import { CONTACT, PAGE_IMAGES, SECTION_IDS } from "@/lib/content/site";
 
@@ -134,6 +138,21 @@ export default async function JoinPage({ params }: Props) {
         </div>
       </section>
 
+      <section className="section section--white section--bordered">
+        <div className="container">
+          <p className="eyebrow">{t("forms.eyebrow")}</p>
+          <h2 className="title-md section-head__title">{t("forms.title")}</h2>
+          <p className="lead" style={{ marginTop: 12 }}>
+            {t("forms.lead")}
+          </p>
+
+          <div className="split" style={{ marginTop: 28 }}>
+            <InscripcionForm />
+            <VoluntariadoForm />
+          </div>
+        </div>
+      </section>
+
       <section className="section section--cream">
         <div className="container split">
           <div>
@@ -202,7 +221,7 @@ export default async function JoinPage({ params }: Props) {
                     {t("join.contact.emailTitle")}
                   </h3>
                   <p className="contact-item__texto">
-                    <PendingValue />
+                    <a href={CONTACT.emailHref}>{t("content.contact.email")}</a>
                   </p>
                 </div>
               </li>
