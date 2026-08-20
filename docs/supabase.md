@@ -81,7 +81,12 @@ correrla dos veces no rompe nada.
 | `full_name` | Nombre que se muestra en el encabezado del portal |
 | `email` | Correo con el que entra. Se guarda en minúsculas y es único |
 | `is_active` | En `false` la persona conserva su fila pero no puede entrar |
+| `must_change_password` | En `true` la persona entra pero solo puede cambiar su clave |
 | `created_at` / `updated_at` | Fechas de control |
+
+`must_change_password` la agrega
+`supabase/migrations/202608210001_portal_users_temporary_password.sql`, que se
+corre igual que las anteriores.
 
 La tabla tiene RLS activo y ninguna política pública: `anon` y `authenticated`
 no tienen ningún permiso. Solo el backend con la clave secreta la lee o la
@@ -93,13 +98,16 @@ solicitudes, para saber quién movió el estado por última vez, y dos índices 
 
 ### Cómo entra la primera persona
 
+Solo la primera vez hay que hacerlo a mano, porque todavía no hay nadie que
+pueda entrar al portal para agregar a alguien:
+
 1. En **Authentication > Users** del dashboard, **Add user** con su correo y una
-   clave temporal.
+   clave.
 2. En **SQL Editor**, insertar su fila en el portal:
 
    ```sql
-   insert into public.portal_users (full_name, email)
-   values ('Nombre Apellido', 'correo@ejemplo.org');
+   insert into public.portal_users (full_name, email, must_change_password)
+   values ('Nombre Apellido', 'correo@ejemplo.org', false);
    ```
 
 3. Entrar a `/es/portal/login` con ese correo y esa clave. En esa primera
@@ -109,13 +117,30 @@ Las dos cosas son necesarias: la cuenta de Auth valida la clave y la fila de
 `portal_users` autoriza el acceso. Si falta cualquiera de las dos, el portal
 responde lo mismo que ante una clave equivocada.
 
+### Después de la primera, todo desde el portal
+
+Agregar a alguien desde `/es/portal/usuarios` ya no necesita el dashboard: el
+portal crea la cuenta en Supabase Auth con una clave temporal, la muestra una
+sola vez en pantalla y deja la fila con `must_change_password` en `true`. Esa
+persona entra con la temporal y el portal no la deja pasar hasta que elija una
+clave propia.
+
+**Restablecer clave** en la lista hace lo mismo para quien olvidó la suya o
+quedó sin cuenta de Auth, que es el caso de las filas creadas antes de esta
+migración.
+
+El portal usa la API de administración de Supabase Auth (`auth.admin`), que
+funciona con la clave secreta desde el servidor. Ninguna clave viaja al
+navegador salvo la temporal recién generada, que se muestra una vez y no se
+guarda en texto plano en ningún lado.
+
 ### Por qué clave y no enlace mágico
 
 El enlace mágico necesita un servidor de correo propio: el correo integrado de
 Supabase está limitado a unos pocos envíos por hora y avisa que no es para
 producción. El grupo todavía no tiene ese servicio configurado. Con clave, la
 jefatura no depende de que llegue un correo para entrar, y agregar a alguien es
-crear su cuenta y su fila.
+un solo paso desde el portal.
 
 Queda anotado para más adelante: si el grupo llega a tener correo saliente
 propio, cambiar a enlace mágico solo toca la ruta `/api/portal/login` y el

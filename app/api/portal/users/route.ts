@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
 
+import { createAuthUser, deleteAuthUser } from "@/lib/portal/auth-users";
+import { createTemporaryPassword } from "@/lib/portal/passwords";
 import { getPortalSession } from "@/lib/portal/session";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 
@@ -13,6 +15,8 @@ type PortalUserRow = {
   email: string;
   is_active: boolean;
   created_at: string;
+  auth_user_id: string | null;
+  must_change_password: boolean;
 };
 
 type PortalUserUpdate = {
@@ -99,6 +103,8 @@ function toItem(row: PortalUserRow) {
     email: row.email,
     isActive: row.is_active === true,
     createdAt: row.created_at,
+    hasAccount: row.auth_user_id !== null,
+    mustChangePassword: row.must_change_password === true,
   };
 }
 
@@ -114,7 +120,9 @@ export async function GET() {
     const supabase = createSupabaseServerClient();
     const { data, error } = await supabase
       .from("portal_users")
-      .select("id, full_name, email, is_active, created_at")
+      .select(
+        "id, full_name, email, is_active, created_at, auth_user_id, must_change_password",
+      )
       .order("full_name", { ascending: true });
 
     if (error) {
@@ -158,19 +166,36 @@ export async function POST(request: Request) {
 
     if (existing) return conflict("email_taken");
 
+    const temporaryPassword = createTemporaryPassword();
+    const authUserId = await createAuthUser(supabase, email, temporaryPassword);
+
     const { data, error } = await supabase
       .from("portal_users")
-      .insert({ full_name: fullName, email })
+      .insert({
+        full_name: fullName,
+        email,
+        auth_user_id: authUserId,
+        must_change_password: true,
+      })
       .select("id")
       .single();
 
     if (error) {
+      try {
+        await deleteAuthUser(supabase, authUserId);
+      } catch (cleanupError) {
+        console.error("Portal user cleanup failed", cleanupError);
+      }
+
       if (error.code === UNIQUE_VIOLATION) return conflict("email_taken");
       logFailure("Portal user creation failed", error);
       return storageError();
     }
 
-    return NextResponse.json({ ok: true, id: data.id as string }, { status: 201 });
+    return NextResponse.json(
+      { ok: true, id: data.id as string, temporaryPassword },
+      { status: 201 },
+    );
   } catch (error) {
     console.error("Portal user creation unavailable", error);
     return serviceUnavailable();
