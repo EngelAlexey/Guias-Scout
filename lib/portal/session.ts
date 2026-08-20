@@ -15,6 +15,8 @@ export type PortalSession = {
   id: string;
   email: string;
   fullName: string;
+  authUserId: string | null;
+  mustChangePassword: boolean;
 };
 
 type TokenPayload = {
@@ -99,7 +101,7 @@ export async function getPortalSession(): Promise<PortalSession | null> {
     const supabase = createSupabaseServerClient();
     const { data, error } = await supabase
       .from("portal_users")
-      .select("id, email, full_name, is_active")
+      .select("id, email, full_name, is_active, auth_user_id, must_change_password")
       .eq("id", payload.sub)
       .maybeSingle();
 
@@ -117,6 +119,8 @@ export async function getPortalSession(): Promise<PortalSession | null> {
       id: data.id as string,
       email: data.email as string,
       fullName: data.full_name as string,
+      authUserId: (data.auth_user_id as string | null) ?? null,
+      mustChangePassword: data.must_change_password === true,
     };
   } catch (error) {
     console.error("Portal session unavailable", error);

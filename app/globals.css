@@ -2699,10 +2699,8 @@ select.field__control {
 
 .tabla-portal__vos {
   color: var(--purple);
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 700;
 }
 
 .tabla-portal__aviso {
@@ -2843,4 +2841,69 @@ select.field__control {
   cursor: not-allowed;
   opacity: 0.55;
   transform: none;
+}
+
+.portal__clave {
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.portal__clave:hover {
+  color: var(--purple);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.portal-clave {
+  display: grid;
+  gap: 12px;
+  padding: 18px 20px;
+  border: 1px solid var(--purple-border);
+  border-radius: var(--radio-card);
+  background: var(--purple-soft);
+}
+
+.portal-clave__titulo {
+  font-family: var(--font-titulo);
+  font-size: 1.0625rem;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.portal-clave__texto {
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.6;
+  max-width: 62ch;
+}
+
+.portal-clave__datos {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.portal-clave__datos dt {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.portal-clave__datos dd {
+  margin: 4px 0 0;
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 600;
+  word-break: break-word;
+}
+
+.portal-clave__valor {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
 }
