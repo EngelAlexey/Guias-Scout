@@ -126,8 +126,8 @@ pedir que elija una propia.
 
 ### Cambiar la propia clave
 
-Desde **Cambiar clave**, arriba a la derecha. Pide la clave actual y la nueva dos
-veces. Quien entra con una temporal va derecho a esa pantalla y no puede hacer otra
+Desde **Cambiar mi clave**, en la fila propia de `/es/portal/usuarios`, la que
+esta marcada con **(Tu)**. Pide la clave actual y la nueva dos veces. Quien entra con una temporal va derecho a esa pantalla y no puede hacer otra
 cosa hasta cambiarla.
 
 ### Modificar
