@@ -3,6 +3,8 @@
 import { useCallback, useEffect, useState, type FormEvent } from "react";
 import { useTranslations } from "next-intl";
 
+import { Link } from "@/i18n/navigation";
+
 type PortalUser = {
   id: string;
   fullName: string;
@@ -750,6 +752,15 @@ export function PortalUsersManager({
                                     : t("activate.action")}
                                 </button>
                               )}
+
+                              {isSelf ? (
+                                <Link
+                                  className="btn btn--ghost btn--sm"
+                                  href="/portal/clave"
+                                >
+                                  {t("changeOwn")}
+                                </Link>
+                              ) : null}
 
                               {isSelf && user.isActive ? (
                                 <span className="tabla-portal__aviso">
