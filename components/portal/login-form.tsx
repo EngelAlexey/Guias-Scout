@@ -5,7 +5,12 @@ import { useTranslations } from "next-intl";
 
 import { useRouter } from "@/i18n/navigation";
 
-type Status = "idle" | "submitting" | "invalid" | "unauthorized" | "error";
+type Status =
+  | "idle"
+  | "submitting"
+  | "invalid_request"
+  | "unauthorized"
+  | "unexpected";
 
 export function PortalLoginForm() {
   const t = useTranslations("portal.login");
@@ -37,15 +42,17 @@ export function PortalLoginForm() {
       }
 
       if (response.status === 401) setStatus("unauthorized");
-      else if (response.status === 400) setStatus("invalid");
-      else setStatus("error");
+      else if (response.status === 400) setStatus("invalid_request");
+      else setStatus("unexpected");
     } catch {
-      setStatus("error");
+      setStatus("unexpected");
     }
   }
 
   const message =
-    status === "unauthorized" || status === "invalid" || status === "error"
+    status === "unauthorized" ||
+    status === "invalid_request" ||
+    status === "unexpected"
       ? t(`errors.${status}`)
       : "";
 
