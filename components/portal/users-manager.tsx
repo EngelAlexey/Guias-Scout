@@ -222,6 +222,10 @@ export function PortalUsersManager({
 
   async function onSaveEdit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    await saveEdit();
+  }
+
+  async function saveEdit() {
     if (!editingId) return;
 
     const { errors, fullName, email } = validate(editName, editEmail);
@@ -505,11 +509,11 @@ export function PortalUsersManager({
 
                         <td data-label={t("fields.actions")}>
                           {editing ? (
-                            <div className="portal-usuarios__acciones">
+                            <div className="portal-usuarios__acciones" key="edicion">
                               <button
                                 className="btn btn--sm"
-                                form={EDIT_FORM_ID}
-                                type="submit"
+                                type="button"
+                                onClick={() => void saveEdit()}
                                 disabled={busy}
                               >
                                 {busy ? t("edit.saving") : t("edit.save")}
@@ -524,7 +528,7 @@ export function PortalUsersManager({
                               </button>
                             </div>
                           ) : confirming ? (
-                            <div className="portal-usuarios__confirmar">
+                            <div className="portal-usuarios__confirmar" key="confirmar">
                               <p className="portal-usuarios__pregunta">
                                 {t("deactivate.question", {
                                   name: user.fullName,
@@ -552,7 +556,7 @@ export function PortalUsersManager({
                               </div>
                             </div>
                           ) : (
-                            <div className="portal-usuarios__acciones">
+                            <div className="portal-usuarios__acciones" key="acciones">
                               <button
                                 className="btn btn--ghost btn--sm"
                                 type="button"
@@ -602,7 +606,11 @@ export function PortalUsersManager({
               </table>
             </div>
 
-            <form id={EDIT_FORM_ID} onSubmit={onSaveEdit} noValidate />
+            <form id={EDIT_FORM_ID} onSubmit={onSaveEdit} noValidate>
+              <button className="visually-hidden" type="submit" tabIndex={-1}>
+                {t("edit.save")}
+              </button>
+            </form>
           </>
         ) : null}
       </section>
