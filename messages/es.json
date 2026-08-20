@@ -672,7 +672,6 @@
     "shell": {
       "name": "Portal del Grupo 35",
       "tagline": "Seguimiento de solicitudes",
-      "changePassword": "Cambiar clave",
       "signOut": "Salir",
       "skipToContent": "Ir al contenido del portal"
     },
@@ -758,6 +757,7 @@
         "action": "Reactivar",
         "working": "Reactivando…"
       },
+      "changeOwn": "Cambiar mi clave",
       "reset": {
         "action": "Restablecer clave",
         "question": "¿Restablecer la clave de {name}? La clave que use hoy deja de servir.",

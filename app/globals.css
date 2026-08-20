@@ -2843,19 +2843,6 @@ select.field__control {
   transform: none;
 }
 
-.portal__clave {
-  color: var(--muted);
-  font-size: 14px;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.portal__clave:hover {
-  color: var(--purple);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
 .portal-clave {
   display: grid;
   gap: 12px;
