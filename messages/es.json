@@ -21,13 +21,15 @@
     "projects": "Proyectos",
     "news": "Comunicados",
     "join": "Únete",
-    "designSystem": "Base de diseño"
+    "designSystem": "Base de diseño",
+    "portal": "Portal"
   },
 
   "layout": {
     "skipToContent": "Saltar al contenido",
     "mainNav": "Navegación principal",
     "openMenu": "Abrir menú",
+    "language": "Idioma",
     "closeMenu": "Cerrar menú",
     "breadcrumbSeparator": "·"
   },
@@ -662,9 +664,9 @@
         "password": "Clave"
       },
       "errors": {
-        "invalid": "Revisá el correo y la clave: falta algún dato o el formato no es válido.",
+        "invalid_request": "Revisá el correo y la clave: falta algún dato o el formato no es válido.",
         "unauthorized": "No pudimos entrar con esos datos. Si tu acceso fue desactivado, pedile a otra persona encargada que lo active.",
-        "error": "No pudimos completar el acceso. Intentá de nuevo en un momento."
+        "unexpected": "No pudimos completar el acceso. Intentá de nuevo en un momento."
       }
     },
     "shell": {
@@ -700,6 +702,93 @@
           "detail": "Quiénes pueden entrar al portal. Se agregan, se modifican y se desactivan desde aquí.",
           "action": "Ver personas encargadas"
         }
+      }
+    },
+    "users": {
+      "eyebrow": "Portal de encargados",
+      "title": "Personas encargadas",
+      "lead": "Quiénes pueden entrar al portal. Agregá a alguien nuevo, corregí sus datos o quitale el acceso a quien ya no está en la Junta.",
+      "scopeNote": "Todas las personas encargadas ven y hacen lo mismo dentro del portal: no hay roles ni permisos. Desactivar el acceso es el único control disponible.",
+      "fields": {
+        "name": "Nombre",
+        "email": "Correo",
+        "status": "Estado",
+        "actions": "Acciones"
+      },
+      "add": {
+        "title": "Agregar una persona encargada",
+        "note": "El correo tiene que ser el mismo con el que la persona va a entrar al portal.",
+        "submit": "Agregar",
+        "submitting": "Agregando…"
+      },
+      "list": {
+        "title": "Con acceso al portal",
+        "note": "La lista está ordenada por nombre.",
+        "caption": "Personas encargadas del portal, con su correo y su estado.",
+        "loading": "Cargando la lista…",
+        "retry": "Reintentar",
+        "empty": "Todavía no hay personas encargadas registradas.",
+        "you": "Vos"
+      },
+      "status": {
+        "active": "Activa",
+        "inactive": "Inactiva",
+        "inactiveNote": "Mientras esté inactiva no puede entrar al portal, aunque su clave siga sirviendo."
+      },
+      "edit": {
+        "action": "Modificar",
+        "save": "Guardar",
+        "saving": "Guardando…",
+        "cancel": "Cancelar",
+        "nameLabel": "Nombre de la persona encargada",
+        "emailLabel": "Correo de la persona encargada"
+      },
+      "deactivate": {
+        "action": "Desactivar",
+        "question": "¿Desactivar el acceso de {name}?",
+        "confirm": "Sí, desactivar",
+        "cancel": "No, dejarlo así",
+        "working": "Desactivando…",
+        "selfNote": "No podés desactivar tu propio acceso: pedíselo a otra persona encargada."
+      },
+      "activate": {
+        "action": "Reactivar",
+        "working": "Reactivando…"
+      },
+      "validation": {
+        "name": "Escribí el nombre completo, de 1 a 160 caracteres.",
+        "email": "Escribí un correo válido, por ejemplo persona@correo.com."
+      },
+      "feedback": {
+        "created": "{name} ya puede entrar al portal.",
+        "updated": "Guardamos los datos de {name}.",
+        "activated": "{name} vuelve a tener acceso al portal.",
+        "deactivated": "{name} ya no puede entrar al portal."
+      },
+      "errors": {
+        "invalid_request": "Revisá el nombre y el correo: falta algún dato o el formato no es válido.",
+        "unauthorized": "Tu sesión venció. Volvé a entrar al portal para seguir.",
+        "email_taken": "Ese correo ya está registrado en otra persona encargada.",
+        "self_deactivation": "No podés desactivar tu propio acceso: pedíselo a otra persona encargada.",
+        "not_found": "Esa persona ya no está en la lista. Actualizá la página.",
+        "storage_error": "No pudimos guardar el cambio. Intentá de nuevo en un momento.",
+        "service_unavailable": "El portal no está disponible en este momento. Intentá de nuevo más tarde.",
+        "network": "No pudimos conectarnos con el portal. Revisá tu conexión e intentá de nuevo.",
+        "unexpected": "Algo salió mal. Intentá de nuevo en un momento."
+      }
+    },
+    "statuses": {
+      "pending": "Pendiente",
+      "contacted": "Contactada",
+      "accepted": "Aceptada",
+      "rejected": "Rechazada",
+      "archived": "Archivada",
+      "help": {
+        "pending": "Llegó del sitio y todavía nadie la atendió.",
+        "contacted": "Alguien de la Junta ya se comunicó con la persona y espera respuesta.",
+        "accepted": "La solicitud siguió adelante: la persona queda inscrita o entra como voluntaria.",
+        "rejected": "La solicitud no sigue adelante y ya se le avisó a la persona.",
+        "archived": "Se descarta sin resolver: duplicada, de prueba o sin datos para responder."
       }
     }
   }
