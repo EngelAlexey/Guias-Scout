@@ -2828,6 +2828,11 @@ select.field__control {
   background: var(--purple-soft);
 }
 
+.nav-link--portal::after,
+.nav-link--portal:hover::after {
+  content: none;
+}
+
 .mobile-nav__portal {
   display: flex;
   align-items: center;
