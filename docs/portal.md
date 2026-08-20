@@ -29,7 +29,10 @@ Lo que el portal **no** hace (fuera de alcance):
   recordatorios ni asignacion de responsables.
 - Notificaciones por correo, exportaciones y busqueda avanzada.
 - Borrado permanente de personas encargadas: desactivar conserva la fila.
-- Cambio de clave desde el portal, foto de perfil e invitaciones por correo.
+- Invitaciones y avisos por correo: el grupo no tiene correo saliente propio, asi
+  que la clave temporal se pasa a mano.
+- Foto de perfil y recuperacion de clave por autoservicio: quien pierde la suya
+  necesita que otra persona encargada se la restablezca.
 
 ---
 
@@ -40,26 +43,21 @@ Lo que el portal **no** hace (fuera de alcance):
 2. Escribir el correo y la clave.
 3. Si los datos son correctos y el acceso esta activo, el portal abre en el resumen.
 
-El acceso tiene **dos partes** y hacen falta las dos:
-
-| Parte | Donde vive | Quien la crea |
-| --- | --- | --- |
-| Cuenta con clave | Supabase Auth | Quien administra Supabase |
-| Permiso de entrada | Tabla `portal_users` del portal | Cualquier persona encargada, desde `/es/portal/usuarios` |
-
-Agregar a alguien en el portal le da el permiso, pero todavia necesita su cuenta con
-clave en Supabase Auth. Mientras no exista, esa persona no va a poder entrar aunque
-aparezca en la lista como activa. La primera vez que entra, el portal enlaza sola la
-cuenta con su fila.
+Quien agrega a la persona en `/es/portal/usuarios` recibe en pantalla una **clave
+temporal** y se la pasa. Con esa clave la persona entra una vez y el portal le pide
+elegir una propia antes de dejarla pasar a las demas pantallas.
 
 El acceso es con correo y clave, no con enlace magico: el enlace exige correo saliente
-propio que el grupo todavia no tiene.
+propio que el grupo todavia no tiene. Por eso la clave temporal se muestra en pantalla
+en vez de mandarse por correo, y hay que pasarsela a la persona por el medio que el
+grupo use.
 
 **Si alguien no puede entrar,** revisar en este orden:
 
 1. Que aparezca en `/es/portal/usuarios` con estado **Activa**.
-2. Que el correo del portal sea exactamente el mismo de su cuenta de Supabase Auth.
-3. Que tenga cuenta creada en Supabase Auth.
+2. Que la fila no diga «Todavia no tiene clave»: si lo dice, tocar **Restablecer
+   clave** y pasarle la temporal nueva.
+3. Si perdio la clave, **Restablecer clave** le genera otra.
 
 ### Rutas del portal
 
@@ -69,6 +67,7 @@ propio que el grupo todavia no tiene.
 | `/es/portal` | Resumen: cuantas solicitudes estan sin atender |
 | `/es/portal/solicitudes` | Lista de solicitudes de los dos formularios |
 | `/es/portal/usuarios` | Personas encargadas |
+| `/es/portal/clave` | Cambiar la propia clave |
 
 Todas las paginas del portal se publican con `noindex`: no aparecen en buscadores.
 La sesion dura hasta que vence o hasta tocar **Salir**.
@@ -107,6 +106,30 @@ El correo tiene que ser el mismo con el que la persona va a entrar. Se guarda si
 en minusculas y no puede repetirse: si ya existe, el portal avisa que ese correo ya
 esta registrado en otra persona encargada.
 
+Al agregarla, el portal crea su cuenta de acceso y muestra una **clave temporal**:
+copiar el correo y la clave del recuadro, pasarselos a la persona y tocar
+**Ya la anote** para cerrarlo.
+
+La clave temporal se muestra **una sola vez**: no queda guardada en ningun lado en
+texto plano. Si se pierde, hay que restablecerla.
+
+### Restablecer la clave
+
+Para quien olvido su clave, o para las filas viejas que quedaron sin cuenta de acceso:
+
+1. Tocar **Restablecer clave** en su fila. El portal pregunta antes de hacer nada.
+2. Confirmar con **Si, restablecer**.
+3. Pasarle la clave temporal nueva.
+
+La clave anterior deja de servir en ese momento, y al entrar el portal le vuelve a
+pedir que elija una propia.
+
+### Cambiar la propia clave
+
+Desde **Cambiar clave**, arriba a la derecha. Pide la clave actual y la nueva dos
+veces. Quien entra con una temporal va derecho a esa pantalla y no puede hacer otra
+cosa hasta cambiarla.
+
 ### Modificar
 
 1. Tocar **Modificar** en la fila de la persona.
@@ -122,7 +145,7 @@ La persona desactivada conserva su fila y su historial, pero deja de entrar al p
 de inmediato: si tenia la sesion abierta, la proxima pantalla que abra la manda al
 acceso. **Reactivar** le devuelve el acceso.
 
-Nadie puede desactivarse a si mismo. Su propia fila aparece marcada con **VOS** y el
+Nadie puede desactivarse a si mismo. Su propia fila aparece marcada con **(Tu)** y el
 boton queda deshabilitado; hay que pedirselo a otra persona encargada. Asi se evita
 que el portal se quede sin nadie que pueda entrar.
 
@@ -140,18 +163,34 @@ Esta seccion es para quien programa; la Junta no la necesita.
 | Archivo | Que hace |
 | --- | --- |
 | `app/api/portal/users/route.ts` | API de personas encargadas (`GET`, `POST`, `PATCH`) |
+| `app/api/portal/users/reset/route.ts` | Restablecer la clave de una persona |
+| `app/api/portal/password/route.ts` | Cambiar la propia clave |
+| `app/[locale]/portal/clave/page.tsx` | Pantalla de cambio de clave |
+| `lib/portal/passwords.ts` | Generador de claves temporales y limites de largo |
+| `lib/portal/auth-users.ts` | Cuentas de Supabase Auth: crear, buscar y cambiar la clave |
 | `app/[locale]/portal/(panel)/usuarios/page.tsx` | Pagina protegida de personas encargadas |
 | `components/portal/users-manager.tsx` | Lista, formularios y acciones de la vista |
 | `lib/portal/session.ts` | `getPortalSession()`: firma, vencimiento y `is_active` |
 | `supabase/migrations/202608170001_create_portal_users.sql` | Tabla `portal_users` y columnas de seguimiento |
+| `supabase/migrations/202608210001_portal_users_temporary_password.sql` | Columna `must_change_password` |
 
 ### Contrato de la API
 
 | Metodo y ruta | Cuerpo | Respuesta |
 | --- | --- | --- |
-| `GET /api/portal/users` | — | `{ ok: true, items: [{ id, fullName, email, isActive, createdAt }] }` ordenado por nombre |
-| `POST /api/portal/users` | `{ fullName, email }` | `201 { ok: true, id }` |
+| `GET /api/portal/users` | — | `{ ok: true, items: [{ id, fullName, email, isActive, createdAt, hasAccount, mustChangePassword }] }` ordenado por nombre |
+| `POST /api/portal/users` | `{ fullName, email }` | `201 { ok: true, id, temporaryPassword }` |
 | `PATCH /api/portal/users` | `{ id, fullName?, email?, isActive? }` | `{ ok: true }` |
+| `POST /api/portal/users/reset` | `{ id }` | `{ ok: true, temporaryPassword }` |
+| `POST /api/portal/password` | `{ currentPassword, newPassword }` | `{ ok: true }` |
+
+`GET` devuelve ademas `hasAccount` y `mustChangePassword` por persona, que es lo que
+la vista usa para avisar «Todavia no tiene clave» o «Tiene una clave temporal sin
+cambiar».
+
+La clave temporal viaja una sola vez, en la respuesta de `POST`: no se guarda en la
+tabla ni se puede volver a consultar. En Supabase Auth queda con hash, como cualquier
+otra.
 
 Errores, con el mismo formato del resto del sitio (`{ ok: false, error }`):
 
@@ -162,6 +201,8 @@ Errores, con el mismo formato del resto del sitio (`{ ok: false, error }`):
 | 404 | `not_found` | El `id` del `PATCH` no existe |
 | 409 | `email_taken` | Ese correo ya esta en otra fila |
 | 409 | `self_deactivation` | Se intento desactivar a la persona de la propia sesion |
+| 401 | `wrong_password` | La clave actual no coincide, al cambiarla |
+| 409 | `same_password` | La clave nueva es igual a la actual |
 | 500 | `storage_error` | Supabase respondio con error |
 | 503 | `service_unavailable` | Faltan variables de entorno u otra falla de configuracion |
 
@@ -184,6 +225,7 @@ Todo lo que se lee en el portal vive bajo `portal.*` en `messages/es.json`:
 | `portal.nav` | Nombres de las secciones del portal |
 | `portal.home` | Resumen |
 | `portal.users` | Personas encargadas |
+| `portal.password` | Pantalla de cambio de clave |
 | `portal.statuses` | Los cinco estados y su explicacion |
 
 Convenciones de redaccion:
@@ -241,7 +283,10 @@ hidratarse, asi que los botones no responden).
 | 5 | Cambiar el estado de una solicitud | El nuevo estado queda guardado al recargar |
 | 6 | Abrir `/es/portal/usuarios` | Lista ordenada por nombre, con correo y estado |
 | 7 | Tocar **Agregar** con los campos vacios | Dos mensajes de validacion, sin enviar nada |
-| 8 | Agregar a alguien con correo valido | Aparece en la lista como **Activa** |
+| 8 | Agregar a alguien con correo valido | Aparece en la lista como **Activa** y sale el recuadro con la clave temporal |
+| 8b | Entrar con esa clave temporal | Entra, pero el portal manda derecho a `/es/portal/clave` |
+| 8c | Elegir una clave propia | Vuelve al portal; la temporal vieja ya no sirve |
+| 8d | **Restablecer clave** a esa persona | Sale una temporal nueva y el portal vuelve a exigir el cambio |
 | 9 | Agregar el mismo correo otra vez | Avisa que ya esta registrado, sin crear otra fila |
 | 10 | Tocar **Modificar** y no tocar nada mas | La fila queda en edicion: no se guarda sola |
 | 11 | **Modificar** nombre y correo, guardar con Enter y con el boton | Los datos nuevos quedan en la lista |
@@ -253,6 +298,8 @@ hidratarse, asi que los botones no responden).
 | 17 | Abrir la vista en pantalla angosta | La tabla se apila en fichas y nada se desborda |
 
 ### Resultado de la corrida del 20 de agosto de 2026
+
+Los pasos 8b a 8d se corrieron el 21 de agosto, cuando se agrego la clave temporal.
 
 Corrida sobre `pnpm dev` con la base de Supabase del proyecto, usando una persona de
 prueba que se borro al terminar.
@@ -266,7 +313,10 @@ prueba que se borro al terminar.
 | 5 | **Pendiente**: igual que el 4 |
 | 6 | Correcto: lista ordenada por nombre, con nombre, correo y estado |
 | 7 | Correcto: «Escribi el nombre completo…» y «Escribi un correo valido…», sin llamar a la API |
-| 8 | Correcto: `201`; espacios de sobra y mayusculas del correo quedaron normalizados |
+| 8 | Correcto: `201` con clave temporal de 14 caracteres; espacios de sobra y mayusculas del correo quedaron normalizados |
+| 8b | Correcto: entra y `/es/portal` y `/es/portal/usuarios` responden `307` a `/es/portal/clave` |
+| 8c | Correcto: cambia la clave, pasa al portal, y la temporal vieja responde `401`. Con la clave actual equivocada responde `401 wrong_password` y repitiendo la misma, `409 same_password` |
+| 8d | Correcto: temporal nueva distinta de la anterior, vuelve a pedir el cambio y la clave elegida antes deja de servir |
 | 9 | Correcto: `409 email_taken`, tambien escribiendo el correo en mayusculas |
 | 10 | Correcto despues de arreglar el bug: al tocar **Modificar** la fila entra en edicion y se queda ahi |
 | 11 | Correcto: `200` con Enter y con el boton **Guardar**; la fila muestra los datos nuevos y el aviso «Guardamos los datos de…» |

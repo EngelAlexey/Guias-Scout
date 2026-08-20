@@ -672,6 +672,7 @@
     "shell": {
       "name": "Portal del Grupo 35",
       "tagline": "Seguimiento de solicitudes",
+      "changePassword": "Cambiar clave",
       "signOut": "Salir",
       "skipToContent": "Ir al contenido del portal"
     },
@@ -728,12 +729,14 @@
         "loading": "Cargando la lista…",
         "retry": "Reintentar",
         "empty": "Todavía no hay personas encargadas registradas.",
-        "you": "Vos"
+        "you": "(Tú)"
       },
       "status": {
         "active": "Activa",
         "inactive": "Inactiva",
-        "inactiveNote": "Mientras esté inactiva no puede entrar al portal, aunque su clave siga sirviendo."
+        "inactiveNote": "Mientras esté inactiva no puede entrar al portal, aunque su clave siga sirviendo.",
+        "noAccount": "Todavía no tiene clave: restablecésela para generarle una temporal.",
+        "pendingPassword": "Tiene una clave temporal sin cambiar."
       },
       "edit": {
         "action": "Modificar",
@@ -755,6 +758,23 @@
         "action": "Reactivar",
         "working": "Reactivando…"
       },
+      "reset": {
+        "action": "Restablecer clave",
+        "question": "¿Restablecer la clave de {name}? La clave que use hoy deja de servir.",
+        "confirm": "Sí, restablecer",
+        "cancel": "No, dejarla así",
+        "working": "Restableciendo…"
+      },
+      "temporary": {
+        "title": "Clave temporal",
+        "lead": "Pasale estos datos a {name}. Al entrar, el portal le va a pedir que elija una clave propia.",
+        "password": "Clave temporal",
+        "note": "Esta clave se muestra una sola vez: si se pierde, hay que restablecerla desde la lista.",
+        "copy": "Copiar los datos",
+        "copied": "Datos copiados",
+        "dismiss": "Ya la anoté",
+        "clipboard": "Portal del Grupo 35 · Correo: {email} · Clave temporal: {password}"
+      },
       "validation": {
         "name": "Escribí el nombre completo, de 1 a 160 caracteres.",
         "email": "Escribí un correo válido, por ejemplo persona@correo.com."
@@ -763,7 +783,8 @@
         "created": "{name} ya puede entrar al portal.",
         "updated": "Guardamos los datos de {name}.",
         "activated": "{name} vuelve a tener acceso al portal.",
-        "deactivated": "{name} ya no puede entrar al portal."
+        "deactivated": "{name} ya no puede entrar al portal.",
+        "reset": "Generamos una clave temporal para {name}."
       },
       "errors": {
         "invalid_request": "Revisá el nombre y el correo: falta algún dato o el formato no es válido.",
@@ -772,6 +793,40 @@
         "self_deactivation": "No podés desactivar tu propio acceso: pedíselo a otra persona encargada.",
         "not_found": "Esa persona ya no está en la lista. Actualizá la página.",
         "storage_error": "No pudimos guardar el cambio. Intentá de nuevo en un momento.",
+        "service_unavailable": "El portal no está disponible en este momento. Intentá de nuevo más tarde.",
+        "network": "No pudimos conectarnos con el portal. Revisá tu conexión e intentá de nuevo.",
+        "unexpected": "Algo salió mal. Intentá de nuevo en un momento."
+      }
+    },
+    "password": {
+      "eyebrow": "Portal de encargados",
+      "title": "Cambiar la clave",
+      "titleForced": "Elegí tu clave",
+      "lead": "Cambiá la clave con la que entrás al portal.",
+      "leadForced": "Entraste con una clave temporal. Elegí una propia para seguir.",
+      "hint": "Al menos 8 caracteres. Usá una que no uses en otro lado.",
+      "help": "Hasta que elijas una clave propia, el portal no te deja pasar a las demás pantallas.",
+      "back": "Volver al portal",
+      "submit": "Guardar la clave",
+      "submitting": "Guardando…",
+      "fields": {
+        "current": "Clave actual",
+        "temporary": "Clave temporal",
+        "next": "Clave nueva",
+        "repeat": "Repetir la clave nueva"
+      },
+      "validation": {
+        "current": "Escribí la clave con la que entraste.",
+        "next": "La clave nueva tiene que tener entre 8 y 128 caracteres.",
+        "repeat": "Las dos claves nuevas tienen que ser iguales."
+      },
+      "errors": {
+        "invalid_request": "Revisá los campos: falta algún dato o el formato no es válido.",
+        "unauthorized": "Tu sesión venció. Volvé a entrar al portal para seguir.",
+        "wrong_password": "Esa no es tu clave actual.",
+        "same_password": "La clave nueva tiene que ser distinta de la actual.",
+        "not_found": "No encontramos tu cuenta de acceso. Pedile a otra persona encargada que te restablezca la clave.",
+        "storage_error": "No pudimos guardar la clave. Intentá de nuevo en un momento.",
         "service_unavailable": "El portal no está disponible en este momento. Intentá de nuevo más tarde.",
         "network": "No pudimos conectarnos con el portal. Revisá tu conexión e intentá de nuevo.",
         "unexpected": "Algo salió mal. Intentá de nuevo en un momento."
