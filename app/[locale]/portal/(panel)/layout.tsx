@@ -26,6 +26,12 @@ export default async function PortalPanelLayout({ children, params }: Props) {
     return null;
   }
 
+  // Con clave temporal la persona entra, pero solo hasta la pantalla de cambio.
+  if (session.mustChangePassword) {
+    redirect({ href: "/portal/clave", locale });
+    return null;
+  }
+
   const t = await getTranslations("portal.shell");
 
   return (
@@ -50,6 +56,9 @@ export default async function PortalPanelLayout({ children, params }: Props) {
             <span className="portal__persona" title={session.email}>
               {session.fullName}
             </span>
+            <Link className="portal__clave" href="/portal/clave">
+              {t("changePassword")}
+            </Link>
             <form action="/api/portal/logout" method="post">
               <button className="btn btn--ghost portal__salir" type="submit">
                 {t("signOut")}

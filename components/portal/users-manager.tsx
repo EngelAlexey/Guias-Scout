@@ -9,17 +9,26 @@ type PortalUser = {
   email: string;
   isActive: boolean;
   createdAt: string;
+  hasAccount: boolean;
+  mustChangePassword: boolean;
 };
 
 type Feedback = { tone: "success" | "error"; text: string } | null;
 
 type FieldErrors = { name?: string; email?: string };
 
+type Credential = {
+  name: string;
+  email: string;
+  password: string;
+} | null;
+
 type ApiPayload = {
   ok?: boolean;
   error?: unknown;
   items?: unknown;
   id?: unknown;
+  temporaryPassword?: unknown;
 };
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -86,7 +95,11 @@ export function PortalUsersManager({
   const [editErrors, setEditErrors] = useState<FieldErrors>({});
 
   const [confirmingId, setConfirmingId] = useState<string | null>(null);
+  const [confirmingResetId, setConfirmingResetId] = useState<string | null>(null);
   const [busyId, setBusyId] = useState<string | null>(null);
+
+  const [credential, setCredential] = useState<Credential>(null);
+  const [copied, setCopied] = useState(false);
 
   const messageFor = useCallback(
     (error: unknown) =>
@@ -172,6 +185,7 @@ export function PortalUsersManager({
         tone: "success",
         text: t("feedback.created", { name: fullName }),
       });
+      showCredential(fullName, email, payload.temporaryPassword);
       await load();
     } catch {
       setFeedback({ tone: "error", text: t("errors.network") });
@@ -207,8 +221,61 @@ export function PortalUsersManager({
     }
   }
 
+  function showCredential(name: string, email: string, password: unknown) {
+    if (typeof password !== "string" || password === "") return;
+    setCopied(false);
+    setCredential({ name, email, password });
+  }
+
+  async function copyCredential() {
+    if (!credential) return;
+
+    try {
+      await navigator.clipboard.writeText(
+        t("temporary.clipboard", {
+          email: credential.email,
+          password: credential.password,
+        }),
+      );
+      setCopied(true);
+    } catch {
+      setCopied(false);
+    }
+  }
+
+  async function resetPassword(user: PortalUser) {
+    setBusyId(user.id);
+    setFeedback(null);
+
+    try {
+      const response = await fetch("/api/portal/users/reset", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id: user.id }),
+      });
+      const payload = await readPayload(response);
+
+      if (!response.ok || payload.ok !== true) {
+        setFeedback({ tone: "error", text: messageFor(payload.error) });
+        return;
+      }
+
+      setConfirmingResetId(null);
+      setFeedback({
+        tone: "success",
+        text: t("feedback.reset", { name: user.fullName }),
+      });
+      showCredential(user.fullName, user.email, payload.temporaryPassword);
+    } catch {
+      setFeedback({ tone: "error", text: t("errors.network") });
+    } finally {
+      setBusyId(null);
+    }
+  }
+
   function startEdit(user: PortalUser) {
     setConfirmingId(null);
+    setConfirmingResetId(null);
     setEditingId(user.id);
     setEditName(user.fullName);
     setEditEmail(user.email);
@@ -343,6 +410,45 @@ export function PortalUsersManager({
         {feedback?.text ?? ""}
       </p>
 
+      {credential ? (
+        <div className="portal-clave" role="alert">
+          <h3 className="portal-clave__titulo">{t("temporary.title")}</h3>
+          <p className="portal-clave__texto">
+            {t("temporary.lead", { name: credential.name })}
+          </p>
+
+          <dl className="portal-clave__datos">
+            <div>
+              <dt>{t("fields.email")}</dt>
+              <dd>{credential.email}</dd>
+            </div>
+            <div>
+              <dt>{t("temporary.password")}</dt>
+              <dd className="portal-clave__valor">{credential.password}</dd>
+            </div>
+          </dl>
+
+          <p className="portal-clave__texto">{t("temporary.note")}</p>
+
+          <div className="portal-usuarios__acciones">
+            <button
+              className="btn btn--sm"
+              type="button"
+              onClick={() => void copyCredential()}
+            >
+              {copied ? t("temporary.copied") : t("temporary.copy")}
+            </button>
+            <button
+              className="btn btn--ghost btn--sm"
+              type="button"
+              onClick={() => setCredential(null)}
+            >
+              {t("temporary.dismiss")}
+            </button>
+          </div>
+        </div>
+      ) : null}
+
       <section aria-labelledby="portal-usuarios-lista">
         <h2 className="title-xs" id="portal-usuarios-lista">
           {t("list.title")}
@@ -385,6 +491,7 @@ export function PortalUsersManager({
                   {users.map((user) => {
                     const editing = editingId === user.id;
                     const confirming = confirmingId === user.id;
+                    const confirmingReset = confirmingResetId === user.id;
                     const busy = busyId === user.id;
                     const isSelf = user.id === sessionUserId;
 
@@ -505,6 +612,18 @@ export function PortalUsersManager({
                               {t("status.inactiveNote")}
                             </span>
                           )}
+                          {user.isActive && !user.hasAccount ? (
+                            <span className="tabla-portal__aviso">
+                              {t("status.noAccount")}
+                            </span>
+                          ) : null}
+                          {user.isActive &&
+                          user.hasAccount &&
+                          user.mustChangePassword ? (
+                            <span className="tabla-portal__aviso">
+                              {t("status.pendingPassword")}
+                            </span>
+                          ) : null}
                         </td>
 
                         <td data-label={t("fields.actions")}>
@@ -526,6 +645,33 @@ export function PortalUsersManager({
                               >
                                 {t("edit.cancel")}
                               </button>
+                            </div>
+                          ) : confirmingReset ? (
+                            <div
+                              className="portal-usuarios__confirmar"
+                              key="confirmar-clave"
+                            >
+                              <p className="portal-usuarios__pregunta">
+                                {t("reset.question", { name: user.fullName })}
+                              </p>
+                              <div className="portal-usuarios__acciones">
+                                <button
+                                  className="btn btn--sm"
+                                  type="button"
+                                  onClick={() => void resetPassword(user)}
+                                  disabled={busy}
+                                >
+                                  {busy ? t("reset.working") : t("reset.confirm")}
+                                </button>
+                                <button
+                                  className="btn btn--ghost btn--sm"
+                                  type="button"
+                                  onClick={() => setConfirmingResetId(null)}
+                                  disabled={busy}
+                                >
+                                  {t("reset.cancel")}
+                                </button>
+                              </div>
                             </div>
                           ) : confirming ? (
                             <div className="portal-usuarios__confirmar" key="confirmar">
@@ -566,12 +712,26 @@ export function PortalUsersManager({
                                 {t("edit.action")}
                               </button>
 
+                              <button
+                                className="btn btn--ghost btn--sm"
+                                type="button"
+                                onClick={() => {
+                                  setEditingId(null);
+                                  setConfirmingId(null);
+                                  setConfirmingResetId(user.id);
+                                }}
+                                disabled={busy}
+                              >
+                                {t("reset.action")}
+                              </button>
+
                               {user.isActive ? (
                                 <button
                                   className="btn btn--ghost btn--sm"
                                   type="button"
                                   onClick={() => {
                                     setEditingId(null);
+                                    setConfirmingResetId(null);
                                     setConfirmingId(user.id);
                                   }}
                                   disabled={busy || isSelf}
