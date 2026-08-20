@@ -243,13 +243,14 @@ hidratarse, asi que los botones no responden).
 | 7 | Tocar **Agregar** con los campos vacios | Dos mensajes de validacion, sin enviar nada |
 | 8 | Agregar a alguien con correo valido | Aparece en la lista como **Activa** |
 | 9 | Agregar el mismo correo otra vez | Avisa que ya esta registrado, sin crear otra fila |
-| 10 | **Modificar** nombre y correo, guardar con Enter | Los datos nuevos quedan en la lista |
-| 11 | **Desactivar** a esa persona | Pregunta antes; al confirmar queda **Inactiva** |
-| 12 | Entrar al portal con esa persona desactivada | No entra: vuelve al acceso |
-| 13 | **Reactivar** a esa persona | Vuelve a **Activa** y puede entrar |
-| 14 | Intentar desactivar la propia fila | El boton esta deshabilitado y explica por que |
-| 15 | Repasar la pagina con Tab, sin mouse | Todos los controles reciben foco visible, en orden |
-| 16 | Abrir la vista en pantalla angosta | La tabla se apila en fichas y nada se desborda |
+| 10 | Tocar **Modificar** y no tocar nada mas | La fila queda en edicion: no se guarda sola |
+| 11 | **Modificar** nombre y correo, guardar con Enter y con el boton | Los datos nuevos quedan en la lista |
+| 12 | **Desactivar** a esa persona | Pregunta antes; al confirmar queda **Inactiva** |
+| 13 | Entrar al portal con esa persona desactivada | No entra: vuelve al acceso |
+| 14 | **Reactivar** a esa persona | Vuelve a **Activa** y puede entrar |
+| 15 | Intentar desactivar la propia fila | El boton esta deshabilitado y explica por que |
+| 16 | Repasar la pagina con Tab, sin mouse | Todos los controles reciben foco visible, en orden |
+| 17 | Abrir la vista en pantalla angosta | La tabla se apila en fichas y nada se desborda |
 
 ### Resultado de la corrida del 20 de agosto de 2026
 
@@ -267,13 +268,14 @@ prueba que se borro al terminar.
 | 7 | Correcto: «Escribi el nombre completo…» y «Escribi un correo valido…», sin llamar a la API |
 | 8 | Correcto: `201`; espacios de sobra y mayusculas del correo quedaron normalizados |
 | 9 | Correcto: `409 email_taken`, tambien escribiendo el correo en mayusculas |
-| 10 | Correcto: `200`, la fila muestra los datos nuevos y el aviso «Guardamos los datos de…» |
-| 11 | Correcto: pregunta en pantalla, y al confirmar la fila queda **Inactiva** con su explicacion |
-| 12 | Correcto: la API responde `401` y `/es/portal` redirige al acceso |
-| 13 | Correcto: vuelve a **Activa** |
-| 14 | Correcto: el boton esta deshabilitado y la API responde `409 self_deactivation` |
-| 15 | Correcto: foco visible en todos los controles; Enter guarda la edicion en linea |
-| 16 | Correcto: debajo de 860px la tabla se apila con la etiqueta de cada dato |
+| 10 | Correcto despues de arreglar el bug: al tocar **Modificar** la fila entra en edicion y se queda ahi |
+| 11 | Correcto: `200` con Enter y con el boton **Guardar**; la fila muestra los datos nuevos y el aviso «Guardamos los datos de…» |
+| 12 | Correcto: pregunta en pantalla, y al confirmar la fila queda **Inactiva** con su explicacion |
+| 13 | Correcto: la API responde `401` y `/es/portal` redirige al acceso |
+| 14 | Correcto: vuelve a **Activa** |
+| 15 | Correcto: el boton esta deshabilitado y la API responde `409 self_deactivation` |
+| 16 | Correcto: foco visible en todos los controles; Enter guarda la edicion en linea |
+| 17 | Correcto: debajo de 860px la tabla se apila con la etiqueta de cada dato |
 
 Los pasos 2 a 5 quedan pendientes de la vista de solicitudes y de una cuenta de prueba
 en Supabase Auth; hay que correrlos antes de publicar el portal.
