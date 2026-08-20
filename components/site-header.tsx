@@ -4,7 +4,8 @@ import { useEffect, useId, useState } from "react";
 import { useTranslations } from "next-intl";
 
 import { BrandMark } from "@/components/brand-mark";
-import { IconClose, IconMenu } from "@/components/icons";
+import { IconClose, IconMenu, IconUser } from "@/components/icons";
+import { LanguageSwitcher } from "@/components/language-switcher";
 import { Link, usePathname } from "@/i18n/navigation";
 import { NAV_ITEMS } from "@/lib/content/site";
 
@@ -57,6 +58,15 @@ export function SiteHeader() {
         </nav>
 
         <div className="header-actions">
+          <LanguageSwitcher />
+          <Link
+            className="nav-link nav-link--portal"
+            href="/portal/login"
+            title={t("nav.portal")}
+          >
+            <IconUser size={20} />
+            <span className="visually-hidden">{t("nav.portal")}</span>
+          </Link>
           <Link className="btn header-cta" href="/join">
             {t("nav.join")}
           </Link>
@@ -86,9 +96,14 @@ export function SiteHeader() {
               {t(`nav.${item.key}`)}
             </Link>
           ))}
+          <Link className="mobile-nav__portal" href="/portal/login">
+            <IconUser size={20} />
+            {t("nav.portal")}
+          </Link>
           <Link className="btn" href="/join">
             {t("nav.join")}
           </Link>
+          <LanguageSwitcher className="idioma--movil" />
         </div>
       </div>
     </header>

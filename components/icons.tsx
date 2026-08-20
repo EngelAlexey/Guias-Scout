@@ -186,6 +186,15 @@ export function IconClose(props: IconProps) {
   );
 }
 
+export function IconUser(props: IconProps) {
+  return (
+    <Icon {...props} strokeWidth={2}>
+      <circle cx="12" cy="8.5" r="3.6" />
+      <path d="M4.8 20a7.2 7.2 0 0 1 14.4 0" />
+    </Icon>
+  );
+}
+
 export function IconInstagram(props: IconProps) {
   return (
     <Icon {...props} strokeWidth={1.9}>
