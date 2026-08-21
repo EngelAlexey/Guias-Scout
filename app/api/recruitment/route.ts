@@ -76,7 +76,7 @@ async function saveMinorSubmission(body: JsonObject) {
   const birthDate = validDate(body.birthDate);
   const guardianName = requiredText(body, "guardian", 160);
   const phone = requiredText(body, "phone", 25);
-  const email = optionalText(body, "email", 254);
+  const email = requiredText(body, "email", 254);
   const section = optionalText(body, "section", 32);
   const message = optionalText(body, "message", 2000);
 
@@ -85,7 +85,7 @@ async function saveMinorSubmission(body: JsonObject) {
     !birthDate ||
     !guardianName ||
     !validPhone(phone) ||
-    email === undefined ||
+    !email ||
     !validEmail(email) ||
     section === undefined ||
     (section !== null && !SECTION_IDS.has(section)) ||
@@ -124,14 +124,14 @@ async function saveMinorSubmission(body: JsonObject) {
 async function saveVolunteerSubmission(body: JsonObject) {
   const name = requiredText(body, "name", 160);
   const phone = requiredText(body, "phone", 25);
-  const email = optionalText(body, "email", 254);
+  const email = requiredText(body, "email", 254);
   const role = requiredText(body, "role", 32);
   const motivation = requiredText(body, "why", 2000);
 
   if (
     !name ||
     !validPhone(phone) ||
-    email === undefined ||
+    !email ||
     !validEmail(email) ||
     !role ||
     !VOLUNTEER_ROLES.has(role) ||

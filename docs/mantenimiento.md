@@ -10,10 +10,10 @@ Registro de decision. Cierra la pregunta 10.3 del formulario y el issue #51.
 La respuesta 10.3 dice que el sitio queda a cargo de **Comunicacion y
 Tecnologia** del Grupo 35. Quien recibe el proyecto no necesariamente programa.
 
-Hoy todo el contenido publicado vive en `messages/es.json` y en dos constantes de
-`lib/content/site.ts`. Cambiar un dato exige editar JSON, hacer un commit y
-promover la rama. Eso funciona para quien programa; no para quien reciba el
-proyecto.
+Hoy todo el contenido publicado vive en `messages/es.json`, `messages/en.json`
+y en dos constantes de `lib/content/site.ts`. Cambiar un dato exige mantener
+ambos catalogos alineados, hacer un commit y promover la rama. Eso funciona para
+quien programa; no para quien reciba el proyecto.
 
 El formulario ofrecia dos salidas y habia que escoger una:
 

@@ -1,0 +1,855 @@
+{
+  "site": {
+    "name": "Grupo 35 Esparzol Guías y Scouts de Costa Rica",
+    "shortName": "Grupo 35 Esparzol",
+    "tagline": "Guides and Scouts",
+    "description": "A Guides and Scouts group in Esparza, Puntarenas. Non-formal education, outdoor life, and the Banda Artística Juvenil de Esparzol for children and young people ages 6 to 21.",
+    "motto": "Siempre Mejor"
+  },
+
+  "pending": {
+    "label": "To be confirmed",
+    "hint": "This information is awaiting confirmation from the group.",
+    "block": "This block is intentionally empty. The group will provide the content, and no invented information will be published. The inventory of missing content is available in docs/contenido-pendiente.md."
+  },
+
+  "nav": {
+    "home": "Home",
+    "about": "Our Group",
+    "sections": "Sections",
+    "impact": "Impact",
+    "projects": "Projects",
+    "news": "Notices",
+    "join": "Join Us",
+    "designSystem": "Design system",
+    "portal": "Portal"
+  },
+
+  "layout": {
+    "skipToContent": "Skip to content",
+    "mainNav": "Main navigation",
+    "openMenu": "Open menu",
+    "language": "Language",
+    "closeMenu": "Close menu",
+    "breadcrumbSeparator": "·",
+    "languageSelector": "Choose language",
+    "languages": {
+      "es": "ES",
+      "en": "EN"
+    }
+  },
+
+  "home": {
+    "hero": {
+      "badge": "Youth movement · Esparza, Costa Rica",
+      "title": "We develop leaders who care for their community and their planet",
+      "lead": "We support children and young people ages 6 to 21 in Esparza through non-formal education, outdoor life, and the Banda Artística Juvenil de Esparzol.",
+      "ctaJoin": "I want to join",
+      "ctaAbout": "Discover our group",
+      "imageAlt": "Young people taking part in an outdoor Scout activity",
+      "statAges": "years old",
+      "statAgesValue": "6-21",
+      "statSections": "sections",
+      "statMethod": "method",
+      "statMethodValue": "Scout"
+    },
+    "sections": {
+      "eyebrow": "Our sections",
+      "title": "A path for every age",
+      "link": "See all four sections"
+    },
+    "method": {
+      "eyebrow": "How we educate",
+      "title": "Learning by doing, with purpose",
+      "lead": "The Scout method turns every camp, patrol, and project into an opportunity to grow. These are the three pillars that support our work each week.",
+      "imageAlt": "Planting native trees during an outdoor activity",
+      "pillars": {
+        "education": {
+          "title": "Non-formal education",
+          "text": "An age-based progressive program with clear goals and guided assessment."
+        },
+        "outdoors": {
+          "title": "Outdoor life",
+          "text": "Camps, hikes, and direct contact with Costa Rica's natural environment."
+        },
+        "service": {
+          "title": "Community service",
+          "text": "Leaving the world better than we found it through measurable projects."
+        }
+      }
+    },
+    "environment": {
+      "eyebrow": "Our educational project",
+      "title": "Banda Artística Juvenil de Esparzol",
+      "lead": "The group's educational project has a musical focus: the Banda Artística Juvenil de Esparzol rehearses, performs, and represents the community in parades within and beyond Esparza. Through the band, we work to preserve intangible cultural heritage and promote good practices.",
+      "cta": "See our impact",
+      "themesTitle": "Topics we work on",
+      "sdgNote": "Sustainable Development Goals that guide the group's work, as confirmed by the group leadership."
+    },
+    "agenda": {
+      "eyebrow": "Schedule",
+      "title": "Upcoming activities",
+      "note": "Dates marked “to be confirmed” will be published as soon as the group finalizes them."
+    },
+    "closing": {
+      "title": "Ready for an adventure?",
+      "lead": "Come to a meeting, see how we work, and take your time deciding.",
+      "ctaJoin": "I want to register",
+      "ctaAbout": "Discover the group"
+    }
+  },
+
+  "about": {
+    "metaTitle": "Our Group",
+    "metaDescription": "Who we are, what we believe in, the Promise and Law, and the volunteer team of Grupo 35 Esparzol de Guías y Scouts in Esparza, Puntarenas.",
+    "hero": {
+      "eyebrow": "Our Group",
+      "title": "A community that educates through play, camping, and service",
+      "lead": "Who we are, what we believe in, and who supports our children and young people.",
+      "imageAlt": "A group of Scout volunteers and young people gathered outdoors"
+    },
+    "history": {
+      "eyebrow": "Our history",
+      "title": "A young group in Costa Rica's Central Pacific region",
+      "lead": "Grupo 35 Esparzol was founded on November 9, 2020, as part of a plan by the national office of the Asociación de Guías y Scouts de Costa Rica to open groups in the Central Pacific region.",
+      "story": "It was founded by Elena Manzanarez Juárez, who had previously participated in Grupo 44 de San Francisco de Dos Ríos and brought that experience to Esparza.",
+      "sponsor": "The group is part of the Asociación de Guías y Scouts de Costa Rica, which supports its program and accredits its adult volunteers.",
+      "imageAlt": "Group volunteers during an activity",
+      "metricFoundation": "year founded",
+      "metricPeople": "participants",
+      "metricLeaders": "adult volunteers",
+      "foundationValue": "2020",
+      "leadersValue": "22",
+      "milestonesTitle": "Milestones"
+    },
+    "purpose": {
+      "eyebrow": "What drives us",
+      "title": "Mission, vision, and values",
+      "missionTitle": "Mission",
+      "missionText": "To contribute to the education of children and young people so they can reach their full potential and participate as active citizens in building a better world.",
+      "missionSource": "Mission of the Scout Movement, adopted by the Asociación de Guías y Scouts de Costa Rica.",
+      "visionTitle": "Vision",
+      "visionText": "To implement good practices and preserve intangible cultural heritage through the Scout method.",
+      "valuesTitle": "Values"
+    },
+    "commitment": {
+      "promiseEyebrow": "Our commitment",
+      "promiseTitle": "The Promise",
+      "promiseLead": "The official wording confirmed by the group leadership is presented below without alteration.",
+      "lawEyebrow": "Code of conduct",
+      "lawTitle": "The Law"
+    },
+    "team": {
+      "eyebrow": "Team",
+      "title": "Who supports our members",
+      "lead": "Adult volunteers who are trained and currently accredited by the Association. Each section has its leadership team, and group decisions are made by the Group Board, led by the group leader.",
+      "structureTitle": "How the Group Board is organized",
+      "rosterNote": "The group has 22 adult leaders and collaborators. We publish the people who have already confirmed their name and role; everyone else will be added as their information is provided."
+    },
+    "venue": {
+      "eyebrow": "Where to find us",
+      "title": "The home of Grupo 35 Esparzol",
+      "lead": "We meet every Sunday in Esparza, Puntarenas. Visit us on a Sunday, get to know the place, and ask any questions you may have.",
+      "addressTitle": "Address",
+      "meetingsTitle": "Meeting day and time",
+      "phoneTitle": "Phone",
+      "contactTitle": "Email",
+      "cta": "Come meet us",
+      "imageAlt": "An outdoor group meeting"
+    }
+  },
+
+  "sections": {
+    "metaTitle": "Sections",
+    "metaDescription": "Manada, Tropa, Wak, and Comunidad: the four sections of Grupo 35 Esparzol de Guías y Scouts, including their age ranges, organization, and program focus.",
+    "hero": {
+      "eyebrow": "Age-based program",
+      "title": "Four stages, one path",
+      "lead": "The program is organized by age. Each section has its own name, way of working, and challenges.",
+      "imageAlt": "Young people working together during an outdoor activity"
+    },
+    "anchorNav": "Go to a section",
+    "table": {
+      "title": "At a glance",
+      "caption": "Comparison of the four sections by age, organization, and program focus",
+      "colSection": "Section",
+      "colAges": "Ages",
+      "colUnit": "Organized in",
+      "colFocus": "Focus",
+      "cta": "I want to register someone",
+      "help": "Not sure which section is right? Call us and we will help you."
+    }
+  },
+
+  "join": {
+    "metaTitle": "Join Us",
+    "metaDescription": "How to join Grupo 35 Esparzol de Guías y Scouts: steps, requirements, age-based sections, and contact information in Esparza, Puntarenas.",
+    "hero": {
+      "eyebrow": "Registration",
+      "title": "Join the group",
+      "lead": "Call us, visit our meeting place on a Sunday, and take your time deciding.",
+      "imageAlt": "Young Scouts building a structure with ropes and poles"
+    },
+    "steps": {
+      "eyebrow": "How it works",
+      "title": "Three steps",
+      "items": [
+        {
+          "title": "Contact us",
+          "detail": "Call us and tell us the age of the person interested. We will explain which section is right and when to visit."
+        },
+        {
+          "title": "Come to a meeting",
+          "detail": "We invite the child to our Sunday meetings so they can get to know the place, their section, and the leadership team."
+        },
+        {
+          "title": "Complete the registration",
+          "detail": "If they enjoy it, the Association's form is completed with permission from a parent or guardian. Group membership is free."
+        }
+      ],
+      "factsTitle": "Before you visit"
+    },
+    "facts": [
+      { "label": "Membership cost", "value": "Free" },
+      { "label": "Minimum age", "value": "6 years old" },
+      { "label": "Next registration period", "value": "October 2026" },
+      { "label": "Uniform", "value": "After attending several meetings" }
+    ],
+    "factsNote": "Group attire is provided after a person has attended several meetings; it is not needed to get started.",
+    "byAge": {
+      "eyebrow": "By age",
+      "title": "Which section is right",
+      "cta": "See each section in detail"
+    },
+    "contact": {
+      "eyebrow": "Contact",
+      "title": "Let's talk",
+      "lead": "We are available by phone and in person at our Sunday meetings.",
+      "phoneTitle": "Phone",
+      "meetingsTitle": "Meeting day and time",
+      "venueTitle": "Where we meet",
+      "emailTitle": "Email",
+      "checklistTitle": "What to bring on your first day",
+      "checklist": [
+        "Comfortable clothes",
+        "Water bottle",
+        "Cap or hat",
+        "Snack",
+        "Plenty of enthusiasm"
+      ],
+      "checklistNote": "The first visit is free and carries no obligation. A responsible adult must accompany anyone under the age of 18."
+    }
+  },
+
+  "forms": {
+    "eyebrow": "Forms",
+    "title": "Send us a message to join",
+    "lead": "Choose the form that matches your situation. Your request is stored privately so the Group Board can follow up.",
+    "inscription": {
+      "eyebrow": "Registration",
+      "title": "Children and young people",
+      "lead": "Enter the minor's information and the details of their parent or guardian.",
+      "fields": {
+        "minorName": "Minor's name",
+        "birthDate": "Date of birth",
+        "guardian": "Parent or guardian",
+        "phone": "Contact phone",
+        "email": "Parent or guardian's email",
+        "section": "Section of interest",
+        "message": "Is there anything else you would like to tell us?"
+      },
+      "options": {
+        "notSure": "We are not sure yet"
+      },
+      "consent": "I am the minor's parent or guardian and authorize the group to contact me to arrange a visit.",
+      "privacyNote": "The information is stored privately and used only to contact the parent or guardian, coordinate registration, and send a confirmation to the email address provided. It is not published on the site.",
+      "submit": "Send request"
+    },
+    "volunteer": {
+      "eyebrow": "Volunteering",
+      "title": "Adults",
+      "lead": "Tell us who you are and why you would like to join. Your request will reach the Group Board.",
+      "fields": {
+        "name": "Full name",
+        "phone": "Contact phone",
+        "email": "Email",
+        "role": "How would you like to help?",
+        "why": "Why would you like to join Guides and Scouts?"
+      },
+      "options": {
+        "default": "Choose an option",
+        "leader": "As a leader",
+        "collab": "With occasional support",
+        "band": "With the Banda Artística Juvenil",
+        "notSure": "I am not sure yet"
+      },
+      "consent": "I authorize the Group Board to contact me to coordinate my participation.",
+      "juntaNote": "Requests are sent to the Group Board.",
+      "privacyNote": "The information is stored privately and used only by the Group Board for follow-up and to send a confirmation to the email address provided. It is not published on the site.",
+      "submit": "Send request"
+    },
+    "status": {
+      "submitting": "Sending…",
+      "success": "Done! We received your request. We will send a confirmation to the email address provided.",
+      "error": "We could not save your request. Check the information and try again."
+    },
+    "mail": {
+      "subjectInscription": "Registration request for Grupo 35 Esparzol",
+      "subjectVolunteer": "Volunteer request for Grupo 35 Esparzol",
+      "greeting": "Hello, this message was prepared by the Grupo 35 website:",
+      "labels": {
+        "minorName": "Minor's name",
+        "birthDate": "Date of birth",
+        "guardian": "Parent or guardian",
+        "phone": "Contact phone",
+        "email": "Email",
+        "section": "Section of interest",
+        "message": "Message",
+        "name": "Full name",
+        "role": "Type of support",
+        "why": "Why they want to join",
+        "consent": "Consent"
+      }
+    }
+  },
+
+  "designSystem": {
+    "metaTitle": "Design system",
+    "metaDescription": "Colors, typography, components, and rhythm for the Grupo 35 Esparzol website so future pages remain visually consistent.",
+    "eyebrow": "Team guide",
+    "title": "Website design system",
+    "lead": "Everything needed to make the Impact, Projects, and Notices pages feel like part of the same site. Values are stored as custom properties in <code>app/globals.css</code>.",
+    "colorTitle": "Color",
+    "typographyTitle": "Typography",
+    "typographyHeadings": "Headings · Sora 800",
+    "typographyHeadingsDetail": "H1 <code>clamp(2.25rem, 6vw, 3.875rem)</code><br></br>H2 <code>clamp(1.625rem, 3.4vw, 2.5rem)</code> · H3 20-24px<br></br>Line height 1.06-1.2 · letter-spacing -0.02em",
+    "typographyBody": "Body · Mulish 400/700/800",
+    "typographyBodyDetail": "Paragraph 16-20px · Label 13px 800 uppercase<br></br>Line height 1.55-1.7 · secondary text <code>#5B5169</code>",
+    "componentsTitle": "Components",
+    "buttonsTitle": "Buttons",
+    "buttonPrimary": "Primary",
+    "buttonAccent": "Accent",
+    "buttonGhost": "Secondary",
+    "buttonsDetail": "Classes <code>.btn</code>, <code>.btn--accent</code>, and <code>.btn--ghost</code>. Radius 999px.",
+    "cardTitle": "Card",
+    "cardSample": "Card title",
+    "cardDetail": "Radius 20px · border <code>#EFE9DF</code> · padding 22-34px",
+    "rhythmTitle": "Rhythm and grid",
+    "rhythmDetail": "Maximum width <b>1280px</b><br></br>Side margins <code>clamp(20px, 5vw, 32px)</code><br></br>Space between sections <code>clamp(56px, 8vw, 84px)</code><br></br>Column gap <code>clamp(36px, 5vw, 64px)</code><br></br>Image radius <b>24px</b>",
+    "howToTitle": "How to build a new page",
+    "structureTitle": "Minimum structure",
+    "structureDetail": "Create <code>{route}</code>, export <code>generateMetadata</code>, and wrap each block in <code>{section}</code> with a <code>{wrapper}</code> inside. The <code>{layout}</code> already provides the header and footer.",
+    "accentTitle": "Color by section",
+    "accentDetail": "Adding <code>data-seccion=\"manada|tropa|wak|comunidad\"</code> to any container changes <code>--acento</code>, <code>--acento-suave</code>, and <code>--acento-texto</code> for everything inside it. Do not write standalone hex values in components.",
+    "i18nTitle": "Text and languages",
+    "i18nDetail": "No visible text is written in JSX: everything comes from <code>messages/&lt;locale&gt;.json</code> through message keys. Server pages use <code>getTranslations</code>, and client components use <code>useTranslations</code>. Available languages are configured in <code>i18n/routing.ts</code>.",
+    "contentTitle": "Group information",
+    "contentDetail": "The site does not publish invented information. Dates, quantities, addresses, contact details, and names use <code>PendingValue</code> or <code>PendingNote</code> until the group confirms them. The full list is available in <code>docs/contenido-pendiente.md</code>.",
+    "splitEyebrowDone": "Work distribution",
+    "splitTitleDone": "Part 1 · complete",
+    "splitTextDone": "Header and footer · Design system<br></br>Home · Our Group · Sections · Join Us<br></br>Impact · Projects · Notices",
+    "splitEyebrowPending": "Pending",
+    "splitTitlePending": "Part 2",
+    "splitTextPending": "Social report data<br></br>Gallery and the group's own image bank"
+  },
+
+  "underConstruction": {
+    "backHome": "Back to home",
+    "designSystem": "View the design system"
+  },
+
+  "impact": {
+    "metaTitle": "Impact",
+    "metaDescription": "Verifiable results from Grupo 35 Esparzol's work: Banda Artística Juvenil performances, service hours, and environmental actions.",
+    "hero": {
+      "eyebrow": "Open data",
+      "title": "What we do, in numbers",
+      "lead": "We publish the group's results using verifiable data. Information that has not yet been confirmed is shown as “to be confirmed” instead of using invented figures.",
+      "imageAlt": "Young group members during an activity"
+    },
+    "axes": [
+      {
+        "eyebrow": "Culture and community",
+        "title": "Band performances",
+        "lead": "The Banda Artística Juvenil de Esparzol represents the community in parades within and beyond Esparza.",
+        "facts": [
+          { "label": "Performances held" },
+          { "label": "Places reached" }
+        ]
+      },
+      {
+        "eyebrow": "Service",
+        "title": "Service hours",
+        "lead": "Group members freely and voluntarily dedicate their time to serving the community.",
+        "facts": [
+          { "label": "Accumulated service hours" }
+        ]
+      },
+      {
+        "eyebrow": "Environmental care",
+        "title": "Environmental actions",
+        "lead": "Caring for the environment is one of the group's values, and its work aligns with SDGs 4, 13, and 17.",
+        "facts": [
+          { "label": "Environmental care actions" }
+        ]
+      }
+    ],
+    "note": "Source: the group's social report. Figures will be published as soon as the group leadership confirms them and will be updated during each site review."
+  },
+
+  "projects": {
+    "metaTitle": "Projects",
+    "metaDescription": "A catalog of educational and community projects by Grupo 35 Esparzol, beginning with the Banda Artística Juvenil de Esparzol.",
+    "hero": {
+      "eyebrow": "What we build",
+      "title": "Group projects",
+      "lead": "The projects in which the group invests its time, including their status, leaders, and results.",
+      "imageAlt": "Group volunteers gathered outdoors"
+    },
+    "status": {
+      "active": "Active",
+      "done": "Completed"
+    },
+    "items": [
+      {
+        "name": "Banda Artística Juvenil de Esparzol",
+        "status": "active",
+        "year": "2024",
+        "lead": "Led by José Campos Zamora, with the entire group",
+        "result": "Performances in parades within and beyond Esparza that represent the community in other cantons.",
+        "detail": "The group's educational project has a musical focus: the band rehearses and performs, while its activities promote the preservation of intangible cultural heritage and good practices."
+      }
+    ],
+    "pendingNote": "The catalog will be expanded as the group confirms additional projects."
+  },
+
+  "news": {
+    "metaTitle": "Notices",
+    "metaDescription": "Notices and updates for Grupo 35 Esparzol families: schedule changes, camp packing lists, and updates from each section.",
+    "hero": {
+      "eyebrow": "Updates for families",
+      "title": "Notices",
+      "lead": "Public group updates for anyone who needs them: schedule changes, packing lists, and notices from each section.",
+      "imageAlt": "An outdoor group meeting"
+    },
+    "emptyTitle": "No notices have been published yet",
+    "emptyLead": "Notices will appear here as soon as the group leadership confirms them. Until then, you can contact us by phone or at our Sunday meeting.",
+    "items": [],
+    "note": "The activity calendar will be available on this page once the group begins maintaining one."
+  },
+
+  "notFound": {
+    "eyebrow": "Error 404",
+    "title": "We could not find that page",
+    "lead": "The link may be outdated, or the section may not exist yet. Everything currently published is accessible from the home page.",
+    "backHome": "Back to home",
+    "sections": "View the sections"
+  },
+
+  "footer": {
+    "text": "A community of children, young people, and adults who freely and voluntarily commit to service and environmental care.",
+    "navTitle": "Navigation",
+    "navLabel": "Footer navigation",
+    "transparencyTitle": "Transparency",
+    "transparencyLabel": "Transparency",
+    "contactTitle": "Contact",
+    "venueLabel": "Where we meet",
+    "phoneLabel": "Phone",
+    "emailLabel": "Email",
+    "copyright": "© {year} {name} · Website developed as a UTN University Community Service project",
+    "sdgLabel": "Sustainable Development Goals",
+    "sdgAbbr": "SDG"
+  },
+
+  "content": {
+    "contact": {
+      "address": "Plaza de Tierra, Esparzol, Esparza, Puntarenas.",
+      "addressShort": "Esparza, Esparzol, Plaza de Tierra",
+      "meetings": "Every Sunday, from 10 a.m. to noon.",
+      "meetingsNote": "There are no meetings from December 15 through early January.",
+      "phone": "6010 1502",
+      "phoneNote": "The group leader answers this number.",
+      "email": "grupo35@siemprelistos.org"
+    },
+
+    "milestones": [
+      { "year": "2020", "text": "The group was founded on November 9" },
+      {
+        "year": "2024",
+        "text": "First performance by the Banda Artística Juvenil de Esparzol"
+      }
+    ],
+
+    "team": [
+      {
+        "initials": "EM",
+        "name": "Elena Manzanarez Juárez",
+        "role": "Group leader · Management",
+        "detail": "University technician in local management and public policy."
+      },
+      {
+        "initials": "JC",
+        "name": "José Campos Zamora",
+        "role": "Tropa · Director of the Banda Artística Juvenil",
+        "detail": "Organizes the band's rehearsals and performances, which form the group's educational project."
+      }
+    ],
+
+    "groupAreas": [
+      "Group leadership",
+      "Administration and finance",
+      "Talent management",
+      "Communication and technology"
+    ],
+
+    "themes": ["Preservation of intangible cultural heritage", "Good practices"],
+
+    "agenda": [
+      {
+        "day": "30",
+        "month": "SEP",
+        "title": "Band Parade in Puntarenas",
+        "detail": "September 30, 2026 · All sections · Downtown Puntarenas · In the morning."
+      },
+      {
+        "day": "Dec",
+        "month": "2026",
+        "title": "Parade in Marañonal de Esparza",
+        "detail": "December 2026, day to be confirmed · All sections · Marañonal, Esparza, Puntarenas · In the afternoon."
+      },
+      {
+        "day": "Dec",
+        "month": "2026",
+        "title": "Parade in San Rafael de Heredia",
+        "detail": "December 2026, day to be confirmed · All sections · San Rafael de Heredia · At night."
+      },
+      {
+        "day": "Jan",
+        "month": "2027",
+        "title": "Canapas, Tropa camp",
+        "detail": "January 2027, date to be confirmed · Tropa · Finca Barvak, Heredia · Weekend."
+      }
+    ],
+
+    "values": [
+      "Leadership",
+      "Service",
+      "Respect",
+      "Environmental care",
+      "Teamwork",
+      "Joy",
+      "Friends to all"
+    ],
+
+    "promise": "Prometo por mi honor hacer cuanto de mí dependa por cumplir mis deberes para con Dios y mi Patria, ayudar al prójimo en toda circunstancia y cumplir fielmente la Ley Scout.",
+
+    "scoutLaw": [
+      "Es digna de confianza",
+      "Es leal",
+      "Es útil y ayuda a los demás",
+      "Es amiga de todos y hermana de toda persona guía o scout",
+      "Es cortés",
+      "Ve en la naturaleza la obra de Dios",
+      "Obedece sin réplica y no deja nada a medias",
+      "Sonríe y canta ante las dificultades",
+      "Es económica y respeta el bien ajeno",
+      "Es limpia y sana en pensamientos, palabras y obras"
+    ],
+
+    "sections": {
+      "manada": {
+        "name": "Manada",
+        "ages": "Ages 6 to 10",
+        "agesShort": "6-10",
+        "summary": "Members learn through play, small groups, and plenty of time outdoors.",
+        "description": "Manada is the entry point to the Movement. Its symbolic framework comes from The Jungle Book, and the entire program revolves around play: members work in small groups, and each person progresses with support from the leadership team.",
+        "facts": [
+          { "label": "Organized in", "value": "Sixes" },
+          { "label": "Symbolic framework", "value": "The Jungle Book" },
+          { "label": "Decision-making body", "value": "Council Rock" },
+          { "label": "Members are called", "value": "Cubs" }
+        ],
+        "topics": [
+          "Play and discovery",
+          "First camps",
+          "Caring for nature"
+        ],
+        "focus": "Play, discovery, and habits",
+        "unit": "Sixes",
+        "imageAlt": "Children taking part in an outdoor activity"
+      },
+      "tropa": {
+        "name": "Tropa",
+        "ages": "Ages 11 to 14",
+        "agesShort": "11-14",
+        "summary": "Members work in patrols through camping and Scout skills.",
+        "description": "This is the section that gave rise to the Movement. Tropa is divided into small, autonomous patrols where each person takes on a real role. Members learn outdoor life, Scout skills, and teamwork by doing them.",
+        "facts": [
+          { "label": "Organized in", "value": "Patrols" },
+          { "label": "Symbolic framework", "value": "Adventure" },
+          { "label": "Decision-making body", "value": "Tropa Council" },
+          { "label": "Members are called", "value": "Guides and Scouts" }
+        ],
+        "topics": ["Camping", "Specialties", "Environmental projects"],
+        "focus": "Outdoor life and teamwork",
+        "unit": "Patrols",
+        "imageAlt": "A patrol on a hike"
+      },
+      "wak": {
+        "name": "Wak",
+        "ages": "Ages 15 to 17",
+        "agesShort": "15-17",
+        "summary": "Young people propose, plan, and carry out their own projects.",
+        "description": "At this stage, young people take the lead: they propose their own initiatives, plan them, carry them out, and evaluate them. The adult volunteer provides support rather than direction.",
+        "facts": [
+          { "label": "Organized in", "value": "Teams" },
+          { "label": "Program focus", "value": "The enterprise" },
+          { "label": "Symbolic framework", "value": "Tradition and Journey" },
+          { "label": "Members are called", "value": "Wak and Tsuri" }
+        ],
+        "topics": [
+          "Youth leadership",
+          "Expeditions",
+          "Community advocacy"
+        ],
+        "focus": "Leadership and self-directed projects",
+        "unit": "Teams",
+        "imageAlt": "Young people on an expedition"
+      },
+      "comunidad": {
+        "name": "Comunidad",
+        "ages": "Ages 18 to 21",
+        "agesShort": "18-21",
+        "summary": "Service becomes more than an activity: it becomes a life project.",
+        "description": "The final stage of the journey. Each person defines a personal plan, takes on responsibilities within the group, and sustains long-term service projects.",
+        "facts": [
+          { "label": "Organized in", "value": "Comunidad" },
+          { "label": "Program focus", "value": "Service and personal plan" },
+          { "label": "Symbolic framework" },
+          { "label": "Members are called" }
+        ],
+        "topics": [
+          "Volunteering",
+          "Long-term projects",
+          "Supporting the other sections"
+        ],
+        "focus": "Service and life project",
+        "unit": "Comunidad",
+        "imageAlt": "Young people working on a service project"
+      }
+    },
+
+    "sdg": [
+      { "label": "Education" },
+      { "label": "Climate" },
+      { "label": "Partnerships" }
+    ],
+
+    "palette": [
+      { "name": "Purple", "use": "Dark backgrounds and headings" },
+      { "name": "Bright purple", "use": "Primary actions and links" },
+      { "name": "Amber", "use": "Highlights and calls to action" },
+      { "name": "Green", "use": "Environmental focus" },
+      { "name": "Cream", "use": "General background" },
+      { "name": "Text gray", "use": "Paragraphs and supporting text" }
+    ]
+  },
+
+  "portal": {
+    "login": {
+      "eyebrow": "Staff portal",
+      "title": "Group Board access",
+      "lead": "Sign in with the email address that was granted access. Here you can review registration and volunteer requests submitted through the website.",
+      "help": "If you cannot sign in, ask another staff member to review your account in the portal.",
+      "backToSite": "Back to the website",
+      "submit": "Sign in",
+      "submitting": "Signing in…",
+      "fields": {
+        "email": "Email",
+        "password": "Password"
+      },
+      "errors": {
+        "invalid_request": "Check the email and password. Information is missing or its format is invalid.",
+        "unauthorized": "We could not sign you in with those details. If your access was deactivated, ask another staff member to reactivate it.",
+        "unexpected": "We could not complete the sign-in. Try again in a moment."
+      }
+    },
+    "shell": {
+      "name": "Grupo 35 Portal",
+      "tagline": "Request follow-up",
+      "signOut": "Sign out",
+      "skipToContent": "Skip to portal content"
+    },
+    "nav": {
+      "label": "Portal sections",
+      "home": "Home",
+      "submissions": "Requests",
+      "users": "Staff members"
+    },
+    "home": {
+      "eyebrow": "Staff portal",
+      "title": "Overview",
+      "lead": "This is what is awaiting a response today.",
+      "unavailable": "No data",
+      "scopeNote": "The portal shows requests and who can sign in. Conversation history and reminders are not included because they were outside this sprint's scope.",
+      "cards": {
+        "action": "View requests",
+        "minor": {
+          "label": "Unreviewed registrations",
+          "detail": "Registration requests for minors that are still pending."
+        },
+        "volunteer": {
+          "label": "Unreviewed volunteer requests",
+          "detail": "Adults who offered to help and whose requests are still pending."
+        },
+        "users": {
+          "label": "Staff members",
+          "detail": "People who can sign in to the portal. Add, edit, or deactivate them here.",
+          "action": "View staff members"
+        }
+      }
+    },
+    "users": {
+      "eyebrow": "Staff portal",
+      "title": "Staff members",
+      "lead": "Manage who can sign in to the portal. Add someone new, correct their information, or remove access when they leave the Board.",
+      "scopeNote": "All staff members can see and do the same things in the portal. There are no roles or permissions; deactivating access is the only available control.",
+      "fields": {
+        "name": "Name",
+        "email": "Email",
+        "status": "Status",
+        "actions": "Actions"
+      },
+      "add": {
+        "title": "Add a staff member",
+        "note": "The email address must be the same one the person will use to sign in.",
+        "submit": "Add",
+        "submitting": "Adding…"
+      },
+      "list": {
+        "title": "Portal access",
+        "note": "The list is sorted by name.",
+        "caption": "Portal staff members with their email address and status.",
+        "loading": "Loading the list…",
+        "retry": "Try again",
+        "empty": "No staff members have been registered yet.",
+        "you": "(You)"
+      },
+      "status": {
+        "active": "Active",
+        "inactive": "Inactive",
+        "inactiveNote": "An inactive person cannot sign in to the portal, even if their password still works.",
+        "noAccount": "No password yet. Reset it to generate a temporary one.",
+        "pendingPassword": "The temporary password has not been changed yet."
+      },
+      "edit": {
+        "action": "Edit",
+        "save": "Save",
+        "saving": "Saving…",
+        "cancel": "Cancel",
+        "nameLabel": "Staff member's name",
+        "emailLabel": "Staff member's email"
+      },
+      "deactivate": {
+        "action": "Deactivate",
+        "question": "Deactivate {name}'s access?",
+        "confirm": "Yes, deactivate",
+        "cancel": "No, leave it as is",
+        "working": "Deactivating…",
+        "selfNote": "You cannot deactivate your own access. Ask another staff member to do it."
+      },
+      "activate": {
+        "action": "Reactivate",
+        "working": "Reactivating…"
+      },
+      "changeOwn": "Change my password",
+      "reset": {
+        "action": "Reset password",
+        "question": "Reset {name}'s password? Their current password will stop working.",
+        "confirm": "Yes, reset it",
+        "cancel": "No, leave it as is",
+        "working": "Resetting…"
+      },
+      "temporary": {
+        "title": "Temporary password",
+        "lead": "Give these details to {name}. When they sign in, the portal will ask them to choose their own password.",
+        "password": "Temporary password",
+        "note": "This password is shown only once. If it is lost, reset it again from the list.",
+        "copy": "Copy details",
+        "copied": "Details copied",
+        "dismiss": "I saved it",
+        "clipboard": "Grupo 35 Portal · Email: {email} · Temporary password: {password}"
+      },
+      "validation": {
+        "name": "Enter the full name using 1 to 160 characters.",
+        "email": "Enter a valid email address, such as person@example.com."
+      },
+      "feedback": {
+        "created": "{name} can now sign in to the portal.",
+        "updated": "We saved {name}'s information.",
+        "activated": "{name} can access the portal again.",
+        "deactivated": "{name} can no longer sign in to the portal.",
+        "reset": "We generated a temporary password for {name}."
+      },
+      "errors": {
+        "invalid_request": "Check the name and email. Information is missing or its format is invalid.",
+        "unauthorized": "Your session expired. Sign in to the portal again to continue.",
+        "email_taken": "That email address is already registered to another staff member.",
+        "self_deactivation": "You cannot deactivate your own access. Ask another staff member to do it.",
+        "not_found": "That person is no longer on the list. Refresh the page.",
+        "storage_error": "We could not save the change. Try again in a moment.",
+        "service_unavailable": "The portal is currently unavailable. Try again later.",
+        "network": "We could not connect to the portal. Check your connection and try again.",
+        "unexpected": "Something went wrong. Try again in a moment."
+      }
+    },
+    "password": {
+      "eyebrow": "Staff portal",
+      "title": "Change password",
+      "titleForced": "Choose your password",
+      "lead": "Change the password you use to sign in to the portal.",
+      "leadForced": "You signed in with a temporary password. Choose your own password to continue.",
+      "hint": "Use at least 8 characters and choose a password you do not use elsewhere.",
+      "help": "The portal will not let you access the other screens until you choose your own password.",
+      "back": "Back to the portal",
+      "submit": "Save password",
+      "submitting": "Saving…",
+      "fields": {
+        "current": "Current password",
+        "temporary": "Temporary password",
+        "next": "New password",
+        "repeat": "Repeat new password"
+      },
+      "validation": {
+        "current": "Enter the password you used to sign in.",
+        "next": "The new password must contain between 8 and 128 characters.",
+        "repeat": "The two new passwords must match."
+      },
+      "errors": {
+        "invalid_request": "Check the fields. Information is missing or its format is invalid.",
+        "unauthorized": "Your session expired. Sign in to the portal again to continue.",
+        "wrong_password": "That is not your current password.",
+        "same_password": "The new password must be different from the current one.",
+        "not_found": "We could not find your access account. Ask another staff member to reset your password.",
+        "storage_error": "We could not save the password. Try again in a moment.",
+        "service_unavailable": "The portal is currently unavailable. Try again later.",
+        "network": "We could not connect to the portal. Check your connection and try again.",
+        "unexpected": "Something went wrong. Try again in a moment."
+      }
+    },
+    "statuses": {
+      "pending": "Pending",
+      "contacted": "Contacted",
+      "accepted": "Accepted",
+      "rejected": "Rejected",
+      "archived": "Archived",
+      "help": {
+        "pending": "It arrived through the website and has not yet been reviewed.",
+        "contacted": "A Board member contacted the person and is awaiting a response.",
+        "accepted": "The request moved forward: the person was registered or joined as a volunteer.",
+        "rejected": "The request will not move forward, and the person has been notified.",
+        "archived": "Closed without a decision because it was a duplicate, a test, or lacked enough information for a response."
+      }
+    }
+  }
+}
