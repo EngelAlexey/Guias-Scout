@@ -1,10 +1,11 @@
 # Grupo 35 de Guias y Scouts
 
-Sitio web del proyecto TCU asociado al Grupo 35 de Guias y Scouts. El frontend esta construido con Next.js y Supabase queda preparado como backend previsto para autenticacion, base de datos, almacenamiento de imagenes y futuras metricas ambientales.
+Sitio web del proyecto TCU asociado al Grupo 35 de Guias y Scouts. El frontend esta construido con Next.js y Supabase funciona como base de datos y backend serverless, incluyendo comprobantes de reclutamiento enviados mediante una Edge Function y Resend.
 
 ## Paginas
 
-Las rutas llevan el idioma adelante: `/` redirige a `/es`.
+Las rutas llevan el idioma adelante: `/` redirige a `/es`, el idioma
+predeterminado, y cada pagina tambien esta disponible bajo `/en`.
 
 | Ruta                | Estado                                                  |
 | ------------------- | ------------------------------------------------------- |
@@ -17,12 +18,17 @@ Las rutas llevan el idioma adelante: `/` redirige a `/es`.
 | `/es/news`          | Comunicados para las familias                           |
 | `/es/design-system` | Guia de estilo viva para el resto del equipo            |
 
+Las mismas rutas se publican en ingles sustituyendo `/es` por `/en`. El
+selector de idioma de la cabecera conserva la pagina actual al cambiar y esta
+disponible tanto en escritorio como dentro del menu movil.
+
 El diseno se documenta en [`docs/design-system.md`](docs/design-system.md).
 
 ## Documentacion
 
 | Archivo | Para que sirve |
 | ------- | -------------- |
+| [`docs/README.md`](docs/README.md) | Índice operativo y guía completa de formularios, Supabase y correos de prueba |
 | [`docs/technical-rules.md`](docs/technical-rules.md) | Reglas de ramas, convenciones y validacion |
 | [`docs/design-system.md`](docs/design-system.md) | Color, tipografia, componentes y ritmo |
 | [`docs/contenido-pendiente.md`](docs/contenido-pendiente.md) | Que datos faltan y quien los aporta |
@@ -34,17 +40,18 @@ El diseno se documenta en [`docs/design-system.md`](docs/design-system.md).
 
 ## Textos e idiomas
 
-Ningun texto visible se escribe en el JSX. Todo vive en `messages/es.json` y se
-lee con llaves de i18n (**next-intl**), de modo que traducir el sitio no obliga
-a tocar las vistas.
+Ningun texto visible se escribe en el JSX. Los catalogos viven en
+`messages/es.json` y `messages/en.json` y se leen con llaves de i18n
+(**next-intl**), de modo que mantener los idiomas no obliga a duplicar vistas.
 
 - `messages/<locale>.json`: textos.
 - `i18n/`: idiomas disponibles y navegacion con idioma incluido.
 - `lib/content/site.ts`: solo datos estructurales (ids, rutas, hex, imagenes).
 - `proxy.ts`: resuelve el idioma de cada peticion.
 
-Para agregar un idioma: copiar `messages/es.json`, traducirlo y sumar el codigo
-a `locales` en `i18n/routing.ts`. No hay que modificar ninguna pagina.
+Espanol e ingles estan habilitados en `i18n/routing.ts`. Para agregar otro
+idioma: copiar uno de los catalogos, traducir sus valores y sumar el codigo a
+`locales`. No hay que modificar ninguna pagina.
 
 Al escribir paginas nuevas hay que importar `Link` desde `@/i18n/navigation`
 (no desde `next/link`) y escribir los `href` sin prefijo: `/about`, no `/es/about`.
@@ -54,7 +61,8 @@ Al escribir paginas nuevas hay que importar `Link` desde `@/i18n/navigation`
 - Next.js con App Router
 - TypeScript
 - next-intl
-- Supabase
+- Supabase Database y Edge Functions
+- Resend para correo transaccional
 - pnpm
 
 ## Requisitos locales
@@ -91,7 +99,9 @@ Variables previstas:
 - `NEXT_PUBLIC_SUPABASE_URL` y `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`: URL y clave publicable. El portal de encargados usa la clave publicable desde el servidor para comprobar la clave de acceso contra Supabase Auth.
 - `PORTAL_SESSION_SECRET`: cadena aleatoria de al menos 32 caracteres con la que se firma la cookie de sesion del portal. Cambiarla cierra todas las sesiones abiertas.
 
-Para activar los formularios y el portal de encargados también se deben ejecutar las migraciones documentadas en [`docs/supabase.md`](docs/supabase.md).
+Para activar los formularios, sus notificaciones y el portal de encargados se
+deben ejecutar las migraciones y desplegar la Edge Function según
+[`docs/supabase.md`](docs/supabase.md).
 
 ## Desarrollo
 
@@ -104,9 +114,16 @@ La aplicacion queda disponible por defecto en `http://localhost:3000`.
 ## Validacion
 
 ```bash
-pnpm build
+pnpm lint
+pnpm test
 pnpm typecheck
+pnpm build
 ```
+
+`pnpm test` valida las llaves dinámicas de i18n y que los arreglos estructurales
+`SDG`, `TEAM_SECTIONS` y `AGENDA_TONES` permanezcan alineados con ambos
+catalogos. Tambien comprueba la paridad de llaves, marcadores pendientes,
+placeholders y alternativas `hreflang` entre espanol e ingles.
 
 ## Flujo de ramas
 
@@ -130,7 +147,7 @@ git switch main
 
 ## Estado actual
 
-Estan implementadas Inicio, Nuestro Grupo, Secciones, Unete, Impacto, Proyectos y Comunicados. Los formularios de inscripción y voluntariado guardan sus solicitudes privadas en Supabase cuando se configuran las variables y la migración. Los numeros de Impacto y el catalogo de Proyectos se completan con datos verificables del grupo a medida que la jefatura los confirma (ver `docs/contenido-pendiente.md`). Siguen pendientes: la galeria, la autenticacion y la carga de imagenes.
+Estan implementadas Inicio, Nuestro Grupo, Secciones, Unete, Impacto, Proyectos y Comunicados. Los formularios de inscripción y voluntariado guardan sus solicitudes privadas en Supabase y encolan un comprobante para el correo de quien completa el formulario mediante una Edge Function y Resend. Los numeros de Impacto y el catalogo de Proyectos se completan con datos verificables del grupo a medida que la jefatura los confirma (ver `docs/contenido-pendiente.md`). Siguen pendientes: la galeria, la autenticacion y la carga de imagenes.
 
 El **panel administrativo queda fuera del TCU** por decision explicita: el mantenimiento posterior se resuelve con documentacion y capacitacion. Ver [`docs/mantenimiento.md`](docs/mantenimiento.md).
 

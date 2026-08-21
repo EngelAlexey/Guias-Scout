@@ -137,6 +137,7 @@ export function InscripcionForm() {
               id="insc-email"
               name="email"
               type="email"
+              required
               autoComplete="email"
             />
           </div>
@@ -269,6 +270,7 @@ export function VoluntariadoForm() {
               id="vol-email"
               name="email"
               type="email"
+              required
               autoComplete="email"
             />
           </div>

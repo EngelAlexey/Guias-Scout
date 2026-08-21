@@ -1,6 +1,6 @@
 export type PortalNavItem = {
   href: string;
-  key: string;
+  key: "home" | "submissions" | "users";
 };
 
 export const PORTAL_NAV_ITEMS: PortalNavItem[] = [
