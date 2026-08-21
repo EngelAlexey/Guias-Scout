@@ -1,11 +1,12 @@
 "use client";
 
 import { useEffect, useId, useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 import { BrandMark } from "@/components/brand-mark";
 import { IconClose, IconMenu } from "@/components/icons";
 import { Link, usePathname } from "@/i18n/navigation";
+import { routing } from "@/i18n/routing";
 import { NAV_ITEMS } from "@/lib/content/site";
 
 function isActive(pathname: string, href: string) {
@@ -13,15 +14,43 @@ function isActive(pathname: string, href: string) {
   return pathname === href || pathname.startsWith(`${href}/`);
 }
 
+function LanguageSwitcher({ className = "" }: { className?: string }) {
+  const locale = useLocale();
+  const pathname = usePathname();
+  const t = useTranslations("layout");
+
+  return (
+    <div
+      className={`language-switcher ${className}`.trim()}
+      role="group"
+      aria-label={t("languageSelector")}
+    >
+      {routing.locales.map((nextLocale) => (
+        <Link
+          key={nextLocale}
+          href={pathname}
+          locale={nextLocale}
+          hrefLang={nextLocale}
+          lang={nextLocale}
+          aria-current={locale === nextLocale ? "true" : undefined}
+        >
+          {t(`languages.${nextLocale}`)}
+        </Link>
+      ))}
+    </div>
+  );
+}
+
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
+  const locale = useLocale();
   const pathname = usePathname();
   const menuId = useId();
   const t = useTranslations();
 
   useEffect(() => {
     setOpen(false);
-  }, [pathname]);
+  }, [locale, pathname]);
 
   useEffect(() => {
     if (!open) return;
@@ -57,6 +86,7 @@ export function SiteHeader() {
         </nav>
 
         <div className="header-actions">
+          <LanguageSwitcher className="language-switcher--desktop" />
           <Link className="btn header-cta" href="/join">
             {t("nav.join")}
           </Link>
@@ -86,6 +116,7 @@ export function SiteHeader() {
               {t(`nav.${item.key}`)}
             </Link>
           ))}
+          <LanguageSwitcher className="language-switcher--mobile" />
           <Link className="btn" href="/join">
             {t("nav.join")}
           </Link>

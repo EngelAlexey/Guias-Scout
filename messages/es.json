@@ -29,7 +29,12 @@
     "mainNav": "Navegación principal",
     "openMenu": "Abrir menú",
     "closeMenu": "Cerrar menú",
-    "breadcrumbSeparator": "·"
+    "breadcrumbSeparator": "·",
+    "languageSelector": "Elegir idioma",
+    "languages": {
+      "es": "ES",
+      "en": "EN"
+    }
   },
 
   "home": {
@@ -255,7 +260,7 @@
         "notSure": "Todavía no lo sabemos"
       },
       "consent": "Soy la madre, el padre o la persona encargada de la persona menor y autorizo que el grupo me contacte para coordinar la visita.",
-      "privacyNote": "Los datos se guardan de forma privada y solo se usan para contactar a la persona encargada y coordinar el proceso de inscripción. No se publican en el sitio.",
+      "privacyNote": "Los datos se guardan de forma privada y solo se usan para contactar a la persona encargada, coordinar la inscripción y enviar un comprobante al correo indicado. No se publican en el sitio.",
       "submit": "Enviar solicitud"
     },
     "volunteer": {
@@ -278,12 +283,12 @@
       },
       "consent": "Autorizo que la Junta de Grupo me contacte para coordinar mi participación.",
       "juntaNote": "Las solicitudes llegan a la Junta de Grupo.",
-      "privacyNote": "Los datos se guardan de forma privada y solo se usan para que la Junta de Grupo dé seguimiento a la solicitud. No se publican en el sitio.",
+      "privacyNote": "Los datos se guardan de forma privada y solo se usan para que la Junta de Grupo dé seguimiento y envíe un comprobante al correo indicado. No se publican en el sitio.",
       "submit": "Enviar solicitud"
     },
     "status": {
       "submitting": "Enviando…",
-      "success": "¡Listo! Recibimos tu solicitud y la Junta de Grupo podrá darle seguimiento.",
+      "success": "¡Listo! Recibimos tu solicitud. Te enviaremos un comprobante al correo indicado.",
       "error": "No pudimos guardar la solicitud. Revisá los datos e intentá de nuevo."
     },
     "mail": {
@@ -343,7 +348,7 @@
     "splitTextDone": "Encabezado y pie · Base de diseño<br></br>Inicio · Nuestro Grupo · Secciones · Únete<br></br>Impacto · Proyectos · Comunicados",
     "splitEyebrowPending": "Pendiente",
     "splitTitlePending": "Mitad 2",
-    "splitTextPending": "Formularios (esperan el correo institucional)<br></br>Datos del informe social"
+    "splitTextPending": "Datos del informe social<br></br>Galería y banco de imágenes propio"
   },
 
   "underConstruction": {
