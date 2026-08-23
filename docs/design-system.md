@@ -4,8 +4,6 @@ Origen: proyecto de Claude Design "Sitio web Grupo 35 Scouts", archivo
 `Sitio Grupo 35.dc.html`. Ese prototipo usaba una sola pantalla con estado
 interno; aqui se implemento como rutas reales del App Router.
 
-La pagina viva de esta guia es `/es/design-system`.
-
 ## Donde vive cada cosa
 
 | Que                                     | Donde                          |
@@ -36,6 +34,7 @@ El sitio usa **next-intl** con el idioma en la URL: `/es`, `/es/about`, etc.
 | `i18n/navigation.ts`| `Link`, `usePathname`, `redirect`... con idioma incluido |
 | `i18n/request.ts`   | Carga el archivo de mensajes que corresponde            |
 | `messages/es.json`  | Todos los textos en espanol, con tildes                 |
+| `messages/en.json`  | Traduccion inglesa con la misma estructura              |
 
 En paginas y componentes de servidor se usa `getTranslations`; en componentes
 de cliente, `useTranslations`. Para listas se usa `t.raw("content.values")`,
@@ -46,9 +45,15 @@ y para texto con formato `t.rich(...)` con las etiquetas permitidas
 `Link` desde `@/i18n/navigation`, no desde `next/link`. El prefijo lo agrega
 el helper.
 
-### Agregar un idioma
+### Idiomas publicados
 
-1. Copiar `messages/es.json` a `messages/en.json` y traducir los valores.
+El sitio publica espanol e ingles. El selector de `components/site-header.tsx`
+usa `usePathname` de la navegacion localizada para cambiar de idioma sin perder
+la pagina actual, y tambien aparece dentro del menu movil.
+
+Para agregar otro idioma:
+
+1. Copiar un catalogo existente y traducir solo los valores.
 2. Agregar el codigo a `locales` en `i18n/routing.ts`.
 
 No hay que tocar ninguna pagina: las rutas ya viajan con idioma y el sitemap
@@ -65,7 +70,6 @@ genera las alternativas `hreflang` solo.
 | `/es/impact`         | Impacto con datos abiertos del grupo         |
 | `/es/projects`       | Proyectos, empezando por la Banda            |
 | `/es/news`           | Comunicados para las familias                |
-| `/es/design-system`  | Esta guia, en vivo                           |
 
 Las carpetas van en ingles porque en el App Router la carpeta es el segmento
 de URL, y las URL en ingles son la practica comun aunque el contenido este en
@@ -232,7 +236,8 @@ para no tocar 1800 lineas de CSS por un cambio cosmetico.
    `setRequestLocale(locale)` y exportar `generateMetadata`.
 3. Envolver cada bloque en `<section className="section section--cream">` con
    un `<div className="container">` adentro.
-4. Escribir los textos en `messages/es.json` y leerlos con `getTranslations`.
+4. Escribir los textos en `messages/es.json` y `messages/en.json`, y leerlos con
+   `getTranslations`.
 5. Importar `Link` desde `@/i18n/navigation`.
 6. Si la pagina ya es publica, agregarla a `app/sitemap.ts` y quitarla de
    `PRIVATE_ROUTES` en `app/robots.ts`.

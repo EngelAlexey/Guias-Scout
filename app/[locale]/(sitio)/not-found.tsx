@@ -7,7 +7,7 @@ export default async function NotFoundPage() {
 
   return (
     <section className="section--cream">
-      <div className="container construccion">
+      <div className="container bloque-centrado">
         <p className="eyebrow">{t("eyebrow")}</p>
         <h1 className="title-lg" style={{ marginTop: 12 }}>
           {t("title")}

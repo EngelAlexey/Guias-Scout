@@ -1,7 +1,6 @@
 import { getTranslations } from "next-intl/server";
 
 import { BrandMark } from "@/components/brand-mark";
-import { PendingValue } from "@/components/pending";
 import { Link } from "@/i18n/navigation";
 import {
   CONTACT,

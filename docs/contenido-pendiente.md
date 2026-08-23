@@ -6,7 +6,8 @@ nombres, actividades) aparece marcada en la interfaz con `PendingValue` o
 `PendingNote` (`components/pending.tsx`).
 
 Este archivo es la lista de lo que hay que preguntar. Al recibir cada dato:
-escribirlo en `messages/es.json` y quitar el marcador de la vista.
+escribirlo en `messages/es.json` y `messages/en.json`, y quitar el marcador de
+la vista.
 
 El grupo respondio 55 de 56 preguntas del formulario
 (`docs/formulario-grupo-35.md`); las respuestas y su destino en el codigo estan
@@ -21,7 +22,7 @@ en `docs/mapeo-respuestas.md`. Lo que sigue es **solo lo que quedo abierto**.
 
 Resueltos: dirección, día y hora de reunión, receso de fin de año, teléfono
 (`6010 1502`, responde la jefatura), correo institucional (`grupo35@siemprelistos.org`), nombre completo del grupo. Viven una sola
-vez en `content.contact` de `messages/es.json` y `lib/content/site.ts`.
+vez en `content.contact` de ambos catalogos y `lib/content/site.ts`.
 
 ## 2. Historia del grupo
 
@@ -50,15 +51,14 @@ la clase `.avatar` con las iniciales de cada persona.
 
 Nota de redaccion: el rol de Elena Manzanarez Juarez se publica como «Jefe de
 grupo» porque asi lo escribio el grupo. Si prefieren «Jefa», es un cambio de una
-palabra en `content.team` de `messages/es.json`.
+palabra en `content.team` de ambos catalogos.
 
 ## 4. Agenda y actividades
 
 Las cuatro actividades de la respuesta 5.1 ya estan publicadas en `/es`
 (`content.agenda`). El grupo **no maneja un calendario anual** (5.2), asi que se
 quito el enlace «Ver calendario completo» que apuntaba a `/es/news`: esa pagina
-esta en construccion y ademas esta bloqueada para buscadores en
-`app/robots.ts`.
+publica los comunicados y no lleva calendario.
 
 **Mantenimiento:** la agenda no tiene logica de fechas. Las actividades pasadas
 **no desaparecen solas** y el sitio es estatico, asi que hay que revisar la
@@ -150,7 +150,7 @@ verificables.
 de diseno. Lo que sigue abierto:
 
 - **Impacto:** los numeros esperan el informe social (9.2) para llenar
-  `impact.axes` en `messages/es.json`. Las etiquetas estan publicadas con
+  `impact.axes` en ambos catalogos. Las etiquetas estan publicadas con
   `PendingValue` hasta que la jefatura confirme cifras.
 - **Proyectos:** el catalogo arranca con la Banda Artistica Juvenil de Esparzol
   (`projects.items[0]`) y crece con lo que el grupo confirme. Las «8000 vistas»
@@ -188,8 +188,9 @@ hay que definir `NEXT_PUBLIC_SITE_URL` en el entorno: de ahi salen
 
 ## Idiomas
 
-El grupo dijo que **no hace falta version en ingles** (9.7). `i18n/routing.ts`
-se queda con `locales: ["es"]`.
+La respuesta original 9.7 indicaba que no hacia falta version en ingles. Esa
+decision fue reemplazada el 20 de agosto de 2026: `i18n/routing.ts` publica
+`locales: ["es", "en"]`, con catalogos equivalentes y selector de idioma.
 
 ## Registro del texto
 
@@ -198,5 +199,5 @@ El sitio se escribe en espanol de Costa Rica, con tuteo (`ven`, `llámanos`,
 registro y evitar formas peninsulares.
 
 La decision sobre el titulo del enlace quedo **cerrada**: se mantiene el tuteo,
-«Únete», y la copia relevante se ajusto en `nav.join`, `join.metaTitle` y
-`designSystem.splitTextDone` de `messages/es.json`.
+«Únete», y la copia relevante se ajusto en `nav.join` y `join.metaTitle` de
+`messages/es.json`.
