@@ -58,8 +58,7 @@ palabra en `content.team` de ambos catalogos.
 Las cuatro actividades de la respuesta 5.1 ya estan publicadas en `/es`
 (`content.agenda`). El grupo **no maneja un calendario anual** (5.2), asi que se
 quito el enlace «Ver calendario completo» que apuntaba a `/es/news`: esa pagina
-esta en construccion y ademas esta bloqueada para buscadores en
-`app/robots.ts`.
+publica los comunicados y no lleva calendario.
 
 **Mantenimiento:** la agenda no tiene logica de fechas. Las actividades pasadas
 **no desaparecen solas** y el sitio es estatico, asi que hay que revisar la
@@ -200,5 +199,5 @@ El sitio se escribe en espanol de Costa Rica, con tuteo (`ven`, `llámanos`,
 registro y evitar formas peninsulares.
 
 La decision sobre el titulo del enlace quedo **cerrada**: se mantiene el tuteo,
-«Únete», y la copia relevante se ajusto en `nav.join`, `join.metaTitle` y
-`designSystem.splitTextDone` de `messages/es.json`.
+«Únete», y la copia relevante se ajusto en `nav.join` y `join.metaTitle` de
+`messages/es.json`.

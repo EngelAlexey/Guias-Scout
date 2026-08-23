@@ -61,7 +61,7 @@ export default async function NewsPage({ params }: Props) {
 
       {items.length === 0 ? (
         <section className="section section--cream">
-          <div className="container construccion">
+          <div className="container bloque-centrado">
             <h2 className="title-lg">{t("news.emptyTitle")}</h2>
             <p className="lead">{t("news.emptyLead")}</p>
           </div>

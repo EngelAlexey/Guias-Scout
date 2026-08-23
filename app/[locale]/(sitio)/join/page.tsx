@@ -8,7 +8,6 @@ import {
   IconMail,
   IconPhone,
 } from "@/components/icons";
-import { PendingValue } from "@/components/pending";
 import {
   InscripcionForm,
   VoluntariadoForm,

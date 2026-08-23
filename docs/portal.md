@@ -93,7 +93,60 @@ en **Pendiente**.
 
 ---
 
-## 4. Como se maneja quien entra al portal
+## 4. Como se ven y se actualizan las solicitudes
+
+Todo ocurre en `/es/portal/solicitudes`. La pantalla junta las dos tablas del sitio,
+inscripciones de personas menores y voluntariados, en una sola lista ordenada de la
+solicitud mas reciente a la mas vieja.
+
+### Filtros
+
+Dos listas y un boton, arriba de la tabla:
+
+- **Tipo de solicitud**: Todas, Inscripcion o Voluntariado.
+- **Estado**: Todas o uno de los cinco estados.
+- **Actualizar**: vuelve a consultar sin cambiar los filtros.
+
+Los filtros se aplican en la consulta a Supabase, no en el navegador. Si se cambian
+dos filtros seguidos, la consulta vieja se cancela: siempre queda a la vista el
+resultado del filtro elegido de ultimo.
+
+### Columnas de la lista
+
+| Columna | Que muestra |
+| --- | --- |
+| Recibida | Fecha y hora en que entro la solicitud |
+| Tipo | Inscripcion o Voluntariado |
+| Persona interesada | La persona menor o la persona adulta y, debajo, quien la encarga |
+| Contacto | Telefono y correo, enlazados para llamar o escribir |
+| Interes | Seccion elegida o tipo de colaboracion |
+| Estado | Lista con los cinco estados |
+| Detalle | Abre el resto de los datos |
+
+### Cambiar el estado
+
+El estado se elige en la lista de la propia fila y se guarda de inmediato: no hay
+boton de confirmar. Mientras guarda, esa lista queda deshabilitada y arriba aparece
+un aviso con el resultado. Si falla, el aviso lo explica y la solicitud se queda con
+el estado que tenia.
+
+### Ver el detalle
+
+**Ver detalle** abre, debajo de la fila, una ficha con la persona encargada, la fecha
+de nacimiento, el telefono, el correo, la seccion o la colaboracion, el ultimo cambio
+y el mensaje que escribio la persona. Solo se abre una ficha a la vez.
+
+Al pie de la pantalla queda la explicacion de los cinco estados, la misma tabla de la
+seccion 3.
+
+### Tope de la lista
+
+La consulta trae como maximo 200 solicitudes por tabla. Al llegar a ese tope la
+pantalla lo avisa y pide filtrar por tipo o por estado; no hay paginacion.
+
+---
+
+## 5. Como se maneja quien entra al portal
 
 Todo ocurre en `/es/portal/usuarios`.
 
@@ -154,7 +207,7 @@ la Junta.
 
 ---
 
-## 5. Detalle tecnico
+## 6. Detalle tecnico
 
 Esta seccion es para quien programa; la Junta no la necesita.
 
@@ -162,6 +215,11 @@ Esta seccion es para quien programa; la Junta no la necesita.
 
 | Archivo | Que hace |
 | --- | --- |
+| `app/api/portal/submissions/route.ts` | API de solicitudes (`GET`, `PATCH`) |
+| `app/[locale]/portal/(panel)/solicitudes/page.tsx` | Pagina protegida de solicitudes |
+| `components/portal/submissions-manager.tsx` | Filtros, lista, detalle y cambio de estado |
+| `lib/portal/submissions.ts` | Tipos, estados y tope que comparten API y vista |
+| `supabase/migrations/202608150001_create_recruitment_submissions.sql` | Tablas de las dos solicitudes, con su columna `status` |
 | `app/api/portal/users/route.ts` | API de personas encargadas (`GET`, `POST`, `PATCH`) |
 | `app/api/portal/users/reset/route.ts` | Restablecer la clave de una persona |
 | `app/api/portal/password/route.ts` | Cambiar la propia clave |
@@ -178,11 +236,19 @@ Esta seccion es para quien programa; la Junta no la necesita.
 
 | Metodo y ruta | Cuerpo | Respuesta |
 | --- | --- | --- |
+| `GET /api/portal/submissions?type=&status=` | — | `{ ok: true, items: [{ id, type, status, createdAt, updatedAt, name, guardianName, phone, email, birthDate, sectionInterest, roleInterest, message }], truncated }` de la mas reciente a la mas vieja |
+| `PATCH /api/portal/submissions` | `{ id, type, status }` | `{ ok: true, status, updatedAt }` |
 | `GET /api/portal/users` | — | `{ ok: true, items: [{ id, fullName, email, isActive, createdAt, hasAccount, mustChangePassword }] }` ordenado por nombre |
 | `POST /api/portal/users` | `{ fullName, email }` | `201 { ok: true, id, temporaryPassword }` |
 | `PATCH /api/portal/users` | `{ id, fullName?, email?, isActive? }` | `{ ok: true }` |
 | `POST /api/portal/users/reset` | `{ id }` | `{ ok: true, temporaryPassword }` |
 | `POST /api/portal/password` | `{ currentPassword, newPassword }` | `{ ok: true }` |
+
+En solicitudes, `type` y `status` aceptan `all` o uno de los valores validos;
+cualquier otro texto responde `400 invalid_request`. `truncated` viene en `true`
+cuando se llego al tope de 200 por tabla. Las dos tablas se leen con la misma forma:
+`guardianName`, `birthDate` y `sectionInterest` solo traen dato en las inscripciones,
+y `roleInterest` solo en los voluntariados.
 
 `GET` devuelve ademas `hasAccount` y `mustChangePassword` por persona, que es lo que
 la vista usa para avisar «Todavia no tiene clave» o «Tiene una clave temporal sin
@@ -224,6 +290,7 @@ Todo lo que se lee en el portal vive bajo `portal.*` en `messages/es.json`:
 | `portal.shell` | Marco: nombre, salir, saltar al contenido |
 | `portal.nav` | Nombres de las secciones del portal |
 | `portal.home` | Resumen |
+| `portal.submissions` | Solicitudes: filtros, lista, detalle y errores |
 | `portal.users` | Personas encargadas |
 | `portal.password` | Pantalla de cambio de clave |
 | `portal.statuses` | Los cinco estados y su explicacion |
@@ -244,7 +311,7 @@ y `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`. El detalle esta en `docs/supabase.md`.
 
 ---
 
-## 6. Accesibilidad del portal
+## 7. Accesibilidad del portal
 
 Revision hecha sobre los mismos criterios de `docs/accesibilidad-y-rendimiento.md`
 (WCAG 2.1 AA).
@@ -266,7 +333,7 @@ Revision hecha sobre los mismos criterios de `docs/accesibilidad-y-rendimiento.m
 
 ---
 
-## 7. Checklist de prueba manual
+## 8. Checklist de prueba manual
 
 Correr esta lista completa antes de integrar cambios del portal.
 
@@ -281,6 +348,9 @@ hidratarse, asi que los botones no responden).
 | 3 | Entrar con clave equivocada | Mensaje de error, sin entrar |
 | 4 | Abrir `/es/portal/solicitudes` | Se ven las solicitudes de los dos formularios |
 | 5 | Cambiar el estado de una solicitud | El nuevo estado queda guardado al recargar |
+| 5b | Filtrar por tipo y por estado | La lista solo trae lo que coincide, y el conteo lo refleja |
+| 5c | Filtrar por un estado sin solicitudes | Avisa que ninguna coincide, sin tabla vacia |
+| 5d | Tocar **Ver detalle** | Se abre la ficha completa debajo de la fila, sin desbordar la tabla |
 | 6 | Abrir `/es/portal/usuarios` | Lista ordenada por nombre, con correo y estado |
 | 7 | Tocar **Agregar** con los campos vacios | Dos mensajes de validacion, sin enviar nada |
 | 8 | Agregar a alguien con correo valido | Aparece en la lista como **Activa** y sale el recuadro con la clave temporal |
@@ -332,3 +402,25 @@ en Supabase Auth; hay que correrlos antes de publicar el portal.
 
 Ademas de la lista: `pnpm typecheck`, `pnpm lint` y `pnpm build` corrieron sin errores,
 y ninguna pantalla del portal mostro la ruta de una llave sin traducir.
+
+### Resultado de la corrida del 23 de agosto de 2026
+
+Corrida de los pasos de solicitudes, cuando se agrego la vista. Sobre `pnpm dev` con
+la base de Supabase del proyecto: no se creo ninguna solicitud de prueba, se uso una
+de las que ya estaban y su estado se devolvio a **Pendiente** al terminar.
+
+| # | Resultado |
+| --- | --- |
+| 1 | Correcto: `/es/portal/solicitudes` sin sesion responde `307` a `/es/portal/login`, y la API `401` |
+| 4 | Correcto: las cuatro solicitudes de las dos tablas salen en una sola lista, de la mas reciente a la mas vieja |
+| 5 | Correcto: el estado nuevo queda en Supabase y sobrevive a la recarga; con un estado inventado la API responde `400` y con un `id` que no existe, `404` |
+| 5b | Correcto: filtrar por tipo y por estado deja solo lo que coincide, y cambiar dos filtros seguidos ya no deja ganar a la consulta vieja |
+| 5c | Correcto: sale «Ninguna solicitud coincide con los filtros elegidos» |
+| 5d | Correcto: la ficha se abre en una fila completa debajo, sin scroll horizontal en la tabla |
+
+Los pasos 2 y 3 siguen pendientes de una cuenta de prueba en Supabase Auth. El paso 17
+no se repitio para esta vista: la ventana del navegador de prueba no se dejo achicar,
+asi que la vista angosta de solicitudes queda por revisar a mano.
+
+Ademas de la lista: `pnpm typecheck`, `pnpm lint`, `pnpm test` y `pnpm build` corrieron
+sin errores, y las dos pantallas, en espanol y en ingles, se leyeron sin llaves crudas.

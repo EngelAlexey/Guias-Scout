@@ -4,8 +4,6 @@ Origen: proyecto de Claude Design "Sitio web Grupo 35 Scouts", archivo
 `Sitio Grupo 35.dc.html`. Ese prototipo usaba una sola pantalla con estado
 interno; aqui se implemento como rutas reales del App Router.
 
-La pagina viva de esta guia es `/es/design-system`.
-
 ## Donde vive cada cosa
 
 | Que                                     | Donde                          |
@@ -72,7 +70,6 @@ genera las alternativas `hreflang` solo.
 | `/es/impact`         | Impacto con datos abiertos del grupo         |
 | `/es/projects`       | Proyectos, empezando por la Banda            |
 | `/es/news`           | Comunicados para las familias                |
-| `/es/design-system`  | Esta guia, en vivo                           |
 
 Las carpetas van en ingles porque en el App Router la carpeta es el segmento
 de URL, y las URL en ingles son la practica comun aunque el contenido este en
