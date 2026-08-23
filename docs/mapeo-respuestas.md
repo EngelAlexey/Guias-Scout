@@ -127,7 +127,7 @@ textos actuales describen las fotos genericas de Unsplash, no las del grupo.
 | 9.4 | Los avisos son publicos para cualquiera → `/news` se construyo sin autenticacion ni RLS, con `news.items[]` (vacio por ahora) |
 | 9.5 | Formulario de inscripcion → `forms.inscription` | listo. Datos de personas menores + madre/padre/persona encargada (custodia) y consentimiento. Los envios se validan en `POST /api/recruitment` y se guardan de forma privada en Supabase |
 | 9.6 | Formulario de voluntariado → `forms.volunteer` | listo. Pregunta «por que desea formar parte» (campo `why`, obligatorio). Los envios se validan en `POST /api/recruitment` y se guardan de forma privada en Supabase |
-| 9.7 | **No hace falta ingles.** `i18n/routing.ts` se queda con `locales: ["es"]` |
+| 9.7 | La respuesta original fue **no hace falta ingles**, pero quedo reemplazada el 20 de agosto de 2026. El sitio publica `locales: ["es", "en"]`, catalogo ingles y selector de idioma |
 
 ## 10. Operacion
 

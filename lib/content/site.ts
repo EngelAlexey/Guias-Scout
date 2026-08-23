@@ -2,9 +2,19 @@ export const SECTION_IDS = ["manada", "tropa", "wak", "comunidad"] as const;
 
 export type SectionId = (typeof SECTION_IDS)[number];
 
+export type NavKey =
+  | "home"
+  | "about"
+  | "sections"
+  | "join"
+  | "impact"
+  | "projects"
+  | "news"
+  | "designSystem";
+
 export type NavItem = {
   href: string;
-  key: string;
+  key: NavKey;
   pending?: boolean;
 };
 

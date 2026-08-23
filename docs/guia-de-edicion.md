@@ -11,13 +11,17 @@ en [`mantenimiento.md`](./mantenimiento.md).
 Necesitas una cuenta de GitHub con permiso de escritura en
 <https://github.com/EngelAlexey/Guias-Scout>.
 
-Casi todo el texto del sitio vive en **un solo archivo**:
+Casi todo el texto del sitio vive en **dos catalogos con la misma estructura**:
 
 ```
 messages/es.json
+messages/en.json
 ```
 
-Cambiar un texto es cambiar ese archivo. Nada mas.
+Los datos compartidos deben actualizarse en ambos archivos. Los textos
+editoriales se redactan en el idioma correspondiente, sin completar datos
+pendientes ni traducir nombres propios o textos institucionales sin una version
+oficial.
 
 ## Cuatro reglas que no se rompen
 
@@ -35,7 +39,9 @@ Cambiar un texto es cambiar ese archivo. Nada mas.
 
 1. Entrar a <https://github.com/EngelAlexey/Guias-Scout>.
 2. Arriba a la izquierda, donde dice el nombre de la rama, escoger **`dev`**.
-3. Abrir la carpeta `messages` y hacer clic en `es.json`.
+3. Abrir la carpeta `messages` y hacer clic en `es.json` o `en.json`, segun el
+   idioma que se va a editar. Si cambia un dato compartido, repetir el cambio en
+   el otro catalogo.
 4. Hacer clic en el lapiz (**Edit this file**), arriba a la derecha.
 5. Buscar el texto con `Ctrl+F` y cambiarlo.
 6. Bajar hasta **Commit changes**.
@@ -49,7 +55,7 @@ publicado no cambia.
 
 ## Donde esta cada cosa
 
-| Lo que queres cambiar          | Buscar esta clave en `messages/es.json` | Se ve en           |
+| Lo que queres cambiar          | Buscar esta clave en `messages/<idioma>.json` | Se ve en           |
 | ------------------------------ | --------------------------------------- | ------------------ |
 | Telefono, direccion, horario   | `content.contact`                       | Todo el sitio      |
 | Actividades proximas           | `content.agenda`                        | Portada            |
@@ -62,8 +68,9 @@ publicado no cambia.
 | Proyectos                      | `projects.items`                        | `/es/projects`     |
 | Comunicados y avisos           | `news.items`                            | `/es/news`         |
 
-El contacto vive **una sola vez** en `content.contact`. Cambiarlo ahi lo cambia
-en las tres paginas donde aparece: no hay que buscarlo en varios lugares.
+El contacto vive **una sola vez por idioma** en `content.contact`. Cambiarlo ahi
+lo cambia en las tres paginas de ese idioma; hay que mantener el mismo dato en
+los dos catalogos.
 
 ## Recetas
 

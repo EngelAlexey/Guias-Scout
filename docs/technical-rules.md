@@ -48,8 +48,12 @@ Supabase se usa como backend previsto, pero las tablas, politicas RLS, buckets y
 Antes de abrir o fusionar cambios se debe ejecutar:
 
 ```bash
-pnpm build
+pnpm lint
+pnpm test
 pnpm typecheck
+pnpm build
 ```
 
-Si una tarea agrega pruebas, tambien deben ejecutarse antes de integrar.
+Las pruebas deben mantenerse alineadas con los contratos de contenido y correr
+antes de integrar cualquier cambio. El workflow de CI ejecuta estas cuatro
+validaciones en cada pull request hacia `dev`, `qa` y `main`.
