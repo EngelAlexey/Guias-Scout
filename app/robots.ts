@@ -3,7 +3,7 @@ import type { MetadataRoute } from "next";
 import { routing } from "@/i18n/routing";
 import { SITE_URL } from "@/lib/content/site";
 
-const PRIVATE_ROUTES = ["/design-system", "/portal"];
+const PRIVATE_ROUTES = ["/portal"];
 
 export default function robots(): MetadataRoute.Robots {
   return {

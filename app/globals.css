@@ -1472,25 +1472,25 @@ code {
   line-height: 2;
 }
 
-.construccion {
+.bloque-centrado {
   max-width: 760px;
   margin: 0 auto;
   padding-block: clamp(64px, 10vw, 120px) clamp(72px, 11vw, 140px);
   text-align: center;
 }
 
-.construccion .icon-badge {
+.bloque-centrado .icon-badge {
   width: 74px;
   height: 74px;
   margin: 0 auto;
   border-radius: 20px;
 }
 
-.construccion h1 {
+.bloque-centrado h1 {
   margin-top: 26px;
 }
 
-.construccion .lead {
+.bloque-centrado .lead {
   margin: 14px auto 0;
 }
 
@@ -2755,6 +2755,250 @@ select.field__control {
 
   .tabla-portal td:last-child {
     padding-bottom: 16px;
+  }
+}
+
+.portal-solicitudes {
+  display: grid;
+  gap: 32px;
+  margin-top: 28px;
+}
+
+.portal-solicitudes .form__status {
+  margin: 0;
+}
+
+.portal-solicitudes__filtros {
+  display: flex;
+  align-items: end;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.portal-solicitudes__filtros .field {
+  min-width: 190px;
+}
+
+.portal-solicitudes__aviso {
+  margin-top: 10px;
+  padding: 10px 14px;
+  border: 1px dashed var(--amber);
+  border-radius: 12px;
+  background: #fef3d9;
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.portal-tipo {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.portal-tipo--minor {
+  color: var(--purple);
+  background: var(--purple-soft);
+}
+
+.portal-tipo--volunteer {
+  color: var(--green-deep);
+  background: var(--green-soft);
+}
+
+.portal-solicitudes__contacto {
+  display: block;
+  color: var(--purple);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  word-break: break-word;
+}
+
+.portal-solicitudes__contacto + .portal-solicitudes__contacto {
+  margin-top: 4px;
+}
+
+.field__control--compacto {
+  min-width: 150px;
+  padding: 8px 12px;
+  font-size: 0.875rem;
+}
+
+/* Anchos mínimos para que la fecha y el correo no se partan a cada letra. */
+.portal-solicitudes .tabla-portal th:first-child,
+.portal-solicitudes .tabla-portal td:first-child {
+  min-width: 92px;
+}
+
+.portal-solicitudes .tabla-portal th:nth-child(4),
+.portal-solicitudes .tabla-portal td:nth-child(4) {
+  min-width: 180px;
+}
+
+.portal-solicitudes__ver {
+  white-space: nowrap;
+}
+
+.portal-solicitudes__fila-detalle td {
+  border-bottom: 1px solid var(--line);
+  padding: 0 18px 16px;
+}
+
+.portal-solicitudes__detalle {
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--cream);
+}
+
+.portal-solicitudes__detalle-titulo {
+  font-family: var(--font-titulo);
+  font-size: 0.9375rem;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.portal-solicitudes__datos {
+  display: grid;
+  gap: 10px 24px;
+  margin-top: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.portal-solicitudes__datos dt {
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.portal-solicitudes__datos dd {
+  margin: 2px 0 0;
+  color: var(--ink);
+  font-size: 0.875rem;
+  line-height: 1.55;
+  word-break: break-word;
+}
+
+.portal-solicitudes__mensaje-etiqueta {
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.portal-solicitudes__mensaje {
+  margin-top: 4px;
+  max-width: 72ch;
+  color: var(--text);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  white-space: pre-line;
+}
+
+.portal-solicitudes__leyenda {
+  display: grid;
+  gap: 12px 24px;
+  margin-top: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+
+.portal-solicitudes__leyenda dt {
+  color: var(--ink);
+  font-size: 0.875rem;
+  font-weight: 800;
+}
+
+.portal-solicitudes__leyenda dd {
+  margin: 2px 0 0;
+  color: var(--muted);
+  font-size: 0.8125rem;
+  line-height: 1.55;
+}
+
+/* La tabla de solicitudes lleva siete columnas y necesita ~1000px de ancho
+   util; contando el margen del contenedor, se apila por debajo de 1080px,
+   antes que el resto de las tablas del portal. */
+@media (max-width: 1080px) {
+  .portal-solicitudes .tabla-portal thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .portal-solicitudes .tabla-portal tr {
+    display: block;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .portal-solicitudes .tabla-portal tbody tr:last-child {
+    border-bottom: 0;
+  }
+
+  .portal-solicitudes .tabla-portal td {
+    display: grid;
+    /* Columna fija para que los valores de todas las filas arranquen parejos. */
+    grid-template-columns: 152px minmax(0, 1fr);
+    align-items: start;
+    gap: 12px;
+    border-bottom: 0;
+    padding: 10px 16px;
+    min-width: 0;
+  }
+
+  .portal-solicitudes .tabla-portal td::before {
+    content: attr(data-label);
+    grid-column: 1;
+    grid-row: 1;
+    color: var(--muted);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  /* Cada celda puede traer varios elementos (el aviso bajo el nombre, los dos
+     enlaces de contacto): todos van a la segunda columna, uno bajo otro. */
+  .portal-solicitudes .tabla-portal td > * {
+    grid-column: 2;
+    justify-self: start;
+  }
+
+  .portal-solicitudes .tabla-portal td:first-child {
+    padding-top: 16px;
+  }
+
+  .portal-solicitudes .tabla-portal td:last-child {
+    padding-bottom: 16px;
+  }
+
+  .portal-solicitudes__fila-detalle td {
+    display: block;
+    padding: 0 16px 16px;
+  }
+
+  /* En la vista apilada la fila de detalle no lleva encabezado propio. */
+  .portal-solicitudes__fila-detalle td::before {
+    content: none;
+  }
+
+  .portal-solicitudes .field__control--compacto {
+    min-width: 0;
+    width: 100%;
+    max-width: 280px;
   }
 }
 

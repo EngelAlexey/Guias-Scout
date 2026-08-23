@@ -9,13 +9,11 @@ export type NavKey =
   | "join"
   | "impact"
   | "projects"
-  | "news"
-  | "designSystem";
+  | "news";
 
 export type NavItem = {
   href: string;
   key: NavKey;
-  pending?: boolean;
 };
 
 const rawSiteUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim();
@@ -26,9 +24,9 @@ export const NAV_ITEMS: NavItem[] = [
   { href: "/", key: "home" },
   { href: "/about", key: "about" },
   { href: "/sections", key: "sections" },
-  { href: "/impact", key: "impact", pending: true },
-  { href: "/projects", key: "projects", pending: true },
-  { href: "/news", key: "news", pending: true },
+  { href: "/impact", key: "impact" },
+  { href: "/projects", key: "projects" },
+  { href: "/news", key: "news" },
 ];
 
 export const FOOTER_NAV: NavItem[] = [
@@ -42,7 +40,6 @@ export const FOOTER_TRANSPARENCY: NavItem[] = [
   { href: "/impact", key: "impact" },
   { href: "/projects", key: "projects" },
   { href: "/news", key: "news" },
-  { href: "/design-system", key: "designSystem" },
 ];
 
 export const SECTION_IMAGES: Record<SectionId, string> = {
@@ -76,15 +73,6 @@ export const PAGE_IMAGES = {
   newsHero:
     "https://images.unsplash.com/photo-1603714196939-6f6436c8d0c5?fm=jpg&q=75&w=1000&auto=format&fit=crop",
 } as const;
-
-export const PALETTE_HEX = [
-  "#2E1A47",
-  "#5B2D8E",
-  "#F2A900",
-  "#2E7D4F",
-  "#FAF8F3",
-  "#5B5169",
-];
 
 export const SDG = [
   { number: "4", hex: "#C5192D" },

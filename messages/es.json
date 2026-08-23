@@ -9,8 +9,8 @@
 
   "pending": {
     "label": "Por confirmar",
-    "hint": "Dato pendiente de confirmar con el grupo.",
-    "block": "Este bloque queda vacío a propósito. El contenido lo aporta el grupo y no se publica información inventada. El inventario de lo que falta está en docs/contenido-pendiente.md."
+    "hint": "Dato por confirmar.",
+    "block": "Este bloque queda vacío a propósito: solo se publica información confirmada por el grupo."
   },
 
   "nav": {
@@ -21,7 +21,6 @@
     "projects": "Proyectos",
     "news": "Comunicados",
     "join": "Únete",
-    "designSystem": "Base de diseño",
     "portal": "Portal"
   },
 
@@ -144,7 +143,7 @@
       "title": "Quiénes acompañan",
       "lead": "Personas adultas voluntarias, formadas y con acreditación vigente de la Asociación. Cada sección tiene su equipo de dirigentes y las decisiones del grupo las toma la Junta de Grupo, encabezada por la jefatura.",
       "structureTitle": "Cómo se organiza la Junta de Grupo",
-      "rosterNote": "El grupo cuenta con 22 personas adultas entre dirigentes y colaboradoras. Aquí publicamos las que ya confirmaron su nombre y su rol; el resto se agrega conforme nos lo vayan pasando."
+      "rosterNote": "El grupo cuenta con 22 personas adultas entre dirigentes y colaboradoras. Aquí publicamos a quienes confirmaron su nombre y su rol."
     },
     "venue": {
       "eyebrow": "Dónde estamos",
@@ -313,50 +312,7 @@
     }
   },
 
-  "designSystem": {
-    "metaTitle": "Base de diseño",
-    "metaDescription": "Color, tipografía, componentes y ritmo del sitio del Grupo 35 Esparzol, para que las páginas pendientes se vean como parte del mismo sitio.",
-    "eyebrow": "Guía para el equipo",
-    "title": "Base de diseño del sitio",
-    "lead": "Todo lo que hace falta para que las páginas de Impacto, Proyectos y Comunicados se vean como parte del mismo sitio. Los valores viven como custom properties en <code>app/globals.css</code>.",
-    "colorTitle": "Color",
-    "typographyTitle": "Tipografía",
-    "typographyHeadings": "Títulos · Sora 800",
-    "typographyHeadingsDetail": "H1 <code>clamp(2.25rem, 6vw, 3.875rem)</code><br></br>H2 <code>clamp(1.625rem, 3.4vw, 2.5rem)</code> · H3 20-24px<br></br>Interlineado 1.06-1.2 · letter-spacing -0.02em",
-    "typographyBody": "Texto · Mulish 400/700/800",
-    "typographyBodyDetail": "Párrafo 16-20px · Etiqueta 13px 800 mayúsculas<br></br>Interlineado 1.55-1.7 · texto secundario <code>#5B5169</code>",
-    "componentsTitle": "Componentes",
-    "buttonsTitle": "Botones",
-    "buttonPrimary": "Primario",
-    "buttonAccent": "Destacado",
-    "buttonGhost": "Secundario",
-    "buttonsDetail": "Clases <code>.btn</code>, <code>.btn--accent</code>, <code>.btn--ghost</code>. Radio 999px.",
-    "cardTitle": "Tarjeta",
-    "cardSample": "Título de tarjeta",
-    "cardDetail": "Radio 20px · borde <code>#EFE9DF</code> · relleno 22-34px",
-    "rhythmTitle": "Ritmo y rejilla",
-    "rhythmDetail": "Ancho máximo <b>1280px</b><br></br>Márgenes laterales <code>clamp(20px, 5vw, 32px)</code><br></br>Separación entre secciones <code>clamp(56px, 8vw, 84px)</code><br></br>Espacio entre columnas <code>clamp(36px, 5vw, 64px)</code><br></br>Radio de imagen <b>24px</b>",
-    "howToTitle": "Cómo construir una página nueva",
-    "structureTitle": "Estructura mínima",
-    "structureDetail": "Crear <code>{route}</code>, exportar <code>generateMetadata</code> y envolver cada bloque en <code>{section}</code> con un <code>{wrapper}</code> adentro. El encabezado y el pie ya los pone <code>{layout}</code>.",
-    "accentTitle": "Color por sección",
-    "accentDetail": "Poner <code>data-seccion=\"manada|tropa|wak|comunidad\"</code> en cualquier contenedor cambia <code>--acento</code>, <code>--acento-suave</code> y <code>--acento-texto</code> para todo lo que tenga adentro. No se escriben hex sueltos en los componentes.",
-    "i18nTitle": "Textos e idiomas",
-    "i18nDetail": "Ningún texto visible se escribe en el JSX: todo sale de <code>messages/es.json</code> mediante llaves. En páginas de servidor se usa <code>getTranslations</code> y en componentes de cliente <code>useTranslations</code>. Para sumar un idioma se copia el archivo de mensajes y se agrega el código a <code>i18n/routing.ts</code>.",
-    "contentTitle": "Datos del grupo",
-    "contentDetail": "El sitio no publica datos inventados. Fechas, cantidades, direcciones, contactos y nombres se marcan con <code>PendingValue</code> o <code>PendingNote</code> hasta que el grupo los confirme. La lista completa está en <code>docs/contenido-pendiente.md</code>.",
-    "splitEyebrowDone": "Reparto del trabajo",
-    "splitTitleDone": "Mitad 1 · lista",
-    "splitTextDone": "Encabezado y pie · Base de diseño<br></br>Inicio · Nuestro Grupo · Secciones · Únete<br></br>Impacto · Proyectos · Comunicados",
-    "splitEyebrowPending": "Pendiente",
-    "splitTitlePending": "Mitad 2",
-    "splitTextPending": "Datos del informe social<br></br>Galería y banco de imágenes propio"
-  },
 
-  "underConstruction": {
-    "backHome": "Volver al inicio",
-    "designSystem": "Ver la base de diseño"
-  },
 
   "impact": {
     "metaTitle": "Impacto",
@@ -364,7 +320,7 @@
     "hero": {
       "eyebrow": "Datos abiertos",
       "title": "Lo que hacemos, con números",
-      "lead": "Publicamos los resultados del trabajo del grupo con datos verificables. Lo que todavía no está confirmado se muestra «por confirmar» en lugar de inventar cifras.",
+      "lead": "Publicamos los resultados del trabajo del grupo con datos verificables: ninguna cifra se estima ni se redondea.",
       "imageAlt": "Personas jóvenes del grupo durante una actividad"
     },
     "axes": [
@@ -394,7 +350,7 @@
         ]
       }
     ],
-    "note": "Fuente: informe social del grupo. Los números se publican apenas la jefatura los confirme y se actualizan en cada revisión del sitio."
+    "note": "Fuente: informe social del Grupo 35."
   },
 
   "projects": {
@@ -420,7 +376,7 @@
         "detail": "El proyecto educativo del grupo tiene enfoque musical: la Banda ensaya, se presenta y alrededor de ella se trabaja el rescate del patrimonio inmaterial y las buenas prácticas."
       }
     ],
-    "pendingNote": "El catálogo se completa con los proyectos que el grupo vaya confirmando."
+    "pendingNote": "El catálogo reúne los proyectos confirmados por el grupo."
   },
 
   "news": {
@@ -432,10 +388,10 @@
       "lead": "Los avisos del grupo, públicos para cualquiera que los necesite: cambios de horario, listas de qué llevar y avisos de cada sección.",
       "imageAlt": "Reunión de grupo al aire libre"
     },
-    "emptyTitle": "Todavía no hay comunicados publicados",
-    "emptyLead": "Los avisos aparecen aquí apenas la jefatura los confirme. Mientras tanto, la vía de contacto sigue siendo el teléfono y la reunión de los domingos.",
+    "emptyTitle": "No hay comunicados publicados",
+    "emptyLead": "Cuando la jefatura publique un aviso aparecerá aquí. Para cualquier consulta, llámanos o acércate a la reunión de los domingos.",
     "items": [],
-    "note": "El calendario de actividades vivirá en esta página cuando el grupo maneje uno."
+    "note": "Los comunicados son la vía oficial para avisos de actividades, cambios de horario y requisitos."
   },
 
   "notFound": {
@@ -801,6 +757,75 @@
         "service_unavailable": "El portal no está disponible en este momento. Intentá de nuevo más tarde.",
         "network": "No pudimos conectarnos con el portal. Revisá tu conexión e intentá de nuevo.",
         "unexpected": "Algo salió mal. Intentá de nuevo en un momento."
+      }
+    },
+    "submissions": {
+      "eyebrow": "Portal de encargados",
+      "title": "Solicitudes",
+      "lead": "Todo lo que llegó desde los formularios del sitio. Cambiá el estado conforme le den seguimiento.",
+      "scopeNote": "Los datos personales solo se ven aquí adentro y no se publican en el sitio. El portal guarda el estado de cada solicitud, no el historial de la conversación.",
+      "filters": {
+        "title": "Filtros",
+        "type": "Tipo de solicitud",
+        "status": "Estado",
+        "all": "Todas",
+        "refresh": "Actualizar",
+        "refreshing": "Actualizando…",
+        "showing": "{count} a la vista.",
+        "truncated": "Hay más solicitudes de las que caben en una sola vista. Filtrá por tipo o por estado para ver el resto."
+      },
+      "types": {
+        "minor": "Inscripción",
+        "volunteer": "Voluntariado"
+      },
+      "fields": {
+        "received": "Recibida",
+        "type": "Tipo",
+        "person": "Persona interesada",
+        "contact": "Contacto",
+        "interest": "Interés",
+        "status": "Estado",
+        "actions": "Detalle"
+      },
+      "detail": {
+        "show": "Ver detalle",
+        "hide": "Ocultar detalle",
+        "title": "Detalle de la solicitud de {name}",
+        "guardian": "Persona encargada",
+        "birthDate": "Fecha de nacimiento",
+        "section": "Sección de interés",
+        "role": "Colaboración",
+        "message": "Mensaje",
+        "phone": "Teléfono",
+        "email": "Correo",
+        "updated": "Último cambio",
+        "emptyMessage": "Sin mensaje.",
+        "unspecified": "Sin indicar"
+      },
+      "status": {
+        "label": "Estado de la solicitud de {name}",
+        "saving": "Guardando…",
+        "legend": "Qué significa cada estado"
+      },
+      "list": {
+        "title": "Lista de solicitudes",
+        "caption": "Solicitudes recibidas desde el sitio, con su tipo, contacto y estado.",
+        "loading": "Cargando solicitudes…",
+        "empty": "Todavía no llegó ninguna solicitud desde el sitio.",
+        "emptyFiltered": "Ninguna solicitud coincide con los filtros elegidos.",
+        "retry": "Reintentar"
+      },
+      "feedback": {
+        "updated": "La solicitud de {name} quedó en estado {status}."
+      },
+      "errors": {
+        "invalid_request": "Los datos enviados no son válidos. Revisá e intentá de nuevo.",
+        "unauthorized": "La sesión terminó. Volvé a entrar al portal.",
+        "not_found": "Esa solicitud ya no existe.",
+        "storage_error": "No pudimos guardar el cambio. Intentá de nuevo en un momento.",
+        "service_unavailable": "El servicio no está disponible ahora mismo.",
+        "network": "No hay conexión con el servidor. Revisá tu internet e intentá de nuevo.",
+        "unexpected": "Algo no salió como esperábamos. Intentá de nuevo."
       }
     },
     "password": {

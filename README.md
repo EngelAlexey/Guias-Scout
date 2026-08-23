@@ -16,7 +16,6 @@ predeterminado, y cada pagina tambien esta disponible bajo `/en`.
 | `/es/impact`        | Impacto con datos abiertos del grupo                    |
 | `/es/projects`      | Proyectos, empezando por la Banda                       |
 | `/es/news`          | Comunicados para las familias                           |
-| `/es/design-system` | Guia de estilo viva para el resto del equipo            |
 
 Las mismas rutas se publican en ingles sustituyendo `/es` por `/en`. El
 selector de idioma de la cabecera conserva la pagina actual al cambiar y esta
@@ -28,7 +27,7 @@ El diseno se documenta en [`docs/design-system.md`](docs/design-system.md).
 
 | Archivo | Para que sirve |
 | ------- | -------------- |
-| [`docs/README.md`](docs/README.md) | Índice operativo y guía completa de formularios, Supabase y correos de prueba |
+| [`docs/README.md`](docs/README.md) | Índice operativo y guía completa de formularios, Supabase y notificaciones por correo |
 | [`docs/technical-rules.md`](docs/technical-rules.md) | Reglas de ramas, convenciones y validacion |
 | [`docs/design-system.md`](docs/design-system.md) | Color, tipografia, componentes y ritmo |
 | [`docs/contenido-pendiente.md`](docs/contenido-pendiente.md) | Que datos faltan y quien los aporta |

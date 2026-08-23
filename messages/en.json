@@ -9,8 +9,8 @@
 
   "pending": {
     "label": "To be confirmed",
-    "hint": "This information is awaiting confirmation from the group.",
-    "block": "This block is intentionally empty. The group will provide the content, and no invented information will be published. The inventory of missing content is available in docs/contenido-pendiente.md."
+    "hint": "Information to be confirmed.",
+    "block": "This block is intentionally empty: we only publish information confirmed by the group."
   },
 
   "nav": {
@@ -21,7 +21,6 @@
     "projects": "Projects",
     "news": "Notices",
     "join": "Join Us",
-    "designSystem": "Design system",
     "portal": "Portal"
   },
 
@@ -144,7 +143,7 @@
       "title": "Who supports our members",
       "lead": "Adult volunteers who are trained and currently accredited by the Association. Each section has its leadership team, and group decisions are made by the Group Board, led by the group leader.",
       "structureTitle": "How the Group Board is organized",
-      "rosterNote": "The group has 22 adult leaders and collaborators. We publish the people who have already confirmed their name and role; everyone else will be added as their information is provided."
+      "rosterNote": "The group has 22 adult leaders and collaborators. Here we publish the people who confirmed their name and role."
     },
     "venue": {
       "eyebrow": "Where to find us",
@@ -313,50 +312,7 @@
     }
   },
 
-  "designSystem": {
-    "metaTitle": "Design system",
-    "metaDescription": "Colors, typography, components, and rhythm for the Grupo 35 Esparzol website so future pages remain visually consistent.",
-    "eyebrow": "Team guide",
-    "title": "Website design system",
-    "lead": "Everything needed to make the Impact, Projects, and Notices pages feel like part of the same site. Values are stored as custom properties in <code>app/globals.css</code>.",
-    "colorTitle": "Color",
-    "typographyTitle": "Typography",
-    "typographyHeadings": "Headings · Sora 800",
-    "typographyHeadingsDetail": "H1 <code>clamp(2.25rem, 6vw, 3.875rem)</code><br></br>H2 <code>clamp(1.625rem, 3.4vw, 2.5rem)</code> · H3 20-24px<br></br>Line height 1.06-1.2 · letter-spacing -0.02em",
-    "typographyBody": "Body · Mulish 400/700/800",
-    "typographyBodyDetail": "Paragraph 16-20px · Label 13px 800 uppercase<br></br>Line height 1.55-1.7 · secondary text <code>#5B5169</code>",
-    "componentsTitle": "Components",
-    "buttonsTitle": "Buttons",
-    "buttonPrimary": "Primary",
-    "buttonAccent": "Accent",
-    "buttonGhost": "Secondary",
-    "buttonsDetail": "Classes <code>.btn</code>, <code>.btn--accent</code>, and <code>.btn--ghost</code>. Radius 999px.",
-    "cardTitle": "Card",
-    "cardSample": "Card title",
-    "cardDetail": "Radius 20px · border <code>#EFE9DF</code> · padding 22-34px",
-    "rhythmTitle": "Rhythm and grid",
-    "rhythmDetail": "Maximum width <b>1280px</b><br></br>Side margins <code>clamp(20px, 5vw, 32px)</code><br></br>Space between sections <code>clamp(56px, 8vw, 84px)</code><br></br>Column gap <code>clamp(36px, 5vw, 64px)</code><br></br>Image radius <b>24px</b>",
-    "howToTitle": "How to build a new page",
-    "structureTitle": "Minimum structure",
-    "structureDetail": "Create <code>{route}</code>, export <code>generateMetadata</code>, and wrap each block in <code>{section}</code> with a <code>{wrapper}</code> inside. The <code>{layout}</code> already provides the header and footer.",
-    "accentTitle": "Color by section",
-    "accentDetail": "Adding <code>data-seccion=\"manada|tropa|wak|comunidad\"</code> to any container changes <code>--acento</code>, <code>--acento-suave</code>, and <code>--acento-texto</code> for everything inside it. Do not write standalone hex values in components.",
-    "i18nTitle": "Text and languages",
-    "i18nDetail": "No visible text is written in JSX: everything comes from <code>messages/&lt;locale&gt;.json</code> through message keys. Server pages use <code>getTranslations</code>, and client components use <code>useTranslations</code>. Available languages are configured in <code>i18n/routing.ts</code>.",
-    "contentTitle": "Group information",
-    "contentDetail": "The site does not publish invented information. Dates, quantities, addresses, contact details, and names use <code>PendingValue</code> or <code>PendingNote</code> until the group confirms them. The full list is available in <code>docs/contenido-pendiente.md</code>.",
-    "splitEyebrowDone": "Work distribution",
-    "splitTitleDone": "Part 1 · complete",
-    "splitTextDone": "Header and footer · Design system<br></br>Home · Our Group · Sections · Join Us<br></br>Impact · Projects · Notices",
-    "splitEyebrowPending": "Pending",
-    "splitTitlePending": "Part 2",
-    "splitTextPending": "Social report data<br></br>Gallery and the group's own image bank"
-  },
 
-  "underConstruction": {
-    "backHome": "Back to home",
-    "designSystem": "View the design system"
-  },
 
   "impact": {
     "metaTitle": "Impact",
@@ -364,7 +320,7 @@
     "hero": {
       "eyebrow": "Open data",
       "title": "What we do, in numbers",
-      "lead": "We publish the group's results using verifiable data. Information that has not yet been confirmed is shown as “to be confirmed” instead of using invented figures.",
+      "lead": "We publish the group's results using verifiable data: no figure is estimated or rounded.",
       "imageAlt": "Young group members during an activity"
     },
     "axes": [
@@ -394,7 +350,7 @@
         ]
       }
     ],
-    "note": "Source: the group's social report. Figures will be published as soon as the group leadership confirms them and will be updated during each site review."
+    "note": "Source: the Grupo 35 social report."
   },
 
   "projects": {
@@ -420,7 +376,7 @@
         "detail": "The group's educational project has a musical focus: the band rehearses and performs, while its activities promote the preservation of intangible cultural heritage and good practices."
       }
     ],
-    "pendingNote": "The catalog will be expanded as the group confirms additional projects."
+    "pendingNote": "The catalog gathers the projects confirmed by the group."
   },
 
   "news": {
@@ -432,10 +388,10 @@
       "lead": "Public group updates for anyone who needs them: schedule changes, packing lists, and notices from each section.",
       "imageAlt": "An outdoor group meeting"
     },
-    "emptyTitle": "No notices have been published yet",
-    "emptyLead": "Notices will appear here as soon as the group leadership confirms them. Until then, you can contact us by phone or at our Sunday meeting.",
+    "emptyTitle": "No notices published",
+    "emptyLead": "When the group leadership publishes a notice, it will appear here. For any question, call us or come to our Sunday meeting.",
     "items": [],
-    "note": "The activity calendar will be available on this page once the group begins maintaining one."
+    "note": "Notices are the official channel for activity announcements, schedule changes and requirements."
   },
 
   "notFound": {
@@ -801,6 +757,75 @@
         "service_unavailable": "The portal is currently unavailable. Try again later.",
         "network": "We could not connect to the portal. Check your connection and try again.",
         "unexpected": "Something went wrong. Try again in a moment."
+      }
+    },
+    "submissions": {
+      "eyebrow": "Leaders portal",
+      "title": "Requests",
+      "lead": "Everything that arrived through the site forms. Update the status as your team follows up.",
+      "scopeNote": "Personal data is only visible inside the portal and is never published on the site. The portal stores each request's status, not the conversation history.",
+      "filters": {
+        "title": "Filters",
+        "type": "Request type",
+        "status": "Status",
+        "all": "All",
+        "refresh": "Refresh",
+        "refreshing": "Refreshing…",
+        "showing": "{count} shown.",
+        "truncated": "There are more requests than fit in a single view. Filter by type or status to see the rest."
+      },
+      "types": {
+        "minor": "Enrolment",
+        "volunteer": "Volunteering"
+      },
+      "fields": {
+        "received": "Received",
+        "type": "Type",
+        "person": "Person interested",
+        "contact": "Contact",
+        "interest": "Interest",
+        "status": "Status",
+        "actions": "Details"
+      },
+      "detail": {
+        "show": "View details",
+        "hide": "Hide details",
+        "title": "Details of the request from {name}",
+        "guardian": "Parent or guardian",
+        "birthDate": "Date of birth",
+        "section": "Section of interest",
+        "role": "Contribution",
+        "message": "Message",
+        "phone": "Phone",
+        "email": "Email",
+        "updated": "Last change",
+        "emptyMessage": "No message.",
+        "unspecified": "Not stated"
+      },
+      "status": {
+        "label": "Status of the request from {name}",
+        "saving": "Saving…",
+        "legend": "What each status means"
+      },
+      "list": {
+        "title": "Request list",
+        "caption": "Requests received from the site, with type, contact and status.",
+        "loading": "Loading requests…",
+        "empty": "No requests have arrived from the site yet.",
+        "emptyFiltered": "No request matches the selected filters.",
+        "retry": "Try again"
+      },
+      "feedback": {
+        "updated": "The request from {name} is now {status}."
+      },
+      "errors": {
+        "invalid_request": "The data sent is not valid. Check it and try again.",
+        "unauthorized": "Your session ended. Sign in to the portal again.",
+        "not_found": "That request no longer exists.",
+        "storage_error": "We could not save the change. Try again in a moment.",
+        "service_unavailable": "The service is unavailable right now.",
+        "network": "There is no connection to the server. Check your internet and try again.",
+        "unexpected": "Something did not go as expected. Try again."
       }
     },
     "password": {
