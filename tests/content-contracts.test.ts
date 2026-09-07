@@ -2,6 +2,8 @@ import { describe, expect, it } from "vitest";
 
 import {
   AGENDA_TONES,
+  CREDITS_INSTITUTIONS,
+  CREDITS_TEAM,
   SDG,
   SECTION_IDS,
   TEAM_SECTIONS,
@@ -17,6 +19,16 @@ describe("indexed content contracts", () => {
       ["SDG/content.sdg", SDG, messages.content.sdg],
       ["TEAM_SECTIONS/content.team", TEAM_SECTIONS, messages.content.team],
       ["AGENDA_TONES/content.agenda", AGENDA_TONES, messages.content.agenda],
+      [
+        "CREDITS_INSTITUTIONS/credits.programme.items",
+        CREDITS_INSTITUTIONS,
+        messages.credits.programme.items,
+      ],
+      [
+        "CREDITS_TEAM/credits.people.items",
+        CREDITS_TEAM,
+        messages.credits.people.items,
+      ],
     ])(`keeps %s aligned in ${locale}`, (_name, structuralItems, translatedItems) => {
       expect(structuralItems).toHaveLength(translatedItems.length);
     });

@@ -16,6 +16,7 @@ predeterminado, y cada pagina tambien esta disponible bajo `/en`.
 | `/es/impact`        | Impacto con datos abiertos del grupo                    |
 | `/es/projects`      | Proyectos, empezando por la Banda                       |
 | `/es/news`          | Comunicados para las familias                           |
+| `/es/credits`       | Creditos: el programa de TCU y el equipo responsable    |
 
 Las mismas rutas se publican en ingles sustituyendo `/es` por `/en`. El
 selector de idioma de la cabecera conserva la pagina actual al cambiar y esta
@@ -146,7 +147,7 @@ git switch main
 
 ## Estado actual
 
-Estan implementadas Inicio, Nuestro Grupo, Secciones, Unete, Impacto, Proyectos y Comunicados. Los formularios de inscripción y voluntariado guardan sus solicitudes privadas en Supabase y encolan un comprobante para el correo de quien completa el formulario mediante una Edge Function y Resend. Los numeros de Impacto y el catalogo de Proyectos se completan con datos verificables del grupo a medida que la jefatura los confirma (ver `docs/contenido-pendiente.md`). Siguen pendientes: la galeria, la autenticacion y la carga de imagenes.
+Estan implementadas Inicio, Nuestro Grupo, Secciones, Unete, Impacto, Proyectos, Comunicados y Creditos. Los formularios de inscripción y voluntariado guardan sus solicitudes privadas en Supabase y encolan un comprobante para el correo de quien completa el formulario mediante una Edge Function y Resend. Los numeros de Impacto y el catalogo de Proyectos se completan con datos verificables del grupo a medida que la jefatura los confirma (ver `docs/contenido-pendiente.md`). Siguen pendientes: la galeria, la autenticacion y la carga de imagenes.
 
 El **panel administrativo queda fuera del TCU** por decision explicita: el mantenimiento posterior se resuelve con documentacion y capacitacion. Ver [`docs/mantenimiento.md`](docs/mantenimiento.md).
 

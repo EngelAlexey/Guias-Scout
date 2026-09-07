@@ -1603,6 +1603,18 @@ code {
   font-size: 0.84375rem;
 }
 
+/* El parrafo del copyright es del tono mas apagado que se usa sobre el pie, asi
+   que un enlace que solo herede el color no se distingue del texto. */
+.footer-bottom a {
+  color: var(--on-dark);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footer-bottom a:hover {
+  color: #ffffff;
+}
+
 .footer-ods {
   display: flex;
   gap: 8px;

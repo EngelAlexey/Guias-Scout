@@ -85,9 +85,10 @@ export async function SiteFooter() {
 
         <div className="footer-bottom">
           <p>
-            {t("footer.copyright", {
+            {t.rich("footer.copyright", {
               year: new Date().getFullYear(),
               name: t("site.name"),
+              link: (chunks) => <Link href="/credits">{chunks}</Link>,
             })}
           </p>
           <ul className="footer-ods" aria-label={t("footer.sdgLabel")}>
