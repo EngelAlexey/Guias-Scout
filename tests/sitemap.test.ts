@@ -2,7 +2,16 @@ import { describe, expect, it } from "vitest";
 
 import sitemap from "../app/sitemap";
 
-const routes = ["", "/about", "/sections", "/join", "/impact", "/projects", "/news"];
+const routes = [
+  "",
+  "/about",
+  "/sections",
+  "/join",
+  "/impact",
+  "/projects",
+  "/news",
+  "/credits",
+];
 const locales = ["es", "en"];
 
 describe("localized sitemap", () => {

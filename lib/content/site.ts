@@ -9,7 +9,8 @@ export type NavKey =
   | "join"
   | "impact"
   | "projects"
-  | "news";
+  | "news"
+  | "credits";
 
 export type NavItem = {
   href: string;
@@ -40,6 +41,7 @@ export const FOOTER_TRANSPARENCY: NavItem[] = [
   { href: "/impact", key: "impact" },
   { href: "/projects", key: "projects" },
   { href: "/news", key: "news" },
+  { href: "/credits", key: "credits" },
 ];
 
 export const SECTION_IMAGES: Record<SectionId, string> = {
@@ -100,4 +102,39 @@ export const AGENDA_TONES: readonly (string | undefined)[] = [
   undefined,
   undefined,
   "green",
+];
+
+// Paralelos por indice a credits.people[] y credits.programme[] de
+// messages/es.json. El nombre, la URL y el texto visible del enlace no se
+// traducen, asi que viven aqui; el rol y el rotulo salen del catalogo.
+export type CreditsLink = {
+  href: string;
+  linkText: string;
+  external: boolean;
+};
+
+export const CREDITS_TEAM: readonly (CreditsLink & { name: string })[] = [
+  {
+    name: "Alex Herrera Manzanares",
+    href: "https://www.alexherrera.dev",
+    linkText: "alexherrera.dev",
+    external: true,
+  },
+  {
+    name: "Megan Castro",
+    href: "mailto:meganfabicastro@gmail.com",
+    linkText: "meganfabicastro@gmail.com",
+    external: false,
+  },
+  {
+    name: "Sergio Quesada",
+    href: "mailto:sqada2804@gmail.com",
+    linkText: "sqada2804@gmail.com",
+    external: false,
+  },
+];
+
+export const CREDITS_INSTITUTIONS: readonly CreditsLink[] = [
+  { href: "https://www.utn.ac.cr", linkText: "utn.ac.cr", external: true },
+  { href: "https://www.utn.ac.cr/tcu", linkText: "utn.ac.cr/tcu", external: true },
 ];
