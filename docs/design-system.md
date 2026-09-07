@@ -39,7 +39,9 @@ El sitio usa **next-intl** con el idioma en la URL: `/es`, `/es/about`, etc.
 En paginas y componentes de servidor se usa `getTranslations`; en componentes
 de cliente, `useTranslations`. Para listas se usa `t.raw("content.values")`,
 y para texto con formato `t.rich(...)` con las etiquetas permitidas
-(`code`, `b`, `br`).
+(`code`, `b`, `br`, `link`). `link` la usa el copyright del pie para enlazar
+la frase del TCU a `/credits`; la funcion que la dibuja se pasa en la propia
+llamada, en `components/site-footer.tsx`.
 
 **Importante:** los `href` se escriben sin prefijo (`/about`) y se importa
 `Link` desde `@/i18n/navigation`, no desde `next/link`. El prefijo lo agrega
@@ -70,6 +72,7 @@ genera las alternativas `hreflang` solo.
 | `/es/impact`         | Impacto con datos abiertos del grupo         |
 | `/es/projects`       | Proyectos, empezando por la Banda            |
 | `/es/news`           | Comunicados para las familias                |
+| `/es/credits`        | Creditos del TCU: programa y equipo          |
 
 Las carpetas van en ingles porque en el App Router la carpeta es el segmento
 de URL, y las URL en ingles son la practica comun aunque el contenido este en
@@ -231,7 +234,9 @@ para no tocar 1800 lineas de CSS por un cambio cosmetico.
 
 ## Como agregar una pagina
 
-1. Crear `app/[locale]/<ruta>/page.tsx` con la carpeta en ingles.
+1. Crear `app/[locale]/(sitio)/<ruta>/page.tsx` con la carpeta en ingles. El
+   grupo `(sitio)` no es opcional: su `layout.tsx` es el que monta encabezado,
+   pie y salto al contenido. Fuera de el la pagina sale desnuda.
 2. Recibir `params: Promise<{ locale: string }>`, llamar a
    `setRequestLocale(locale)` y exportar `generateMetadata`.
 3. Envolver cada bloque en `<section className="section section--cream">` con
@@ -239,8 +244,27 @@ para no tocar 1800 lineas de CSS por un cambio cosmetico.
 4. Escribir los textos en `messages/es.json` y `messages/en.json`, y leerlos con
    `getTranslations`.
 5. Importar `Link` desde `@/i18n/navigation`.
-6. Si la pagina ya es publica, agregarla a `app/sitemap.ts` y quitarla de
+6. Si la pagina ya es publica, agregarla a `app/sitemap.ts` **y** a la copia
+   del arreglo en `tests/sitemap.test.ts`, que compara el largo; y quitarla de
    `PRIVATE_ROUTES` en `app/robots.ts`.
+7. Si la pagina entra en el menu o en el pie, ampliar la union `NavKey` de
+   `lib/content/site.ts`, sumar la entrada al arreglo que toque y escribir
+   `nav.<llave>` en los dos catalogos.
+
+## Enlaces que salen del sitio
+
+El `Link` de `@/i18n/navigation` es solo para rutas internas: agrega el prefijo
+de idioma, que a un destino externo no le sirve. Para lo demas, `<a>` plano:
+
+- Externo: `className="link-arrow"`, `target="_blank"` y
+  `rel="noopener noreferrer"`.
+- `mailto:` y `tel:`: `className="link-arrow"` y sin `target`; abrir el cliente
+  de correo en otra pestana solo deja una pestana en blanco.
+- `.footer-mail` es ambar y solo sirve sobre el pie oscuro. Sobre fondo claro
+  no cumple contraste AA: ahi va `.link-arrow`.
+
+La URL vive en `lib/content/site.ts` (como `CONTACT`, `CREDITS_TEAM` o
+`CREDITS_INSTITUTIONS`), nunca escrita dentro del JSX.
 
 ## Pendiente (segunda mitad del proyecto)
 
