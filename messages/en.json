@@ -20,6 +20,7 @@
     "impact": "Impact",
     "projects": "Projects",
     "news": "Notices",
+    "credits": "Credits",
     "join": "Join Us",
     "portal": "Portal"
   },
@@ -394,6 +395,34 @@
     "note": "Notices are the official channel for activity announcements, schedule changes and requirements."
   },
 
+  "credits": {
+    "metaTitle": "Credits",
+    "metaDescription": "Who built this site and under which programme: a University Community Service project of the Universidad Técnica Nacional for Grupo 35 Esparzol.",
+    "hero": {
+      "eyebrow": "Who built this site",
+      "title": "Credits",
+      "lead": "This site was built as a University Community Service project. This page records the programme behind it and the people who developed it."
+    },
+    "programme": {
+      "title": "Programme",
+      "lead": "Development took place within University Community Service, the community outreach track of the Universidad Técnica Nacional. Once the project closes, the site is handed over to Grupo 35.",
+      "items": [
+        { "label": "Universidad Técnica Nacional (UTN)" },
+        { "label": "University Community Service (TCU)" }
+      ]
+    },
+    "people": {
+      "title": "The team",
+      "lead": "Three UTN students took responsibility for the project.",
+      "items": [
+        { "linkLabel": "Portfolio" },
+        { "linkLabel": "Email" },
+        { "linkLabel": "Email" }
+      ]
+    },
+    "note": "For questions about the site, write to the team or to Grupo 35 through the contact details."
+  },
+
   "notFound": {
     "eyebrow": "Error 404",
     "title": "We could not find that page",
@@ -412,7 +441,7 @@
     "venueLabel": "Where we meet",
     "phoneLabel": "Phone",
     "emailLabel": "Email",
-    "copyright": "© {year} {name} · Website developed as a UTN University Community Service project",
+    "copyright": "© {year} {name} · Website developed as a <link>UTN University Community Service project</link>",
     "sdgLabel": "Sustainable Development Goals",
     "sdgAbbr": "SDG"
   },

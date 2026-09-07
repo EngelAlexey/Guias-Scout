@@ -20,6 +20,7 @@
     "impact": "Impacto",
     "projects": "Proyectos",
     "news": "Comunicados",
+    "credits": "Créditos",
     "join": "Únete",
     "portal": "Portal"
   },
@@ -394,6 +395,34 @@
     "note": "Los comunicados son la vía oficial para avisos de actividades, cambios de horario y requisitos."
   },
 
+  "credits": {
+    "metaTitle": "Créditos",
+    "metaDescription": "Quién construyó este sitio y bajo qué programa: un proyecto de Trabajo Comunal Universitario de la Universidad Técnica Nacional para el Grupo 35 Esparzol.",
+    "hero": {
+      "eyebrow": "Quién hizo este sitio",
+      "title": "Créditos",
+      "lead": "Este sitio se construyó como proyecto de Trabajo Comunal Universitario. Aquí queda constancia del programa que lo enmarcó y de las personas que lo desarrollaron."
+    },
+    "programme": {
+      "title": "Programa",
+      "lead": "El desarrollo se hizo dentro del Trabajo Comunal Universitario, la modalidad de servicio a la comunidad de la Universidad Técnica Nacional. Al cerrar el proyecto el sitio queda a cargo del Grupo 35.",
+      "items": [
+        { "label": "Universidad Técnica Nacional (UTN)" },
+        { "label": "Trabajo Comunal Universitario (TCU)" }
+      ]
+    },
+    "people": {
+      "title": "Equipo responsable",
+      "lead": "Tres personas estudiantes de la UTN se hicieron responsables del proyecto.",
+      "items": [
+        { "linkLabel": "Portafolio" },
+        { "linkLabel": "Correo" },
+        { "linkLabel": "Correo" }
+      ]
+    },
+    "note": "Para consultas sobre el sitio se puede escribir al equipo o al Grupo 35 por los medios de contacto."
+  },
+
   "notFound": {
     "eyebrow": "Error 404",
     "title": "No encontramos esa página",
@@ -412,7 +441,7 @@
     "venueLabel": "Dónde nos reunimos",
     "phoneLabel": "Teléfono",
     "emailLabel": "Correo",
-    "copyright": "© {year} {name} · Sitio desarrollado como Trabajo Comunal Universitario de la UTN",
+    "copyright": "© {year} {name} · Sitio desarrollado como <link>Trabajo Comunal Universitario de la UTN</link>",
     "sdgLabel": "Objetivos de Desarrollo Sostenible",
     "sdgAbbr": "ODS"
   },
